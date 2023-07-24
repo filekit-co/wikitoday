@@ -1,8 +1,7 @@
 # `llm` server
 > for making ai news using the LLM model
 
-
-![arch](https://raw.githubusercontent.com/filekit-co/llm/main/docs/arch.iuml)
+![arch](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/filekit-co/llm/main/docs/arch.iuml)
 
 
 Below is the server architecture I envisioned for making ai news using the LLM model.
