@@ -1,0 +1,26 @@
+@startuml
+!theme reddress-lightred
+participant Cronjob
+participant "Data Source server" as DSS
+participant "AI server" as AIS
+participant "Translation" as Trans
+participant "Github Repo" as Repo
+participant "Cloud flare pages" as Build
+participant "WEB" as Deploy
+
+Cronjob -> DSS: 2-1. Get ranked link
+DSS -> DSS: 2-2. Pass to crawler
+DSS -> DSS: 2-3. Crawl links
+DSS -> AIS: 2-4. Pass it to AI server
+
+AIS -> AIS: 3-1. pass crawled data to llm
+AIS -> AIS: 3-2. prompt details
+AIS -> AIS: 3-3. Save contents as a <article>.md
+
+AIS -> Trans: 4. Translate <article>.md
+Trans -> Repo: 5. Push it to news frontend github repository
+
+Repo -> Repo: 6. CI/CD
+Repo -> Build: 7. trigger to build
+Build -> Deploy: 8. Deploy with cloud flare pages
+@enduml
