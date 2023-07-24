@@ -2,25 +2,32 @@
 !theme reddress-lightred
 participant Cronjob
 participant "Data Source server" as DSS
+participant "Crawler" as Crawler
+participant "Google trends" as Google
 participant "AI server" as AIS
+participant "GPT" as GPT
 participant "Translation" as Trans
-participant "Github Repo" as Repo
+participant "SNS" as SNS
+participant "Github" as Repo
 participant "Cloud flare pages" as Build
 participant "WEB" as Deploy
 
-Cronjob -> DSS: 2-1. Get ranked link
-DSS -> DSS: 2-2. Pass to crawler
-DSS -> DSS: 2-3. Crawl links
-DSS -> AIS: 2-4. Pass it to AI server
-
-AIS -> AIS: 3-1. pass crawled data to llm
-AIS -> AIS: 3-2. prompt details
-AIS -> AIS: 3-3. Save contents as a <article>.md
-
-AIS -> Trans: 4. Translate <article>.md
-Trans -> Repo: 5. Push it to news frontend github repository
-
-Repo -> Repo: 6. CI/CD
-Repo -> Build: 7. trigger to build
+Cronjob -> DSS: Trigger
+DSS -> Google: 2-1. Get ranked trends list by country
+Google -> DSS: 5 country(en, ko, jp, ru, cn) * 10 articles = 50ea
+DSS -> Crawler: Pass links
+Crawler -> Crawler: Craw and parse data
+Crawler -> DSS: Pass parsed data
+DSS -> DSS: Preprocess data
+DSS -> AIS: 2-4. Pass Preprocessed data
+AIS -> GPT: 3-1. Query to llm x 50times with prompt template
+GPT -> AIS: Pass regenerated data (50ea) with seo and content data
+AIS -> AIS: 3-3. Store contents as a <article>.md and asset data (img)
+AIS -> Trans : 4. Translate 50 markdown articles by other country lang
+Trans -> AIS : 4. 200 ea markdown (50 * 4, exclude origin lang)
+AIS -> SNS: 5. Push to sns marketing trigger server
+AIS -> Github: 5. Push md files and assets to news frontend github repository
+Github -> Github: 6. CI/CD
+Github -> Build: 7. trigger to build
 Build -> Deploy: 8. Deploy with cloud flare pages
 @enduml
