@@ -1,4 +1,4 @@
-# `llm` server
+# `wikitoday.io` server
 > for making ai news using the LLM model
 
 ![arch](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/filekit-co/llm/main/docs/v1.iuml)
