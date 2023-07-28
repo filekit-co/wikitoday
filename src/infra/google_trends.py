@@ -1,27 +1,32 @@
 import json
 import logging
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass, field
 from typing import List, Optional
 
 from httpx import AsyncClient, Response
 
+from domain.entities import ArticleMeta, Trend
+from utils import generate_dataclass
+
 GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends"
 logger = logging.getLogger(__name__)
 
-@dataclass
-class Image:
-    newsUrl: Optional[str] = None
-    source: Optional[str] = None
-    imageUrl: Optional[str] = None
+
 
 @dataclass
-class Article:
+class GoogleArticle:
     title: Optional[str] = None
     timeAgo: Optional[str] = None
     source: Optional[str] = None
-    image: Optional[Image] = None
     url: Optional[str] = None
     snippet: Optional[str] = None
+
+    @property
+    def dto(self):
+        return ArticleMeta(
+            url=self.url,
+            source=self.source,
+        )
 
 @dataclass
 class RelatedQuery:
@@ -33,18 +38,30 @@ class Title:
     query: Optional[str] = None
     exploreLink: Optional[str] = None
 
+
 @dataclass
 class TrendingDataEntry:
     title: Optional[Title] = None
     formattedTraffic: Optional[str] = None
-    relatedQueries: Optional[List[RelatedQuery]] = None
-    image: Optional[Image] = None
-    articles: Optional[List[Article]] = None
+    relatedQueries: List[RelatedQuery] = field(default_factory=list)
+    articles: List[GoogleArticle] = field(default_factory=list)
     shareUrl: Optional[str] = None
     
-    @property
-    def as_dict(self):
-        return asdict(self)    
+
+    def __post_init__(self):
+        self.title = Title(**self.title)
+        self.relatedQueries = [generate_dataclass(RelatedQuery, rq) for rq in self.relatedQueries]
+        self.articles = [generate_dataclass(GoogleArticle, a) for a in self.articles]
+        
+    
+    def to_dto(self) -> Trend:
+        num_max_article = 2
+        return Trend(
+            query=self.title.query,
+            related_quries=[r.query for r in self.relatedQueries if r.query],
+            articles=[a.dto for a in self.articles if a.url][:num_max_article]
+        )
+
 
 def _parse_trends(response: Response):
     try:
@@ -72,10 +89,10 @@ def _parse_trends(response: Response):
         logger.error(f"No trending data available in the response. Response: {response.text}")
         raise ValueError("No trending data available in the response")
 
-    return [TrendingDataEntry(**entry) for entry in trending_data]
+    return [generate_dataclass(TrendingDataEntry, entry) for entry in trending_data]
 
 
-async def daily_trends(client: AsyncClient, country='US'):
+async def daily_trends(client: AsyncClient, country:str) -> List[Trend]:
     meta_language='en-US'
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
@@ -94,5 +111,5 @@ async def daily_trends(client: AsyncClient, country='US'):
             }
     
     r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
-    trending_data_list: List[TrendingDataEntry] = _parse_trends(r)
-    return trending_data_list
+    trends = _parse_trends(r)
+    return [t.to_dto() for t in trends]
