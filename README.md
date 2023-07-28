@@ -36,23 +36,13 @@ Below is the server architecture I envisioned for making ai news using the LLM m
 
 ```sh
 > poetry init
-> pyenv local 3.10
-> python -V
-Python 3.9.16
+> pyenv local 3.11
 > poetry env use $(pyenv which python)
-Creating virtualenv llm-UTZ1ts9j-py3.9 in /Users/minwook/Library/Caches/pypoetry/virtualenvs
-Using virtualenv: /Users/minwook/Library/Caches/pypoetry/virtualenvs/llm-UTZ1ts9j-py3.9
 > poetry env info
-
-Virtualenv
-Python:         3.9.16
-System
-Platform:   darwin
-OS:         posix
-Python:     3.9.16
-
-> poetry add fastapi 'uvicorn[standard]' feedparser
+> poetry add scrapy fastapi 'uvicorn[standard]' httpx
 ```
+
+- [m1 clang with lxml error](https://github.com/lxml/lxml/pull/360)
 
 ## arch
 - [mongo](https://chat.openai.com/c/ceecbe13-bf65-4dab-96df-42b66a87fc08)
@@ -63,4 +53,3 @@ Python:     3.9.16
   - crawler
   - parse text
   - regenerator
-- 
