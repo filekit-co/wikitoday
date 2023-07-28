@@ -50,5 +50,17 @@ System
 Platform:   darwin
 OS:         posix
 Python:     3.9.16
+
+> poetry add fastapi 'uvicorn[standard]' feedparser
 ```
 
+## arch
+- [mongo](https://chat.openai.com/c/ceecbe13-bf65-4dab-96df-42b66a87fc08)
+  - [atlas](https://cloud.mongodb.com/v2/64bf6da368f1a3195493f775#/clusters/starterTemplates)
+- [google trends](https://github.com/deedy5/google_trends)
+- [crawl and parse text](https://chat.openai.com/c/849ac652-e1cd-4672-ba6e-f2468ce5c9d7)
+- llm server
+  - crawler
+  - parse text
+  - regenerator
+- 

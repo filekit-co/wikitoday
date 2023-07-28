@@ -12,7 +12,7 @@ participant "Github" as Repo
 participant "Cloud flare pages" as Build
 participant "WEB" as Deploy
 
-Cronjob -> DSS: Trigger
+Cronjob -> DSS: Every 5 am by Country time Trigger GET /trends?country=code
 DSS -> Google: 2-1. Get ranked trends list by country
 Google -> DSS: 5 country(en, ko, jp, ru, cn) * 10 articles = 50ea
 DSS -> Crawler: Pass links
