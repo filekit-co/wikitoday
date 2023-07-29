@@ -15,7 +15,7 @@ router = APIRouter(prefix='/trends', tags=["trends"])
 
 
 @router.get("/")
-async def get_trends(country: str, client: httpx.AsyncClient = Depends(get_client)):
+async def generate_news(country: str, client: httpx.AsyncClient = Depends(get_client)):
     # 0. cronjob per 나라 05:00 am 기준 (우리나라는 그 나라에 맞춰서)
     # 1. coutries
     # 2. news link unique
@@ -27,14 +27,19 @@ async def get_trends(country: str, client: httpx.AsyncClient = Depends(get_clien
         raise InvalidCountryCodes
 
     trends = await daily_trends(client, country)
-    urls = []
-    for trend in trends:
-        urls.extend(trend.hrefs)
-    logging.error(urls)
     
-    result = await NewsPlease.from_urls(urls, timeout=6)
+    urls = [
+        href
+        for trend in trends
+        for href in trend.hrefs
+    ]
+    # for test 
+    # TODO: delete it
+    only_two = urls[:2]
+    result = await NewsPlease.from_urls(only_two, timeout=10.0)
 
-    
+
+
     
     # TODO: db url unique check
     # articles = await crawl(trends)

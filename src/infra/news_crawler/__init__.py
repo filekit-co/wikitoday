@@ -1,12 +1,14 @@
 import datetime
 import logging
 import urllib
+from typing import Dict
 
 from dotmap import DotMap
 
 from infra.news_crawler.crawler import NewscrawlerItem, SimpleCrawler
 from infra.news_crawler.extractor import Extractor
 from infra.news_crawler.storage import ExtractedInformationStorage
+from src.infra.news_crawler.models import NewsArticle
 
 
 class NewsPlease:
@@ -15,7 +17,7 @@ class NewsPlease:
     """
 
     @staticmethod
-    async def from_html(html, url=None, download_date=None, fetch_images=True):
+    async def from_html(html, url=None, download_date=None, fetch_images=True) -> NewsArticle:
         """
         Extracts relevant information from an HTML page given as a string. This function does not invoke scrapy but only
         uses the article extractor. If you have the original URL make sure to provide it as this helps NewsPlease
@@ -68,7 +70,7 @@ class NewsPlease:
             return None
 
     @staticmethod
-    async def from_urls(urls, timeout=None):
+    async def from_urls(urls, timeout=None) -> Dict[str, NewsArticle]:
         """
         Crawls articles from the urls and extracts relevant information.
         :param urls:
