@@ -1,7 +1,17 @@
 # `wikitoday.io` server
 > for making ai news using the LLM model
 
-![arch](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/filekit-co/llm/main/docs/v1.iuml)
+
+<p align="center">
+<img src="https://github.com/filekit-co/wikitoday/assets/37536298/7bdab99e-f7e7-400d-878a-eb56d044e024" width=900 />
+<br/>
+<br/>
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/filekit-co/llm/main/docs/v1.iuml" />
+</p>
+
+
+
+
 
 
 Below is the server architecture I envisioned for making ai news using the LLM model.
