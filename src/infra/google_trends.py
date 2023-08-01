@@ -5,7 +5,7 @@ from typing import List, Optional
 
 from httpx import AsyncClient, Response
 
-from domain.entities import ArticleMeta, Trend
+from domain.entities import GoogleTrend, TrendArticleMeta
 from utils import generate_dataclass
 
 GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends"
@@ -23,7 +23,7 @@ class GoogleArticle:
 
     @property
     def dto(self):
-        return ArticleMeta(
+        return TrendArticleMeta(
             url=self.url,
             source=self.source,
         )
@@ -46,7 +46,7 @@ class TrendingDataEntry:
     relatedQueries: List[RelatedQuery] = field(default_factory=list)
     articles: List[GoogleArticle] = field(default_factory=list)
     shareUrl: Optional[str] = None
-    
+
 
     def __post_init__(self):
         self.title = Title(**self.title)
@@ -54,9 +54,9 @@ class TrendingDataEntry:
         self.articles = [generate_dataclass(GoogleArticle, a) for a in self.articles]
         
     
-    def to_dto(self) -> Trend:
+    def to_dto(self) -> GoogleTrend:
         num_max_article = 2
-        return Trend(
+        return GoogleTrend(
             query=self.title.query,
             related_quries=[r.query for r in self.relatedQueries if r.query],
             articles=[a.dto for a in self.articles if a.url][:num_max_article]
@@ -92,7 +92,7 @@ def _parse_trends(response: Response):
     return [generate_dataclass(TrendingDataEntry, entry) for entry in trending_data]
 
 
-async def daily_trends(client: AsyncClient, country:str) -> List[Trend]:
+async def daily_trends(client: AsyncClient, country:str) -> List[GoogleTrend]:
     meta_language='en-US'
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",

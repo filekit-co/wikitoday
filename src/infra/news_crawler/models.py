@@ -1,3 +1,15 @@
+from dataclasses import dataclass
+from typing import Optional
+
+FALLBACK_SOURCE = "Google trends"
+
+@dataclass
+class NewsArticleDto:
+    text: str
+    img_url: Optional[str] = None
+    img_src: str = FALLBACK_SOURCE
+    
+
 class NewsArticle:
     """
     Class representing a single news article containing all the information that news-please can extract.
@@ -53,6 +65,21 @@ class NewsArticle:
             'title_rss': self.title_rss,
             'url': self.url
         }
+
+    def to_dto(self, source: Optional[str]=None) -> NewsArticleDto:
+        if not source:
+            if len(self.authors) > 0:
+                source = self.authors[0]
+            elif self.source_domain:
+                source = self.source_domain
+            else:
+                source = FALLBACK_SOURCE
+
+        return NewsArticleDto(
+            text= f'# Title:{self.title}\n\n# Lead:{self.description}\n\n# Body:{self.maintext}',
+            img_src =source,
+            img_url = self.image_url, 
+        )
 
 
 class ArticleCandidate:
