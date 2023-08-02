@@ -1,5 +1,8 @@
 from dataclasses import asdict, dataclass, field
+from enum import StrEnum
 from typing import Dict, List, Optional
+
+from utils import split_sentences
 
 
 ### Step 1
@@ -67,30 +70,134 @@ class TranslatedCrawledTrend:
 
 
 ### Step 4
+class Language(StrEnum):
+    BG = "BG"
+    CS = "CS"
+    DA = "DA"
+    DE = "DE"
+    EL = "EL"
+    EN_GB = "EN-GB"
+    EN_US = "EN-US"
+    ES = "ES"
+    ET = "ET"
+    FI = "FI"
+    FR = "FR"
+    HU = "HU"
+    ID = "ID"
+    IT = "IT"
+    JA = "JA"
+    KO = "KO"
+    LT = "LT"
+    LV = "LV"
+    NB = "NB"
+    NL = "NL"
+    PL = "PL"
+    PT_BR = "PT-BR"
+    PT_PT = "PT-PT"
+    RO = "RO"
+    RU = "RU"
+    SK = "SK"
+    SL = "SL"
+    SV = "SV"
+    TR = "TR"
+    UK = "UK"
+    ZH = "ZH"
+
+    @classmethod
+    def target_languages(cls, exclude_en=True):
+        # langs = [self.EN_US, self.ZH, self.JA, self.PT_PT, self.PT_BR, self.RU, self.KO]
+        langs = [cls.EN_US, cls.ZH, cls.KO]
+        if exclude_en:
+            return langs[1:]
+        return langs
+
+
 @dataclass
 class QnA:
     question: str
     answer: str
 
-@dataclass
-class Article:
-    title: str
-    lead: str
-    body: str
-    qna: List[QnA]
-    category: str
 
 @dataclass
-class LLMContent:
-    keywords: List[str]
-    article: Article
+class ArticleContent:
+    title: str
+    lead: str
+    body1: str
+    body2: str
+    qna_list: List[QnA]
+    language: Language
+
+
+    def to_list(self):
+        qna_list = []
+        for qa in self.qna_list:
+            qna_list.append(qa.question)
+            qna_list.append(qa.answer)
+
+        return [
+            self.title,
+            self.lead,
+            self.body1,
+            self.body2,
+            *qna_list,
+        ]
+    
+    @staticmethod
+    def from_list(data: List[str], language: Language):
+        qna = data[4:]
+        qna_list = [QnA(qna[i], qna[i+1]) for i in range(0, len(qna), 2)]
+        return ArticleContent(
+            title=data[0],
+            lead=data[1],
+            body1=data[2],
+            body2=data[3],
+            qna_list = qna_list,
+            language=language
+        )
+
+
+@dataclass
+class Article:
+    category: str
+    keywords: str
+    contents: List[ArticleContent]
     images: List[ArticleImage]
 
 
     @classmethod
     def from_dto(cls, tct: TranslatedCrawledTrend, ai_data: Dict[str, str]):
+        category = ai_data.pop('category')
+        
+        paragraphs: List[str] = split_sentences(ai_data['body'])
+        n = len(paragraphs) // 2
+        body1 = ' '.join(paragraphs[:n])
+        body2 = ' '.join(paragraphs[n:])
+
+        qna_list= [QnA(question=qna['question'], answer=qna['answer']) for qna in ai_data['qna']]
+        contents = [
+            ArticleContent(
+                title = ai_data['title'],
+                lead = ai_data['lead'],
+                body1 = body1,
+                body2 = body2,
+                qna_list = qna_list,
+                language = Language.EN_US,
+            )
+        ]
         return cls(
-            keywords=tct.keywords,
-            article=Article(**ai_data),
+            category=category,
+            keywords=tct.str_keywords,
+            contents=contents,
             images=tct.images
+        )
+
+    def to_list(self) -> List[str]:
+        """DeepL does not support json schema translation, so we need to pass it with an array typed texts"""
+        english_content = self.contents[0]
+        return english_content.to_list()
+
+    
+    def append_translation(self, from_list: List[str], language: Language):
+        self.contents.append(
+            ArticleContent.from_list(from_list, language)
         )

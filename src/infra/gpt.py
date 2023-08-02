@@ -12,7 +12,7 @@ from app.config import get_env
 from app.exceptions import GptInvalidLengthError
 from consts import GPT_MODEL
 from domain.entities import TranslatedCrawledTrend
-from src.domain.entities import LLMContent
+from src.domain.entities import Article
 
 _cfg = get_env()
 OPENAI_API_KEY = _cfg["OPENAI_API_KEY"]
@@ -158,7 +158,7 @@ def _generate_template_articles(keyword, articles):
 
 
 
-async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[LLMContent]:
+async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[Article]:
     responses = await asyncio.gather(*[
         openai.ChatCompletion.acreate(
             model=GPT_MODEL,
@@ -192,7 +192,7 @@ async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[LLMContent]:
         function_call = response.choices[0].message.function_call
         article = json.loads(function_call.arguments)
         result.append(
-            LLMContent.from_dto(trend, article)
+            Article.from_dto(trend, article)
         )
     
     return result
