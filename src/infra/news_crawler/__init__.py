@@ -26,20 +26,25 @@ async def from_trends(trends: List[GoogleTrend], timeout=None) -> List[CrawledTr
     for trend in trends:
         crawled_trend_data = {
             'keywords': trend.keywords,
-            'texts': [],
+            'articles': [],
             'images': [],
+            'language': None,
         }
+
         for a in trend.articles:
             news = crawled_news.get(a.url, None)
-            if news:
-                news_dto = news.to_dto(a.source)
-                crawled_trend_data['texts'].append(news_dto.text)
-                crawled_trend_data['images'].append(
-                    ArticleImage(url=news_dto.img_url, source=news_dto.img_src)
-                )
+            if not news:
+                continue
+            
+            news_dto = news.to_dto(a.source)
+            crawled_trend_data['articles'].append(news_dto.text)
+            crawled_trend_data['images'].append(
+                ArticleImage(url=news_dto.img_url, source=news_dto.img_src)
+            )
+            crawled_trend_data['language'] = news_dto.language
         
         # An article will be regenerated only if the crawled text data is existed.
-        if crawled_trend_data['texts']:
+        if crawled_trend_data['articles']:
             result.append(CrawledTrend(**crawled_trend_data))
     return result
 

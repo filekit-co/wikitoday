@@ -3,6 +3,7 @@ import logging
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+import httpx
 from httpx import AsyncClient, Response
 
 from domain.entities import GoogleTrend, TrendArticleMeta
@@ -92,7 +93,7 @@ def _parse_trends(response: Response):
     return [generate_dataclass(TrendingDataEntry, entry) for entry in trending_data]
 
 
-async def daily_trends(client: AsyncClient, country:str) -> List[GoogleTrend]:
+async def daily_trends(country:str) -> List[GoogleTrend]:
     meta_language='en-US'
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
@@ -110,6 +111,7 @@ async def daily_trends(client: AsyncClient, country:str) -> List[GoogleTrend]:
             'ns': '15',
             }
     
-    r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
-    trends = _parse_trends(r)
-    return [t.to_dto() for t in trends]
+    async with httpx.AsyncClient() as client:
+        r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
+        trends = _parse_trends(r)
+        return [t.to_dto() for t in trends]

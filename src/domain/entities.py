@@ -36,9 +36,31 @@ class ArticleImage:
 @dataclass
 class CrawledTrend:
     keywords: List[str]
-    texts: List[str] = field(default_factory=list)
+    articles: List[str] = field(default_factory=list)
     images: List[ArticleImage] = field(default_factory=list)
+    language: Optional[str] = None
+    
+    @property
+    def is_en(self) -> bool:
+        return self.language == 'en'
+
+
+
+@dataclass
+class TranslatedCrawledTrend:
+    keywords: List[str]
+    articles: List[str]
+    images: List[ArticleImage]
 
     @property
     def str_keywords(self):
         return ','.join(self.keywords)
+
+
+    @classmethod
+    def from_crawled_trend(cls, crawled_trend: CrawledTrend, translated_articles: Optional[List[str]]=None):
+        return cls(
+            keywords=crawled_trend.keywords,
+            articles=translated_articles if translated_articles else crawled_trend.articles,
+            images=crawled_trend.images
+        )

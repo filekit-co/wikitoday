@@ -8,7 +8,7 @@ class NewsArticleDto:
     text: str
     img_url: Optional[str] = None
     img_src: str = FALLBACK_SOURCE
-    
+    language: Optional[str] = None
 
 class NewsArticle:
     """
@@ -79,6 +79,7 @@ class NewsArticle:
             text= f'# Title:{self.title}\n\n# Lead:{self.description}\n\n# Body:{self.maintext}',
             img_src =source,
             img_url = self.image_url, 
+            language = self.language,
         )
 
 
