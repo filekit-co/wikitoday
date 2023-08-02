@@ -1,8 +1,8 @@
 from dataclasses import asdict, dataclass, field
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 
-# 1st step
+### Step 1
 @dataclass(frozen=True)
 class TrendArticleMeta:
     url: str
@@ -26,7 +26,7 @@ class GoogleTrend:
     def as_dict(self):
         return asdict(self)
 
-# 2nd
+### Step 2
 @dataclass(frozen=True)
 class ArticleImage:
     url: str
@@ -45,7 +45,7 @@ class CrawledTrend:
         return self.language == 'en'
 
 
-
+### Step 3
 @dataclass
 class TranslatedCrawledTrend:
     keywords: List[str]
@@ -63,4 +63,34 @@ class TranslatedCrawledTrend:
             keywords=crawled_trend.keywords,
             articles=translated_articles if translated_articles else crawled_trend.articles,
             images=crawled_trend.images
+        )
+
+
+### Step 4
+@dataclass
+class QnA:
+    question: str
+    answer: str
+
+@dataclass
+class Article:
+    title: str
+    lead: str
+    body: str
+    qna: List[QnA]
+    category: str
+
+@dataclass
+class LLMContent:
+    keywords: List[str]
+    article: Article
+    images: List[ArticleImage]
+
+
+    @classmethod
+    def from_dto(cls, tct: TranslatedCrawledTrend, ai_data: Dict[str, str]):
+        return cls(
+            keywords=tct.keywords,
+            article=Article(**ai_data),
+            images=tct.images
         )

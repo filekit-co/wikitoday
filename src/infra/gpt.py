@@ -1,6 +1,7 @@
 import asyncio
+import json
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Optional
 
 import openai
@@ -8,8 +9,10 @@ import tiktoken
 from jinja2 import Template
 
 from app.config import get_env
+from app.exceptions import GptInvalidLengthError
 from consts import GPT_MODEL
 from domain.entities import TranslatedCrawledTrend
+from src.domain.entities import LLMContent
 
 _cfg = get_env()
 OPENAI_API_KEY = _cfg["OPENAI_API_KEY"]
@@ -80,10 +83,10 @@ SYS_PROMPT = "You are an AI journalist for \'Wikitoday\', an automated news serv
 #         }
 #     }
 # ]
-
+FUNCTION_NAME = "generate_news_article"
 FUNCTIONS = [
     {
-        "name": "generate_news_article",
+        "name": FUNCTION_NAME,
         "description": "Generate an news article by referring to the given articles of the keyword. !IMPORTANT: you must response with json format below",
         "parameters": {
             "type": "object",
@@ -140,23 +143,6 @@ Below are {{ num_articles }} articles written with the keyword {{ keyword }}. Pl
 USER_PROMPT_TEMPLATE = Template(_str_user_template)
 
 
-@dataclass
-class QnA:
-    question: str
-    answer: str
-
-@dataclass
-class Article:
-    title: Optional[str] = None
-    lead: Optional[str] = None
-    body: Optional[str] = None
-    qna: Optional[List[QnA]] = None
-    
-    
-    @property
-    def to_markdown(self):
-        # TODO: check how to convert it to a markdown format
-        ...
 
 
 
@@ -171,10 +157,8 @@ def _generate_template_articles(keyword, articles):
     })
 
 
-from pprint import pprint
 
-
-async def regenerate(trends: List[TranslatedCrawledTrend]):
+async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[LLMContent]:
     responses = await asyncio.gather(*[
         openai.ChatCompletion.acreate(
             model=GPT_MODEL,
@@ -189,6 +173,7 @@ async def regenerate(trends: List[TranslatedCrawledTrend]):
                 },
             ],
             functions=FUNCTIONS,
+            function_call={"name": FUNCTION_NAME},
             temperature=1,
             max_tokens=10000,
             top_p=1,
@@ -198,8 +183,19 @@ async def regenerate(trends: List[TranslatedCrawledTrend]):
         for t in trends
     ])
 
-    pprint(responses)
-    return responses
+    if len(trends) != len(responses):
+        raise GptInvalidLengthError()
+
+    result = []
+    for trend, response in zip(trends, responses):
+        # https://github.com/openai/openai-cookbook/blob/3115683f14b3ed9570df01d721a2b01be6b0b066/examples/azure/functions.ipynb#L255
+        function_call = response.choices[0].message.function_call
+        article = json.loads(function_call.arguments)
+        result.append(
+            LLMContent.from_dto(trend, article)
+        )
+    
+    return result
     
     
 
