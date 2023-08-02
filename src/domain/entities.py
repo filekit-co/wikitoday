@@ -1,8 +1,9 @@
 from dataclasses import asdict, dataclass, field
+from datetime import date
 from enum import StrEnum
 from typing import Dict, List, Optional
 
-from utils import split_sentences
+from utils import create_url_path, split_sentences
 
 
 ### Step 1
@@ -69,7 +70,7 @@ class TranslatedCrawledTrend:
         )
 
 
-### Step 4
+### Step 4-5
 class Language(StrEnum):
     BG = "BG"
     CS = "CS"
@@ -163,6 +164,10 @@ class Article:
     contents: List[ArticleContent]
     images: List[ArticleImage]
 
+    @property
+    def url_safe_name(self) -> str:
+        en_content = self.contents[0]
+        return create_url_path(en_content.title)
 
     @classmethod
     def from_dto(cls, tct: TranslatedCrawledTrend, ai_data: Dict[str, str]):
@@ -201,3 +206,18 @@ class Article:
         self.contents.append(
             ArticleContent.from_list(from_list, language)
         )
+
+
+
+### Step 6
+
+@dataclass
+class Markdown:
+    language: Language
+    md: str
+
+@dataclass
+class Folder:
+    today: date
+    folder_name: str
+    mds: List[Markdown]

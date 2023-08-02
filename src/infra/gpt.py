@@ -129,8 +129,7 @@ FUNCTIONS = [
         }
     }
 ]
-_str_user_template = """
-Below are {{ num_articles }} articles written with the keyword {{ keyword }}. Please give me the json response according to WIKITODAY's requirements.
+_str_user_template = """Below are {{ num_articles }} articles written with the keyword {{ keyword }}. Please give me the json response according to WIKITODAY's requirements.
 
 
 ```

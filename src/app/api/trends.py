@@ -9,6 +9,7 @@ from app.exceptions import InvalidCountryCodes
 from consts import TARGET_COUNTRY_CODES
 from infra.google_trends import daily_trends
 from infra.gpt import regenerate
+from infra.markdown import to_folders
 from infra.news_crawler import from_trends
 from infra.translate import translate_articles, translate_crawled_trends
 from mocks import step_5
@@ -37,8 +38,8 @@ async def generate_news(country: str):
     # regenerated_articles = await regenerate(translated_trends)
     # translated_articles = await translate_regenerated_articles(regenerated_articles)
 
-    # markdowned_articles = await to_markdown(translated_articles)
-    markdowned_articles = await to_markdown(step_5)
+    # markdown_articles = await to_markdown(translated_articles)
+    folders = to_folders(step_5)
     
     # await push(markdowned_articles)
-    return JSONResponse(content=jsonable_encoder(translated_articles))
+    return JSONResponse(content=jsonable_encoder(folders))
