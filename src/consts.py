@@ -1,4 +1,6 @@
 # https://trends.google.com/trends/trendingsearches/daily?geo=KR&hl=en-GB
+import os
+
 GOOGLE_BASE_TRENDS_API='https://trends.google.com/trends/trendingsearches/daily/rss?geo='
 # 미국, 인도, 일본, 싱가포르, 호주, 홍콩, 타이완, 브라질, 캐나다, 독일, 네덜란드, 인도네시아, 대한민국, 러시아, 터키, 베트남, 필리핀
 TARGET_COUNTRY_CODES = [
@@ -74,3 +76,6 @@ _GOOGLE_GEO_PICKER = [
     {"id": "GB", "name": "United Kingdom"},    
     {"id": "VN", "name": "Vietnam"},
 ]
+
+
+GPT_MODEL = "gpt-3.5-turbo-16k-0613"

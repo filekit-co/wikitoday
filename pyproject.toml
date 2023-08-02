@@ -20,6 +20,7 @@ readability-lxml = "^0.8.1"
 langdetect = "^1.0.9"
 openai = "^0.27.8"
 jinja2 = "^3.1.2"
+tiktoken = "^0.4.0"
 
 
 [build-system]
