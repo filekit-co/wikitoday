@@ -9,17 +9,131 @@ from jinja2 import Template
 
 from app.config import get_env
 from consts import GPT_MODEL
+from domain.entities import TranslatedCrawledTrend
 
 _cfg = get_env()
 OPENAI_API_KEY = _cfg["OPENAI_API_KEY"]
 openai.api_key = OPENAI_API_KEY
 
+
+# SYS_PROMPT = "You are an AI journalist for \'Wikitoday\', an automated news service.\nYour task is to generate engaging and SEO-friendly news articles based on given \'KEYWORD\' and related \'ARTICLES\'. \nYour article should be written in a style that is indistinguishable from human journalists without any reference to the journalist name or news provider that wrote the original article. \nThe ultimate goal of \'Wikitoday\' is to convey information to busy readers as efficiently as possible and to attract a large audience for effective advertising revenue.\n\nProduce your output as JSON. The format should be:\n\n```\n{\n  title: \'..\',\n  lead: \'..\',\n  body: \'..\',\n  qna: [\n    {question:\'..\', answer:\'..\'},\n    {question:\'..\', answer:\'..\'},\n    {question:\'..\', answer:\'..\'},\n    ...\n  ]\n}\n```\n\nEach field in json must follow the rules below.\n\n- title: An article title, to get as many people interested in your article as possible shortly.\n- lead: An article lead, concisely state the facts of the most important article, and write the most important content of the entire article in 1-2 sentences.\n- body: An article body, without any reference to the journalist name or news provider that wrote the original article.\n- qna: An array of Question and Answer, write 3 to 7 Q&As about what people might be curious in this article."
+SYS_PROMPT = "You are an AI journalist for \'Wikitoday\', an automated news service.\nYour task is to generate engaging and SEO-friendly news articles based on given \'KEYWORD\' and related \'ARTICLES\'. \nYour article should be written in a style that is indistinguishable from human journalists without any reference to the journalist name or news provider that wrote the original article. \nThe ultimate goal of \'Wikitoday\' is to convey information to busy readers as efficiently as possible and to attract a large audience for effective advertising revenue.\n"
+# FUNCTIONS = [
+#     {
+#         "name": "generate_news_article",
+#         "description": "Generate an news article by referring to the given articles of the keyword. !IMPORTANT: you must response with json format below",
+#         "parameters": {
+#             "type": "object",
+#             "properties": {
+#                 "keyword": {
+#                     "type": "string",
+#                     "description": "The main keyword related to the article",
+#                 },
+#                 "articles": {
+#                     "type": "array",
+#                     "items": {
+#                         "type": "string",
+#                     },
+#                     "description": "The list of related articles based on the keyword"
+#                 },
+#             },
+#             "required": ["keyword", "articles"]
+#         },
+#         "return": {
+#             "type": "object",
+#             "properties": {
+#                 "title": {
+#                     "type": "string",
+#                     "description": "An article title, to get as many people interested in your article as possible shortly"
+#                 },
+#                 "lead": {
+#                     "type": "string",
+#                     "description": "An article lead, concisely state the facts of the most important article, and write the most important content of the entire article in 1-2 sentences"
+#                 },
+#                 "body": {
+#                     "type": "string",
+#                     "description": "An article body, without any reference to the journalist name or news provider that wrote the original article"
+#                 },
+#                 "qna": {
+#                     "type": "array",
+#                     "items": {
+#                         "type": "object",
+#                         "properties": {
+#                             "question": {
+#                                 "type": "string"
+#                             },
+#                             "answer": {
+#                                 "type": "string"
+#                             }
+#                         },
+#                         "required": ["question", "answer"]
+#                     },
+#                     "description": "An array of Question and Answer, write 3 to 7 Q&As about what people might be curious in this article"
+#                 },
+#                 "category": {
+#                     "type": "string",
+#                     "enum": ["Politics", "World/International", "Business/Economy", "Technology", "Science", "Health", "Entertainment", "Sports", "Environment/Nature", "Education", "Lifestyle", "Opinion/Editorial"],
+#                     "description": "An article enum typed category"
+#                 },
+#             },
+#             "required": ["title", "lead", "body", "qna", "category"]
+#         }
+#     }
+# ]
+
+FUNCTIONS = [
+    {
+        "name": "generate_news_article",
+        "description": "Generate an news article by referring to the given articles of the keyword. !IMPORTANT: you must response with json format below",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "An article title, to get as many people interested in your article as possible shortly"
+                },
+                "lead": {
+                    "type": "string",
+                    "description": "An article lead, concisely state the facts of the most important article, and write the most important content of the entire article in 1-2 sentences"
+                },
+                "body": {
+                    "type": "string",
+                    "description": "An article body, without any reference to the journalist name or news provider that wrote the original article"
+                },
+                "qna": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "question": {
+                                "type": "string"
+                            },
+                            "answer": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["question", "answer"]
+                    },
+                    "description": "An array of Question and Answer, write 3 to 7 Q&As about what people might be curious in this article"
+                },
+                "category": {
+                    "type": "string",
+                    "enum": ["Politics", "World/International", "Business/Economy", "Technology", "Science", "Health", "Entertainment", "Sports", "Environment/Nature", "Education", "Lifestyle", "Opinion/Editorial"],
+                    "description": "An article enum typed category"
+                },
+            },
+            "required": ["title", "lead", "body", "qna", "category"]
+        }
+    }
+]
 _str_user_template = """
-Below are {{ num_articles }} articles written with the keyword {{ keyword }}. Please answer them according to WIKITODAY requirements.
+Below are {{ num_articles }} articles written with the keyword {{ keyword }}. Please give me the json response according to WIKITODAY's requirements.
+
 
 ```
 {{ articles }}
 ```
+
 
 !IMPORTANT Answer in English Never break character:
 """
@@ -57,15 +171,13 @@ def _generate_template_articles(keyword, articles):
     })
 
 
-async def regenerate(trends):
-    model = "gpt-3.5-turbo-16k-0613"
+from pprint import pprint
 
-    # TODO: parse to markdown
 
-    articles = await asyncio.gather(*[
-        Article(
+async def regenerate(trends: List[TranslatedCrawledTrend]):
+    responses = await asyncio.gather(*[
         openai.ChatCompletion.acreate(
-            model=model,
+            model=GPT_MODEL,
             messages=[
                 {
                 "role": "system",
@@ -73,18 +185,24 @@ async def regenerate(trends):
                 },
                 {
                 "role": "user",
-                "content": _generate_template_articles(t.keyword, t.articles)
+                "content": _generate_template_articles(t.str_keywords, t.articles)
                 },
             ],
-            temperature=0.7,
+            functions=FUNCTIONS,
+            temperature=1,
             max_tokens=10000,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0
-            )
         )
         for t in trends
     ])
+
+    pprint(responses)
+    return responses
+    
+    
+
 # https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb
 def num_tokens_from_messages(messages, model=GPT_MODEL):
     """Return the number of tokens used by a list of messages."""

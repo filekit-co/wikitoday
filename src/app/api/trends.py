@@ -62,10 +62,8 @@ async def generate_news(country: str):
     google_trends = await daily_trends(country)
     crawled_trends = await from_trends(google_trends)
     translated_trends = await translate_crawled_trends(crawled_trends)
-
-
-    # regenerated_articles = await regenerate(mocked_crawled_trends)
-    # translated_articles = await translate(regenerated_articles)
+    regenerated_articles = await regenerate(translated_trends)
+    # translated_articles = await translate_regenerated_articles(regenerated_articles)
     # markdowned_articles = await to_markdown(translated_articles)
     # await push(markdowned_articles)
-    # return JSONResponse(content=jsonable_encoder(regenerated_articles))
+    return JSONResponse(content=jsonable_encoder(regenerated_articles))

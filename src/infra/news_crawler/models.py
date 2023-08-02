@@ -76,7 +76,7 @@ class NewsArticle:
                 source = FALLBACK_SOURCE
 
         return NewsArticleDto(
-            text= f'# Title:{self.title}\n\n# Lead:{self.description}\n\n# Body:{self.maintext}',
+            text= f'# Title: {self.title}\n\n# Lead: {self.description}\n\n# Body: {self.maintext}',
             img_src =source,
             img_url = self.image_url, 
             language = self.language,
