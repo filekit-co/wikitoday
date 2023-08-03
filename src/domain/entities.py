@@ -219,5 +219,5 @@ class Markdown:
 @dataclass
 class Folder:
     today: date
-    folder_name: str
+    folder_name: str # create_url_path (max 20 char)
     mds: List[Markdown]

@@ -1,16 +1,15 @@
 from datetime import date
 from typing import List
 
-from jinja2 import Template
-
 from domain.entities import Article, Folder, Markdown
+from jinja2 import Template
 
 _markdown_template = """---
 title: {{ content.title }}
 description: {{ content.lead }}
 category: {{ category }}
 keywords: {{ keywords }}
-date: {{ date }}
+date: "{{ date }}"
 author: wikitoday.io
 language: {{ content.language }}
 ---

@@ -14,8 +14,8 @@ from consts import GPT_MODEL
 from domain.entities import TranslatedCrawledTrend
 from src.domain.entities import Article
 
-_cfg = get_env()
-OPENAI_API_KEY = _cfg["OPENAI_API_KEY"]
+_env = get_env()
+OPENAI_API_KEY = _env["OPENAI_API_KEY"]
 openai.api_key = OPENAI_API_KEY
 
 

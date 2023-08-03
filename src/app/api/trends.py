@@ -7,12 +7,13 @@ from fastapi.responses import JSONResponse
 
 from app.exceptions import InvalidCountryCodes
 from consts import TARGET_COUNTRY_CODES
+from infra.github import push_folder
 from infra.google_trends import daily_trends
 from infra.gpt import regenerate
 from infra.markdown import to_folders
 from infra.news_crawler import from_trends
 from infra.translate import translate_articles, translate_crawled_trends
-from mocks import step_5
+from mocks import step_5, step_6
 
 router = APIRouter(prefix='/trends', tags=["trends"])
 
@@ -39,7 +40,8 @@ async def generate_news(country: str):
     # translated_articles = await translate_regenerated_articles(regenerated_articles)
 
     # markdown_articles = await to_markdown(translated_articles)
-    folders = to_folders(step_5)
-    
-    # await push(markdowned_articles)
+    # folders = to_folders(translated_articles)
+    folders = step_6
+    for folder in folders:
+        await push_folder(folder)
     return JSONResponse(content=jsonable_encoder(folders))
