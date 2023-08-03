@@ -75,8 +75,9 @@ class NewsArticle:
             else:
                 source = FALLBACK_SOURCE
 
+        text = f'# Title: {self.title}\n\n# Lead: {self.description}\n\n# Body: {self.maintext}'
         return NewsArticleDto(
-            text= f'# Title: {self.title}\n\n# Lead: {self.description}\n\n# Body: {self.maintext}',
+            text=text.replace('"', "'"), # to avoid invalid json string from gpt regeneration
             img_src =source,
             img_url = self.image_url, 
             language = self.language,

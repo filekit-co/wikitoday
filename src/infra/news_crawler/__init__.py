@@ -17,10 +17,8 @@ async def from_trends(trends: List[GoogleTrend], timeout=None) -> List[CrawledTr
         for trend in trends
         for href in trend.hrefs
     ]
-    # for test 
-    # TODO: delete it
-    only_two = urls[:2]
-    crawled_news = await _from_urls(only_two, timeout=10.0)
+
+    crawled_news = await _from_urls(urls, timeout=10.0)
     
     result = []
     for trend in trends:

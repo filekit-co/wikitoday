@@ -1,5 +1,6 @@
 import asyncio
 import json
+import logging
 import os
 from dataclasses import dataclass, field
 from typing import List, Optional
@@ -142,9 +143,6 @@ _str_user_template = """Below are {{ num_articles }} articles written with the k
 USER_PROMPT_TEMPLATE = Template(_str_user_template)
 
 
-
-
-
 def _generate_template_articles(keyword, articles):
     separator = "\n---\n"
     articles_text = separator.join(articles)
@@ -155,11 +153,9 @@ def _generate_template_articles(keyword, articles):
         "articles": articles_text
     })
 
-
-
-async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[Article]:
-    responses = await asyncio.gather(*[
-        openai.ChatCompletion.acreate(
+async def _regenerate(trend: TranslatedCrawledTrend):
+    try:
+        response = await openai.ChatCompletion.acreate(
             model=GPT_MODEL,
             messages=[
                 {
@@ -168,7 +164,7 @@ async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[Article]:
                 },
                 {
                 "role": "user",
-                "content": _generate_template_articles(t.str_keywords, t.articles)
+                "content": _generate_template_articles(trend.str_keywords, trend.articles)
                 },
             ],
             functions=FUNCTIONS,
@@ -179,24 +175,23 @@ async def regenerate(trends: List[TranslatedCrawledTrend]) -> List[Article]:
             frequency_penalty=0,
             presence_penalty=0
         )
-        for t in trends
-    ])
-
-    if len(trends) != len(responses):
-        raise GptInvalidLengthError()
-
-    result = []
-    for trend, response in zip(trends, responses):
-        # https://github.com/openai/openai-cookbook/blob/3115683f14b3ed9570df01d721a2b01be6b0b066/examples/azure/functions.ipynb#L255
+        
         function_call = response.choices[0].message.function_call
         article = json.loads(function_call.arguments)
-        result.append(
-            Article.from_dto(trend, article)
-        )
-    
-    return result
-    
-    
+        return Article.from_dto(trend, article)
+    except Exception as e:
+        logging.error(response) # TODO: delete it
+        logging.error(f"An error occurred while generating article for trend\n\n {trend} \n\n{e}")
+        return None
+
+
+async def regenerate_articles(trends: List[TranslatedCrawledTrend]) -> List[Article]:
+    tasks = [_regenerate(trend) for trend in trends]
+    responses = await asyncio.gather(*tasks)
+    # Filter out None results
+    articles = [article for article in responses if article is not None]
+
+    return articles
 
 # https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb
 def num_tokens_from_messages(messages, model=GPT_MODEL):

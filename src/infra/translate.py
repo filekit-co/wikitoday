@@ -52,10 +52,11 @@ async def translate_text(client: httpx.AsyncClient, texts: List[str], target_lan
         return None
     
     translated = response.json()
-    return [t['text'] for t in translated['translations']]
+    # .replace('"', "'") to avoid gpt invalid json string
+    return [t['text'].replace('"', "'") for t in translated['translations']]
 
 
-async def translate_crawled_trends(trends: List[CrawledTrend], target_lang: Language = Language.EN_US) -> List[CrawledTrend]:
+async def translate_crawled_trends(trends: List[CrawledTrend], target_lang: Language = Language.EN_US) -> List[TranslatedCrawledTrend]:
     en = [t for t in trends if t.is_en]
     others = [t for t in trends if not t.is_en]
 

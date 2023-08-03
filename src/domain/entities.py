@@ -59,7 +59,7 @@ class TranslatedCrawledTrend:
     @property
     def str_keywords(self):
         return ','.join(self.keywords)
-
+    
 
     @classmethod
     def from_crawled_trend(cls, crawled_trend: CrawledTrend, translated_articles: Optional[List[str]]=None):

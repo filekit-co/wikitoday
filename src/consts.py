@@ -1,29 +1,29 @@
 # https://trends.google.com/trends/trendingsearches/daily?geo=KR&hl=en-GB
 import os
+from enum import StrEnum
 
+NUM_MAX_ARTICLE = 2
 GOOGLE_BASE_TRENDS_API='https://trends.google.com/trends/trendingsearches/daily/rss?geo='
+
 # 미국, 인도, 일본, 싱가포르, 호주, 홍콩, 타이완, 브라질, 캐나다, 독일, 네덜란드, 인도네시아, 대한민국, 러시아, 터키, 베트남, 필리핀
-TARGET_COUNTRY_CODES = [
-    country["id"] for country in (
-    {"id": "US", "name": "United States"},
-    {"id": "IN", "name": "India"},
-    {"id": "JP", "name": "Japan"},
-    {"id": "SG", "name": "Singapore"},
-    {"id": "AU", "name": "Australia"},
-    {"id": "HK", "name": "Hong Kong"},
-    {"id": "TW", "name": "Taiwan"},
-    {"id": "BR", "name": "Brazil"},
-    {"id": "CA", "name": "Canada"},
-    {"id": "DE", "name": "Germany"},
-    {"id": "NL", "name": "Netherlands"},
-    {"id": "ID", "name": "Indonesia"},
-    {"id": "KR", "name": "South Korea"},
-    {"id": "RU", "name": "Russia"},
-    {"id": "TR", "name": "Türkiye"},
-    {"id": "VN", "name": "Vietnam"},
-    {"id": "PH", "name": "Philippines"}
-    )
-]
+class TargetCountryCode(StrEnum):
+    US = "US"  # United States
+    IN = "IN"  # India
+    JP = "JP"  # Japan
+    SG = "SG"  # Singapore
+    AU = "AU"  # Australia
+    HK = "HK"  # Hong Kong
+    TW = "TW"  # Taiwan
+    BR = "BR"  # Brazil
+    CA = "CA"  # Canada
+    DE = "DE"  # Germany
+    NL = "NL"  # Netherlands
+    ID = "ID"  # Indonesia
+    KR = "KR"  # South Korea
+    RU = "RU"  # Russia
+    TR = "TR"  # Türkiye
+    VN = "VN"  # Vietnam
+    PH = "PH"  # Philippines
 
 _GOOGLE_GEO_PICKER = [
     {"id": "AR", "name": "Argentina"},
