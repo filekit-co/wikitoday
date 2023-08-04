@@ -92,7 +92,16 @@ def _parse_trends(response: Response):
     return [generate_dataclass(TrendingDataEntry, entry) for entry in trending_data]
 
 
-async def daily_trends(country:str) -> List[GoogleTrend]:
+async def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
+    """_summary_
+
+    Args:
+        country (str): _description_
+        date (Optional[str], optional): YYYYMMDD i.g. 20230801. Defaults to None.
+
+    Returns:
+        List[GoogleTrend]: google trends api response
+    """
     meta_language='en-US'
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
@@ -107,10 +116,12 @@ async def daily_trends(country:str) -> List[GoogleTrend]:
     params = {
             'hl': meta_language,
             'geo': country,
+            'ed': date,
             'ns': '15',
             }
     
     async with httpx.AsyncClient() as client:
         r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
+        r.raise_for_status()
         trends = _parse_trends(r)
         return [t.to_dto() for t in trends]
