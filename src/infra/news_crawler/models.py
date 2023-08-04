@@ -75,6 +75,7 @@ class NewsArticle:
             else:
                 source = FALLBACK_SOURCE
 
+        # TODO: escape들 없애기
         text = f'# Title: {self.title}\n\n# Lead: {self.description}\n\n# Body: {self.maintext}'
         return NewsArticleDto(
             text=text.replace('"', "'"), # to avoid invalid json string from gpt regeneration

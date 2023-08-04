@@ -151,16 +151,16 @@ class ArticleContent:
         qna = data[4:]
         qna_list = [
             QnA(
-                reformat_yaml(qna[i]), 
-                reformat_yaml(qna[i+1])
+                qna[i], 
+                qna[i+1]
             ) 
             for i in range(0, len(qna), 2)
         ]
         return ArticleContent(
             title=reformat_yaml(data[0]),
             lead=reformat_yaml(data[1]),
-            body1=reformat_yaml(data[2]),
-            body2=reformat_yaml(data[3]),
+            body1=data[2],
+            body2=data[3],
             qna_list = qna_list,
             language=language
         )
