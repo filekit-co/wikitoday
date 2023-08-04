@@ -1,8 +1,10 @@
-from datetime import date
-from typing import List
+import logging
+from datetime import date, datetime
+from typing import List, Optional
 
 from domain.entities import Article, Folder, Markdown
 from jinja2 import Template
+from jinja2.exceptions import TemplateError
 
 _markdown_template = """---
 title: '{{ content.title }}'
@@ -16,15 +18,19 @@ language: '{{ content.language }}'
 
 ## Summary
 
+
+{% if images|length > 0 %}
 <figure>
     <img src="{{ images[0].url }}" alt="{{ images[0].source }}" />
     <figcaption>
         <h4> from {{ images[0].source }}</h4>
     </figcaption>
 </figure>
+{% endif %}
 
 {{ content.lead }}
 
+{% if qna %}
 ## QnA
 
 {% for i, qna in qna %}
@@ -33,6 +39,7 @@ language: '{{ content.language }}'
     {{ qna.answer }}
 </details>
 {% endfor %}
+{% endif %}
 
 ## {{ content.title }}
 
@@ -40,43 +47,56 @@ _{{ date }} - wikitoday_
 
 {{ content.body1 }}
 
+{% if images|length > 1 %}
 <figure>
     <img src="{{ images[1].url }}" alt="{{ images[1].source }}" />
     <figcaption>
         <h4> from {{ images[1].source }}</h4>
     </figcaption>
 </figure>
+{% endif %}
 
 {{ content.body2 }}
-
-_end_
 
 """
 
 ARTICLE_TEMPLATE = Template(_markdown_template)
 
+def _parse_date(date_string: date):
+    """
+    YYYYMMDD -> YYYY-MM-DD
+    """
+    return datetime.strptime(date_string, "%Y%m%d").date()
 
-def to_folders(articles: List[Article]) -> List[Folder]:
-    today = date.today()
+
+def to_folders(articles: List[Article], article_date: Optional[date] = None) -> List[Folder]:
+    article_date = _parse_date(article_date) if article_date else date.today()
+
     folders = []
     for article in articles:
         markdowns = []
         for content in article.contents:
-            markdown = Markdown(
-                language = content.language,
-                md = ARTICLE_TEMPLATE.render({
-                    "category": article.category,
-                    "keywords": article.keywords,
-                    "images": article.images,                    
-                    "content": content,
-                    "date": today,
-                    "qna": enumerate(content.qna_list)
-                })
-            )
-            markdowns.append(markdown)
+            try:
+                markdown = Markdown(
+                    language = content.language,
+                    md = ARTICLE_TEMPLATE.render({
+                        "category": article.category,
+                        "keywords": article.keywords,
+                        "images": article.images,
+                        "content": content,
+                        "date": article_date,
+                        "qna": enumerate(content.qna_list)
+                    })
+                )
+                markdowns.append(markdown)
+            except TemplateError as e:
+                logging.error(e)
+                logging.error(content)
+                continue
+
         folders.append(
             Folder(
-                today = today,
+                today = article_date,
                 folder_name = article.url_safe_name,
                 mds = markdowns
             )
