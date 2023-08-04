@@ -1258,519 +1258,149 @@ step_5 = [Article(category='Entertainment',
                               source='서울경제신문')])]
 
 ########################## STEP 6 ##########################
-step_6 = [Folder(today=datetime.date(2023, 8, 2),
-        folder_name='Ryu-s-Return-to-the-Mound-Ends-in-a-Loss',
-        mds=[Markdown(language='EN-US',
-                      md='---\n'
-                         "title: Ryu's Return to the Mound Ends in a Loss "
-                         'Against the Baltimore Orioles\n'
-                         "description: Toronto Blue Jays' pitcher, Hyun-jin "
-                         'Ryu, made his first start in over a year but '
-                         "couldn't prevent the AL's leading team from "
-                         'winning.\n'
-                         'category: Sports\n'
-                         'keywords: 류현진\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: EN-US\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         "Toronto Blue Jays' pitcher, Hyun-jin Ryu, made his "
-                         "first start in over a year but couldn't prevent the "
-                         "AL's leading team from winning.\n"
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. Who did Hyun-jin Ryu pitch '
-                         'against in his comeback game?</b></summary>\n'
-                         '    Hyun-jin Ryu pitched against the Baltimore '
-                         'Orioles.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. How many runs did the Baltimore '
-                         'Orioles score against Ryu?</b></summary>\n'
-                         '    The Baltimore Orioles scored four runs against '
-                         'Ryu.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>2. What was Ryu's fastball speed "
-                         'during the game?</b></summary>\n'
-                         "    Ryu's fastball reached an impressive speed of "
-                         '146 mph.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>3. What was Ryu's previous "
-                         'performance before his comeback game?</b></summary>\n'
-                         '    Ryu had been out of action for over a year due '
-                         'to ligament splicing surgery on his left elbow.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>4. What is the outlook for Ryu's "
-                         'future performances?</b></summary>\n'
-                         '    Despite the loss, fans and experts are '
-                         "optimistic about Ryu's future performance.\n"
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         "## Ryu's Return to the Mound Ends in a Loss Against "
-                         'the Baltimore Orioles\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         'In his comeback game, Hyun-jin Ryu pitched for the '
-                         'Toronto Blue Jays against the Baltimore Orioles in '
-                         'the Major League Baseball (MLB) World Series. '
-                         "Despite Ryu's efforts, the Orioles emerged "
-                         'victorious, scoring four runs on nine hits in five '
-                         'innings. Ryu showcased his talents by throwing a '
-                         'fastball at an impressive speed of 146 mph.\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         'However, his performance was unable to secure a win '
-                         "for his team. This loss marked Ryu's first in the "
-                         '2023 season after undergoing ligament splicing '
-                         'surgery in his left elbow. Despite the setback, fans '
-                         "and experts are optimistic about Ryu's future "
-                         'performance.\n'
-                         '\n'
-                         '_end_\n'),
-             Markdown(language='ZH',
-                      md='---\n'
-                         'title: 柳箫然重返投手丘，最终不敌巴尔的摩金莺队\n'
-                         'description: 多伦多蓝鸟队的投手柳贤振一年多来首次先发，但未能阻止美联领先的球队获胜。\n'
-                         'category: Sports\n'
-                         'keywords: 류현진\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: ZH\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '多伦多蓝鸟队的投手柳贤振一年多来首次先发，但未能阻止美联领先的球队获胜。\n'
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. 柳贤振在复出赛中的对手是谁？</b></summary>\n'
-                         '    柳贤振在与巴尔的摩金莺队的比赛中投球。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. 巴尔的摩金莺队对柳箫然的得分是多少？</b></summary>\n'
-                         '    巴尔的摩金莺队对柳箫然打出四次安打。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>2. 比赛中隆的快速球速是多少？</b></summary>\n'
-                         '    柳箫然的快速球达到了令人印象深刻的 146 英里/小时。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>3. 柳忠秧在复出前的表现如何？</b></summary>\n'
-                         '    由于左肘接受了韧带接合手术，柳忠秧已经休战了一年多。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>4. 柳忠秧未来的表现前景如何？</b></summary>\n'
-                         '    尽管输掉了比赛，但球迷和专家们对柳箫然未来的表现还是持乐观态度。\n'
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         '## 柳箫然重返投手丘，最终不敌巴尔的摩金莺队\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         '在美国职业棒球大联盟（MLB）世界系列赛中，柳贤振代表多伦多蓝鸟队对阵巴尔的摩金莺队，这是他的复出之战。尽管柳贤振做出了努力，但金莺队还是取得了胜利，在五局比赛中被击出九支安打，得到四分。隆以令人印象深刻的 '
-                         '146 英里/小时的速度投出快速球，展示了自己的天赋。\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '然而，他的表现未能为球队赢得一场胜利。这场失利是柳箫然接受左肘韧带接合手术后在 2023 '
-                         '赛季的首场失利。尽管遭遇挫折，但球迷和专家对柳箫然未来的表现持乐观态度。\n'
-                         '\n'
-                         '_end_\n'),
-             Markdown(language='KO',
-                      md='---\n'
-                         'title: 류현진의 마운드 복귀, 볼티모어 오리올스전 패배로 끝나다\n'
-                         'description: 토론토 블루제이스의 류현진 투수가 1년여 만에 선발 등판했지만, AL '
-                         '선두 팀의 승리를 막지는 못했습니다.\n'
-                         'category: Sports\n'
-                         'keywords: 류현진\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: KO\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '토론토 블루제이스의 류현진 투수가 1년여 만에 선발 등판했지만, AL 선두 팀의 승리를 막지는 '
-                         '못했습니다.\n'
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. 류현진 선수의 복귀전에서 상대 투수는 '
-                         '누구였나요?</b></summary>\n'
-                         '    류현진이 볼티모어 오리올스를 상대로 투구했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. 볼티모어 오리올스가 류현진을 상대로 얼마나 많은 득점을 '
-                         '올렸나요?</b></summary>\n'
-                         '    볼티모어 오리올스는 류현진을 상대로 4득점을 올렸습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>2. 경기 중 류현진의 직구 속도는 어느 '
-                         '정도였나요?</b></summary>\n'
-                         '    류현진의 직구는 최고 시속 146마일이라는 놀라운 속도를 기록했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>3. 복귀전 경기 전 류제국의 이전 성적은 '
-                         '어땠나요?</b></summary>\n'
-                         '    류 선수는 왼쪽 팔꿈치 인대 접합 수술로 1년 넘게 경기에 나서지 못했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>4. 류 선수의 향후 활약에 대한 전망은 어떻게 '
-                         '되나요?</b></summary>\n'
-                         '    패배에도 불구하고 팬들과 전문가들은 류제국의 향후 활약에 대해 낙관적인 전망을 내놓고 '
-                         '있습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         '## 류현진의 마운드 복귀, 볼티모어 오리올스전 패배로 끝나다\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         '류현진은 메이저리그 야구(MLB) 월드시리즈에서 토론토 블루제이스와 볼티모어 오리올스를 상대로 '
-                         '복귀전에서 선발 투수로 등판했습니다. 류현진의 호투에도 불구하고 오리올스는 5이닝 동안 '
-                         '9안타에 4실점하며 승리를 거뒀습니다. 류현진은 시속 146마일이라는 놀라운 속도의 직구를 '
-                         '던지며 자신의 재능을 뽐냈습니다.\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '그러나 그의 활약은 팀의 승리를 보장하지 못했습니다. 이번 패배는 왼쪽 팔꿈치 인대 접합 '
-                         '수술을 받은 류현진의 2023시즌 첫 패배였습니다. 아쉬움에도 불구하고 팬들과 전문가들은 '
-                         '류현진의 향후 활약에 대해 낙관적인 전망을 내놓고 있습니다.\n'
-                         '\n'
-                         '_end_\n')]),
- Folder(today=datetime.date(2023, 8, 2),
-        folder_name='Ryu-s-Return-to-the-Mound-Ends-in-a-Loss',
-        mds=[Markdown(language='EN-US',
-                      md='---\n'
-                         "title: Ryu's Return to the Mound Ends in a Loss "
-                         'Against the Baltimore Orioles\n'
-                         "description: Toronto Blue Jays' pitcher, Hyun-jin "
-                         'Ryu, made his first start in over a year but '
-                         "couldn't prevent the AL's leading team from "
-                         'winning.\n'
-                         'category: Sports\n'
-                         'keywords: 류현진2\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: EN-US\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         "Toronto Blue Jays' pitcher, Hyun-jin Ryu, made his "
-                         "first start in over a year but couldn't prevent the "
-                         "AL's leading team from winning.\n"
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. Who did Hyun-jin Ryu pitch '
-                         'against in his comeback game?</b></summary>\n'
-                         '    Hyun-jin Ryu pitched against the Baltimore '
-                         'Orioles.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. How many runs did the Baltimore '
-                         'Orioles score against Ryu?</b></summary>\n'
-                         '    The Baltimore Orioles scored four runs against '
-                         'Ryu.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>2. What was Ryu's fastball speed "
-                         'during the game?</b></summary>\n'
-                         "    Ryu's fastball reached an impressive speed of "
-                         '146 mph.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>3. What was Ryu's previous "
-                         'performance before his comeback game?</b></summary>\n'
-                         '    Ryu had been out of action for over a year due '
-                         'to ligament splicing surgery on his left elbow.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         "    <summary><b>4. What is the outlook for Ryu's "
-                         'future performances?</b></summary>\n'
-                         '    Despite the loss, fans and experts are '
-                         "optimistic about Ryu's future performance.\n"
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         "## Ryu's Return to the Mound Ends in a Loss Against "
-                         'the Baltimore Orioles\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         'In his comeback game, Hyun-jin Ryu pitched for the '
-                         'Toronto Blue Jays against the Baltimore Orioles in '
-                         'the Major League Baseball (MLB) World Series. '
-                         "Despite Ryu's efforts, the Orioles emerged "
-                         'victorious, scoring four runs on nine hits in five '
-                         'innings. Ryu showcased his talents by throwing a '
-                         'fastball at an impressive speed of 146 mph.\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         'However, his performance was unable to secure a win '
-                         "for his team. This loss marked Ryu's first in the "
-                         '2023 season after undergoing ligament splicing '
-                         'surgery in his left elbow. Despite the setback, fans '
-                         "and experts are optimistic about Ryu's future "
-                         'performance.\n'
-                         '\n'
-                         '_end_\n'),
-             Markdown(language='ZH',
-                      md='---\n'
-                         'title: 柳箫然重返投手丘，最终不敌巴尔的摩金莺队\n'
-                         'description: 多伦多蓝鸟队的投手柳贤振一年多来首次先发，但未能阻止美联领先的球队获胜。\n'
-                         'category: Sports\n'
-                         'keywords: 류현진2\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: ZH\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '多伦多蓝鸟队的投手柳贤振一年多来首次先发，但未能阻止美联领先的球队获胜。\n'
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. 柳贤振在复出赛中的对手是谁？</b></summary>\n'
-                         '    柳贤振在与巴尔的摩金莺队的比赛中投球。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. 巴尔的摩金莺队对柳箫然的得分是多少？</b></summary>\n'
-                         '    巴尔的摩金莺队在与柳箫然的比赛中得到 4 分。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>2. 比赛中隆的快速球速是多少？</b></summary>\n'
-                         '    柳箫然的快速球达到了令人印象深刻的 146 英里/小时。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>3. 柳忠秧在复出前的表现如何？</b></summary>\n'
-                         '    由于左肘接受了韧带接合手术，柳忠秧已经休战了一年多。\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>4. 柳忠秧未来的表现前景如何？</b></summary>\n'
-                         '    尽管输掉了比赛，但球迷和专家们对柳箫然未来的表现还是很乐观。\n'
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         '## 柳箫然重返投手丘，最终不敌巴尔的摩金莺队\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         '在美国职业棒球大联盟（MLB）世界系列赛中，柳贤振代表多伦多蓝鸟队对阵巴尔的摩金莺队，这是他的复出之战。尽管柳贤振做出了努力，但金莺队还是取得了胜利，在五局比赛中被击出九支安打，得到四分。隆以 '
-                         '146 英里/小时的惊人速度投出快速球，展示了自己的天赋。\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '然而，他的表现未能为球队赢得一场胜利。这场失利是柳箫然接受左肘韧带接合手术后在 2023 '
-                         '赛季的首场失利。尽管遭遇挫折，但球迷和专家对柳箫然未来的表现持乐观态度。\n'
-                         '\n'
-                         '_end_\n'),
-             Markdown(language='KO',
-                      md='---\n'
-                         'title: 류현진의 마운드 복귀, 볼티모어 오리올스전 패배로 끝나다\n'
-                         'description: 토론토 블루제이스의 류현진 투수가 1년여 만에 선발 등판했지만, AL '
-                         '선두 팀의 승리를 막지는 못했습니다.\n'
-                         'category: Sports\n'
-                         'keywords: 류현진2\n'
-                         'date: 2023-08-02\n'
-                         'author: wikitoday.io\n'
-                         'language: KO\n'
-                         '---\n'
-                         '\n'
-                         '# Summary\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg" '
-                         'alt="한겨레" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from 한겨레</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '토론토 블루제이스의 류현진 투수가 1년여 만에 선발 등판했지만, AL 선두 팀의 승리를 막지는 '
-                         '못했습니다.\n'
-                         '\n'
-                         '## QnA\n'
-                         '\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>0. 류현진 선수의 복귀전에서 상대 투수는 '
-                         '누구였나요?</b></summary>\n'
-                         '    류현진이 볼티모어 오리올스를 상대로 투구했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>1. 볼티모어 오리올스가 류현진을 상대로 얼마나 많은 득점을 '
-                         '올렸나요?</b></summary>\n'
-                         '    볼티모어 오리올스는 류현진을 상대로 4득점을 올렸습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>2. 경기 중 류현진의 직구 속도는 어느 '
-                         '정도였나요?</b></summary>\n'
-                         '    류현진의 직구는 최고 시속 146마일이라는 놀라운 속도를 기록했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>3. 복귀전 경기 전 류제국의 이전 성적은 '
-                         '어땠나요?</b></summary>\n'
-                         '    류 선수는 왼쪽 팔꿈치 인대 접합 수술로 1년 넘게 경기에 나서지 못했습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '<details>\n'
-                         '    <summary><b>4. 류 선수의 향후 활약에 대한 전망은 어떻게 '
-                         '되나요?</b></summary>\n'
-                         '    패배에도 불구하고 팬들과 전문가들은 류제국의 향후 활약에 대해 낙관적인 전망을 내놓고 '
-                         '있습니다.\n'
-                         '</details>\n'
-                         '\n'
-                         '\n'
-                         '## 류현진의 마운드 복귀, 볼티모어 오리올스전 패배로 끝나다\n'
-                         '\n'
-                         '_2023-08-02 - wikitoday_\n'
-                         '\n'
-                         '류현진은 메이저리그 야구(MLB) 월드시리즈에서 토론토 블루제이스와 볼티모어 오리올스를 상대로 '
-                         '복귀전에서 선발 투수로 등판했습니다. 류현진의 호투에도 불구하고 오리올스는 5이닝 동안 '
-                         '9안타에 4실점하며 승리를 거뒀습니다. 류현진은 시속 146마일이라는 놀라운 속도의 직구를 '
-                         '던지며 자신의 재능을 뽐냈습니다.\n'
-                         '\n'
-                         '<figure>\n'
-                         '    <img '
-                         'src="https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg" '
-                         'alt="MBC뉴스" />\n'
-                         '    <figcaption>\n'
-                         '        <h4> from MBC뉴스</h4>\n'
-                         '    </figcaption>\n'
-                         '</figure>\n'
-                         '\n'
-                         '그러나 그의 활약은 팀의 승리를 보장하지 못했습니다. 이번 패배는 왼쪽 팔꿈치 인대 접합 '
-                         '수술을 받은 류현진의 2023시즌 첫 패배였습니다. 아쉬움에도 불구하고 팬들과 전문가들은 '
-                         '류현진의 향후 활약에 대해 낙관적인 전망을 내놓고 있습니다.\n'
-                         '\n'
-                         '_end_\n')])]
+step_6 = [
+  {
+    "today": "2023-08-03",
+    "folder_name": "-Women-s-World-Cup-S",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: [Women's World Cup] South Korea Draws 1-1 with Germany...No Miracles\ndescription: Women's World Cup South Korea draws 1-1 with Germany...no miracle Jo So-hyun scores first and concedes a header Group H eliminated after 1-0 loss No miracle for South Korea, Germany. South Korea's women's soccer team was held to a 1-1 draw by Germany at the World Cup, ending their run to the round of 16 for the first time in eight years. Coach Colin Bell62\ncategory: Sports\nkeywords: 월드컵,여자월드컵,fifa 여자 월드컵,여자 월드컵\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/wx6X9TvnT8W5TzPGSyjoPQTS0WY=/1200x630/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/I22EQMSWFZMAPKLTDEFGVSVQMU.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\nWomen's World Cup South Korea draws 1-1 with Germany...no miracle Jo So-hyun scores first and concedes a header Group H eliminated after 1-0 loss No miracle for South Korea, Germany. South Korea's women's soccer team was held to a 1-1 draw by Germany at the World Cup, ending their run to the round of 16 for the first time in eight years. Coach Colin Bell62\n\n## QnA\n\n\n<details>\n    <summary><b>0. What was the result of the match between South Korea and Germany at the Women's World Cup?</b></summary>\n    The match between South Korea and Germany ended in a 1-1 draw.\n</details>\n\n<details>\n    <summary><b>1. What does this result mean for South Korea's women's soccer team?</b></summary>\n    This result ended South Korea's run to the round of 16 at the Women's World Cup after eight years.\n</details>\n\n<details>\n    <summary><b>2. Who scored the first goal for South Korea in the match?</b></summary>\n    Jo So-hyun scored the first goal for South Korea.\n</details>\n\n<details>\n    <summary><b>3. How did South Korea concede the equalizing goal?</b></summary>\n    South Korea conceded a header for Germany's equalizing goal.\n</details>\n\n<details>\n    <summary><b>4. Who is the coach of South Korea's women's soccer team?</b></summary>\n    Colin Bell is the coach of South Korea's women's soccer team.\n</details>\n\n\n## [Women's World Cup] South Korea Draws 1-1 with Germany...No Miracles\n\n_2023-08-03 - wikitoday_\n\n\n\n<figure>\n    <img src=\"https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/ns/2023/08/03/NISI20230803_0000392999_web.jpg\" alt=\"네이트 뉴스\" />\n    <figcaption>\n        <h4> from 네이트 뉴스</h4>\n    </figcaption>\n</figure>\n\n\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: [女子世界杯]韩国 1-1 战平德国......没有奇迹\ndescription: 女足世界杯 韩国队 1-1 战平德国队......没有奇迹 赵素贤先入一球，头球破门 H 组 1-0 落败后被淘汰 韩国队没有奇迹，德国队也没有奇迹。韩国女足在世界杯上以 1-1 被德国队逼平，八年来首次止步十六强。教练科林-贝尔62\ncategory: Sports\nkeywords: 월드컵,여자월드컵,fifa 여자 월드컵,여자 월드컵\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/wx6X9TvnT8W5TzPGSyjoPQTS0WY=/1200x630/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/I22EQMSWFZMAPKLTDEFGVSVQMU.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\n女足世界杯 韩国队 1-1 战平德国队......没有奇迹 赵素贤先入一球，头球破门 H 组 1-0 落败后被淘汰 韩国队没有奇迹，德国队也没有奇迹。韩国女足在世界杯上以 1-1 被德国队逼平，八年来首次止步十六强。教练科林-贝尔62\n\n## QnA\n\n\n<details>\n    <summary><b>0. 韩国队和德国队在女足世界杯上的比赛结果如何？</b></summary>\n    韩国队与德国队的比赛以 1-1 战平告终。\n</details>\n\n<details>\n    <summary><b>1. 这一结果对韩国女子足球队意味着什么？</b></summary>\n    这一结果结束了韩国队时隔八年再次闯入女足世界杯 16 强的历史。\n</details>\n\n<details>\n    <summary><b>2. 谁为韩国队攻入了本场比赛的第一个进球？</b></summary>\n    赵素贤为韩国队攻入第一球。\n</details>\n\n<details>\n    <summary><b>3. 韩国队是如何失球扳平比分的？</b></summary>\n    韩国队头球破门，为德国队扳平比分。\n</details>\n\n<details>\n    <summary><b>4. 谁是韩国女子足球队的教练？</b></summary>\n    科林-贝尔是韩国女子足球队的教练。\n</details>\n\n\n## [女子世界杯]韩国 1-1 战平德国......没有奇迹\n\n_2023-08-03 - wikitoday_\n\n\n\n<figure>\n    <img src=\"https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/ns/2023/08/03/NISI20230803_0000392999_web.jpg\" alt=\"네이트 뉴스\" />\n    <figcaption>\n        <h4> from 네이트 뉴스</h4>\n    </figcaption>\n</figure>\n\n\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: [여자 월드컵] 한국, 독일과 1-1 무승부...기적은 없었다\ndescription: 여자월드컵 한국, 독일과 1-1 무승부...기적은 없었다 조소현 선제골 넣었다가 헤딩 실점 1-0 패배로 H조 탈락 한국, 독일에 기적은 없었다. 한국 여자 축구 대표팀이 월드컵에서 독일과 1-1 무승부를 기록하며 8년 만에 16강 진출에 실패했습니다. 콜린 벨 감독62\ncategory: Sports\nkeywords: 월드컵,여자월드컵,fifa 여자 월드컵,여자 월드컵\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/wx6X9TvnT8W5TzPGSyjoPQTS0WY=/1200x630/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/I22EQMSWFZMAPKLTDEFGVSVQMU.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\n여자월드컵 한국, 독일과 1-1 무승부...기적은 없었다 조소현 선제골 넣었다가 헤딩 실점 1-0 패배로 H조 탈락 한국, 독일에 기적은 없었다. 한국 여자 축구 대표팀이 월드컵에서 독일과 1-1 무승부를 기록하며 8년 만에 16강 진출에 실패했습니다. 콜린 벨 감독62\n\n## QnA\n\n\n<details>\n    <summary><b>0. 여자 월드컵에서 한국과 독일의 경기 결과는 어떻게 되었나요?</b></summary>\n    한국과 독일의 경기는 1-1 무승부로 끝났습니다.\n</details>\n\n<details>\n    <summary><b>1. 이번 결과는 한국 여자 축구 대표팀에게 어떤 의미가 있을까요?</b></summary>\n    이 결과로 한국은 8년 만에 여자 월드컵 16강 진출에 성공했습니다.\n</details>\n\n<details>\n    <summary><b>2. 이 경기에서 한국의 첫 골은 누가 넣었나요?</b></summary>\n    조소현이 한국의 첫 골을 넣었습니다.\n</details>\n\n<details>\n    <summary><b>3. 한국은 어떻게 동점골을 허용했을까요?</b></summary>\n    한국은 독일의 동점골을 헤딩으로 허용했습니다.\n</details>\n\n<details>\n    <summary><b>4. 한국 여자 축구 대표팀의 감독은 누구인가요?</b></summary>\n    콜린 벨은 한국 여자 축구 대표팀의 감독입니다.\n</details>\n\n\n## [여자 월드컵] 한국, 독일과 1-1 무승부...기적은 없었다\n\n_2023-08-03 - wikitoday_\n\n\n\n<figure>\n    <img src=\"https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/ns/2023/08/03/NISI20230803_0000392999_web.jpg\" alt=\"네이트 뉴스\" />\n    <figcaption>\n        <h4> from 네이트 뉴스</h4>\n    </figcaption>\n</figure>\n\n\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "-Seo-Hyun-rok-stabbi",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: 'Seo Hyun-rok stabbing' incident at Seohyeon Station: Eyewitness accounts and video footage\ndescription: Eyewitnesses of the 'Seo Hyun-rok stabbing' incident near Seohyeon Station on the Suinbundang Line in Seongnam-si, Gyeonggi-do, share their accounts of the horrifying attack. Additionally, video footage of the incident showing the assailant running and wielding a weapon has been circulating online.\ncategory: Crime\nkeywords: 서현역 칼부림,서현역,분당 칼부림,칼부림,서현역 흉기난동,서현역 칼부림 영상,서현역 흉기,분당 서현역,성남 칼부림,서현역칼부림,분당 서현역 칼부림\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/mIOGGxHGoKGFPL9sEqwLTcVHIno=/668x350/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/PSZIV47GC5GLPNFUN5RSNTK42E.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\nEyewitnesses of the 'Seo Hyun-rok stabbing' incident near Seohyeon Station on the Suinbundang Line in Seongnam-si, Gyeonggi-do, share their accounts of the horrifying attack. Additionally, video footage of the incident showing the assailant running and wielding a weapon has been circulating online.\n\n## QnA\n\n\n<details>\n    <summary><b>0. What happened near Seohyeon Station?</b></summary>\n    A stabbing incident occurred near Seohyeon Station on the Suinbundang Line in Bundang-gu, Seongnam-si, Gyeonggi-do.\n</details>\n\n<details>\n    <summary><b>1. When did the incident take place?</b></summary>\n    The incident took place on the afternoon of the 3rd.\n</details>\n\n<details>\n    <summary><b>2. Were there any eyewitnesses?</b></summary>\n    Yes, there were eyewitnesses who witnessed the Seo Hyun-rok stabbing incident near Seohyeon Station.\n</details>\n\n<details>\n    <summary><b>3. What can be seen in the video footage of the incident?</b></summary>\n    The video footage shows the suspect running towards citizens and indiscriminately swinging a weapon. There are also moments of the suspect rescuing victims.\n</details>\n\n<details>\n    <summary><b>4. How many victims were injured in the incident?</b></summary>\n    A total of 14 victims were injured in the incident.\n</details>\n\n<details>\n    <summary><b>5. Has the primary suspect been arrested?</b></summary>\n    Yes, the primary suspect has been arrested.\n</details>\n\n<details>\n    <summary><b>6. Are the authorities investigating the incident?</b></summary>\n    Yes, the authorities are actively investigating the incident and looking into the involvement of any additional individuals.\n</details>\n\n\n## 'Seo Hyun-rok stabbing' incident at Seohyeon Station: Eyewitness accounts and video footage\n\n_2023-08-03 - wikitoday_\n\nOn the afternoon of the 3rd, a stabbing incident took place near Seohyeon Station on the Suinbundang Line in Bundang-gu, Seongnam-si, Gyeonggi-do. The police received a report of a weapon-wielding rampage at approximately 5:59 p.m. that day and were able to apprehend the suspect by 6:09 p.m. Eyewitnesses at the scene describe their harrowing experiences during the attack. Meanwhile, photos and videos of the incident, including CCTV footage of the suspect, have been widely shared on various online platforms. These videos show the assailant swiftly approaching innocent citizens and indiscriminately swinging the weapon.\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080319425980965_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\nThe footage also captures moments of bravery as the suspect rescues victims. According to the authorities, the suspect drove a car onto the sidewalk, striking five people before entering a department store building in AK Plaza and continuing the attack. A total of 14 victims were injured and have been transported to nearby hospitals. While the police have already arrested the primary suspect, they are actively investigating to determine if there are any additional individuals involved in the incident.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: 西岘站 '徐贤路刺伤 '事件：目击者陈述和视频录像\ndescription: 京畿道城南市水云塘线锡玄站附近发生的 '徐贤路刺杀事件 '的目击者讲述了这起骇人听闻的袭击事件。此外，网上还流传着袭击者边跑边挥舞武器的视频片段。\ncategory: Crime\nkeywords: 서현역 칼부림,서현역,분당 칼부림,칼부림,서현역 흉기난동,서현역 칼부림 영상,서현역 흉기,분당 서현역,성남 칼부림,서현역칼부림,분당 서현역 칼부림\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/mIOGGxHGoKGFPL9sEqwLTcVHIno=/668x350/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/PSZIV47GC5GLPNFUN5RSNTK42E.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\n京畿道城南市水云塘线锡玄站附近发生的 '徐贤路刺杀事件 '的目击者讲述了这起骇人听闻的袭击事件。此外，网上还流传着袭击者边跑边挥舞武器的视频片段。\n\n## QnA\n\n\n<details>\n    <summary><b>0. 西贤站附近发生了什么事？</b></summary>\n    京畿道城南市盆唐区水云塘线锡玄站附近发生一起刺伤事件。\n</details>\n\n<details>\n    <summary><b>1. 事件发生在何时？</b></summary>\n    事件发生在 3 日下午。\n</details>\n\n<details>\n    <summary><b>2. 有目击证人吗？</b></summary>\n    是的，有目击者在西岘站附近目睹了徐贤路被刺事件。\n</details>\n\n<details>\n    <summary><b>3. 从事件的视频录像中可以看到什么？</b></summary>\n    录像显示，嫌疑人冲向市民，肆意挥舞武器。视频中还有嫌犯解救受害者的瞬间。\n</details>\n\n<details>\n    <summary><b>4. 事件中有多少人受伤？</b></summary>\n    共有 14 人在事件中受伤。\n</details>\n\n<details>\n    <summary><b>5. 主要嫌疑人是否已被逮捕？</b></summary>\n    是的，主要嫌疑人已经被捕。\n</details>\n\n<details>\n    <summary><b>6. 当局是否正在调查这一事件？</b></summary>\n    是的，当局正在积极调查这起事件，并调查是否有其他人参与其中。\n</details>\n\n\n## 西岘站 '徐贤路刺伤 '事件：目击者陈述和视频录像\n\n_2023-08-03 - wikitoday_\n\n3 日下午，京畿道城南市盆唐区水云塘线锡玄站附近发生一起持刀伤人事件。警方于当天下午 5 时 59 分左右接到持械行凶的报警，并于下午 6 时 09 分将嫌疑人抓获。与此同时，事件的照片和视频，包括嫌疑人的闭路电视录像，也在各种网络平台上被广泛分享。这些视频显示，袭击者迅速接近无辜市民，肆意挥舞武器。\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080319425980965_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\n录像还记录了嫌犯营救受害者的英勇瞬间。据当局称，嫌犯驾驶一辆汽车冲上人行道，撞伤 5 人，然后进入 AK 广场的一栋百货大楼继续实施袭击。共有 14 名受害者受伤，已被送往附近的医院。虽然警方已经逮捕了主要嫌疑人，但他们仍在积极调查，以确定是否有其他人员参与了此次事件。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: 서현역 '서현록 칼부림' 사건: 목격자 진술 및 영상\ndescription: 경기도 성남시 수인분당선 서현역 인근에서 발생한 '서현록 칼부림' 사건의 목격자들이 끔찍한 사건에 대해 증언하고 있습니다. 또한 가해자가 달려가 흉기를 휘두르는 장면이 담긴 사건 영상이 온라인에 유포되고 있습니다.\ncategory: Crime\nkeywords: 서현역 칼부림,서현역,분당 칼부림,칼부림,서현역 흉기난동,서현역 칼부림 영상,서현역 흉기,분당 서현역,성남 칼부림,서현역칼부림,분당 서현역 칼부림\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://images.chosun.com/resizer/mIOGGxHGoKGFPL9sEqwLTcVHIno=/668x350/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/PSZIV47GC5GLPNFUN5RSNTK42E.jpg\" alt=\"조선일보\" />\n    <figcaption>\n        <h4> from 조선일보</h4>\n    </figcaption>\n</figure>\n\n경기도 성남시 수인분당선 서현역 인근에서 발생한 '서현록 칼부림' 사건의 목격자들이 끔찍한 사건에 대해 증언하고 있습니다. 또한 가해자가 달려가 흉기를 휘두르는 장면이 담긴 사건 영상이 온라인에 유포되고 있습니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 서현역 근처에서 무슨 일이 있었나요?</b></summary>\n    경기도 성남시 분당구 수인분당선 서현역 인근에서 칼부림 사건이 발생했습니다.\n</details>\n\n<details>\n    <summary><b>1. 언제 사건이 발생했나요?</b></summary>\n    이 사건은 3일 오후에 발생했습니다.\n</details>\n\n<details>\n    <summary><b>2. 목격자가 있었나요?</b></summary>\n    네, 서현역 인근에서 서현록 칼부림 사건을 목격한 목격자가 있었습니다.\n</details>\n\n<details>\n    <summary><b>3. 사건의 비디오 영상에서 무엇을 볼 수 있나요?</b></summary>\n    영상에는 용의자가 시민들을 향해 달려가 무차별적으로 흉기를 휘두르는 모습이 담겨 있습니다. 용의자가 피해자를 구하는 장면도 있습니다.\n</details>\n\n<details>\n    <summary><b>4. 이번 사건으로 몇 명의 피해자가 부상을 입었나요?</b></summary>\n    이 사건으로 총 14명의 피해자가 부상을 입었습니다.\n</details>\n\n<details>\n    <summary><b>5. 주요 용의자가 체포되었나요?</b></summary>\n    예, 주요 용의자가 체포되었습니다.\n</details>\n\n<details>\n    <summary><b>6. 당국에서 사건을 조사하고 있나요?</b></summary>\n    예, 당국은 이 사건을 적극적으로 조사하고 있으며 추가 연루자가 있는지 조사하고 있습니다.\n</details>\n\n\n## 서현역 '서현록 칼부림' 사건: 목격자 진술 및 영상\n\n_2023-08-03 - wikitoday_\n\n3일 오후 경기도 성남시 분당구 수인분당선 서현역 인근에서 칼부림 사건이 발생했습니다. 경찰은 이날 오후 5시 59분경 흉기를 휘두르는 난동 신고를 접수하고 오후 6시 9분경 용의자를 검거할 수 있었으며, 현장에 있던 목격자들은 사건 당시의 끔찍한 상황을 설명했습니다. 한편, 용의자가 찍힌 CCTV 영상을 포함한 사건 관련 사진과 동영상이 다양한 온라인 플랫폼에서 널리 공유되고 있습니다. 이 영상에는 가해자가 무고한 시민들에게 재빨리 다가가 무차별적으로 흉기를 휘두르는 모습이 담겨 있습니다.\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080319425980965_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\n영상에는 용의자가 피해자를 구출하는 용감한 순간도 담겨 있습니다. 당국에 따르면 용의자는 인도로 차를 몰고 가 5명을 치고 AK플라자 백화점 건물로 진입해 공격을 계속했습니다. 총 14명의 피해자가 부상을 입고 인근 병원으로 이송되었습니다. 경찰은 이미 주 용의자를 체포했으며, 사건에 연루된 추가 인물이 있는지 확인하기 위해 적극적으로 수사를 진행하고 있습니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "BLACKPINK-Jisoo-and-",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: BLACKPINK Jisoo and Bo Bo Hyun Confirmed to be Dating\ndescription: BLACKPINK's Jisoo (28) and actor Bo Bo Hyun (35) have officially confirmed that they are dating.\ncategory: Entertainment\nkeywords: 지수 안보현,지수,안보현 지수\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://dimg.donga.com/a/800/0/95/5/wps/NEWS/IMAGE/2023/08/03/120541903.5.jpg\" alt=\"동아일보\" />\n    <figcaption>\n        <h4> from 동아일보</h4>\n    </figcaption>\n</figure>\n\nBLACKPINK's Jisoo (28) and actor Bo Bo Hyun (35) have officially confirmed that they are dating.\n\n## QnA\n\n\n<details>\n    <summary><b>0. Who is BLACKPINK Jisoo dating?</b></summary>\n    BLACKPINK's Jisoo is dating actor Bo Bo Hyun.\n</details>\n\n<details>\n    <summary><b>1. What did YG Entertainment say about their relationship?</b></summary>\n    YG Entertainment stated that Jisoo and Bo Bo Hyun are getting to know each other little by little with good feelings.\n</details>\n\n<details>\n    <summary><b>2. Are Jisoo and Bo Bo Hyun's agencies supportive of their relationship?</b></summary>\n    Yes, both YG Entertainment and FN Entertainment expressed their hopes that fans would support Jisoo and Boo Hyun's relationship.\n</details>\n\n<details>\n    <summary><b>3. How old is Jisoo?</b></summary>\n    Jisoo was born in 1995, making her 28 years old.\n</details>\n\n<details>\n    <summary><b>4. What is Jisoo's recent acting debut?</b></summary>\n    Jisoo made her acting debut in the JTBC drama 'Snowdrop.'\n</details>\n\n\n## BLACKPINK Jisoo and Bo Bo Hyun Confirmed to be Dating\n\n_2023-08-03 - wikitoday_\n\nBlackpink's Jisoo (28) and actor Boo Hyun (35) are in a relationship. On the 3rd, Jisoo's agency, YG Entertainment, stated that Jisoo and Boo Hyun are getting to know each other little by little with good feelings. Both agencies expressed their hopes that fans would support their relationship.\n\n<figure>\n    <img src=\"https://newsimg.sedaily.com/2023/08/03/29T9IVKXFN_3.jpg\" alt=\"서울경제신문\" />\n    <figcaption>\n        <h4> from 서울경제신문</h4>\n    </figcaption>\n</figure>\n\nDespite the seven-year age gap between them, Jisoo and Boo Hyun are said to be nurturing their love with consideration for each other. Jisoo, who was born in 1995, recently made her acting debut in the JTBC drama 'Snowdrop' and is actively pursuing her career. Boo Hyun, on the other hand, has built up his filmography with roles in various dramas and gained popularity through his recent role in tvN's 'This Cadet Please.'\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: BLACKPINK Jisoo 和 Bo Bo Hyun 被证实正在交往\ndescription: BLACKPINK 的 Jisoo（28 岁）和演员 Bo Bo Hyun（35 岁）正式确认正在交往。\ncategory: Entertainment\nkeywords: 지수 안보현,지수,안보현 지수\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://dimg.donga.com/a/800/0/95/5/wps/NEWS/IMAGE/2023/08/03/120541903.5.jpg\" alt=\"동아일보\" />\n    <figcaption>\n        <h4> from 동아일보</h4>\n    </figcaption>\n</figure>\n\nBLACKPINK 的 Jisoo（28 岁）和演员 Bo Bo Hyun（35 岁）正式确认正在交往。\n\n## QnA\n\n\n<details>\n    <summary><b>0. BLACKPINK Jisoo 在和谁约会？</b></summary>\n    BLACKPINK 的 Jisoo 正在与演员 Bo Bo Hyun 约会。\n</details>\n\n<details>\n    <summary><b>1. YG Entertainment 对他们的关系有何评论？</b></summary>\n    YG Entertainment 表示，Jisoo 和 Bo Bo Hyun 正在逐渐了解对方，感情很好。\n</details>\n\n<details>\n    <summary><b>2. Jisoo 和 Bo Bo Hyun 的经纪公司支持他们的恋情吗？</b></summary>\n    是的，YG Entertainment 和 FN Entertainment 都表示希望粉丝们支持 Jisoo 和 Boo Hyun 的恋情。\n</details>\n\n<details>\n    <summary><b>3. Jisoo 多大了？</b></summary>\n    Jisoo 出生于 1995 年，今年 28 岁。\n</details>\n\n<details>\n    <summary><b>4. Jisoo 最近的演艺首秀是什么？</b></summary>\n    Jisoo 在 JTBC 电视剧《Snowdrop》中首次担任演员。\n</details>\n\n\n## BLACKPINK Jisoo 和 Bo Bo Hyun 被证实正在交往\n\n_2023-08-03 - wikitoday_\n\nBlackpink 的 Jisoo（28 岁）和演员 Boo Hyun（35 岁）正在热恋中。3 日，Jisoo 的经纪公司 YG Entertainment 表示，Jisoo 和 Boo Hyun 正在慢慢了解对方，感情很好。双方经纪公司都表示希望粉丝们能够支持他们的恋情。\n\n<figure>\n    <img src=\"https://newsimg.sedaily.com/2023/08/03/29T9IVKXFN_3.jpg\" alt=\"서울경제신문\" />\n    <figcaption>\n        <h4> from 서울경제신문</h4>\n    </figcaption>\n</figure>\n\n据说，尽管 Jisoo 和 Boo Hyun 的年龄相差 7 岁，但他们仍在相互体贴的基础上培养爱情。1995 年出生的 Jisoo 最近首次出演了 JTBC 电视剧《Snowdrop》，目前正在积极地发展自己的事业。另一方面，Boo Hyun 通过出演各种电视剧积累了自己的电影作品，并通过最近出演 tvN 的《拜托了，士官生》获得了人气。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: 블랙핑크 지수-보보경심 려, 열애 사실 확인\ndescription: 블랙핑크 지수(28)와 배우 안보현(35)이 열애를 공식 확인했습니다.\ncategory: Entertainment\nkeywords: 지수 안보현,지수,안보현 지수\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://dimg.donga.com/a/800/0/95/5/wps/NEWS/IMAGE/2023/08/03/120541903.5.jpg\" alt=\"동아일보\" />\n    <figcaption>\n        <h4> from 동아일보</h4>\n    </figcaption>\n</figure>\n\n블랙핑크 지수(28)와 배우 안보현(35)이 열애를 공식 확인했습니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 블랙핑크 지수는 누구와 사귀나요?</b></summary>\n    블랙핑크 지수가 배우 안보현과 열애 중입니다.\n</details>\n\n<details>\n    <summary><b>1. YG엔터테인먼트는 두 사람의 관계에 대해 뭐라고 말했나요?</b></summary>\n    YG엔터테인먼트는 지수와 안보현이 좋은 감정을 가지고 조금씩 서로를 알아가고 있다고 밝혔다.\n</details>\n\n<details>\n    <summary><b>2. 지수와 안보현의 소속사는 두 사람의 관계를 지지하나요?</b></summary>\n    네, YG엔터테인먼트와 FN엔터테인먼트 모두 팬들이 지수와 부현의 연애를 응원해 주길 바란다고 밝혔습니다.\n</details>\n\n<details>\n    <summary><b>3. 지수는 몇 살인가요?</b></summary>\n    지수는 1995년생으로 올해 나이 28세입니다.\n</details>\n\n<details>\n    <summary><b>4. 지수의 최근 연기 데뷔작은 무엇인가요?</b></summary>\n    지수는 JTBC 드라마 '스노우 드롭'으로 연기 데뷔를 했습니다.\n</details>\n\n\n## 블랙핑크 지수-보보경심 려, 열애 사실 확인\n\n_2023-08-03 - wikitoday_\n\n블랙핑크 지수(28)와 배우 부현(35)이 열애 중인 것으로 확인됐다. 3일 지수의 소속사 YG엔터테인먼트는 지수와 부현이 좋은 감정을 가지고 조금씩 서로를 알아가고 있다고 밝혔다. 두 소속사 모두 팬들이 두 사람의 만남을 응원해줬으면 좋겠다는 바람을 전했다.\n\n<figure>\n    <img src=\"https://newsimg.sedaily.com/2023/08/03/29T9IVKXFN_3.jpg\" alt=\"서울경제신문\" />\n    <figcaption>\n        <h4> from 서울경제신문</h4>\n    </figcaption>\n</figure>\n\n지수와 부현은 7살의 나이 차이에도 불구하고 서로에 대한 배려로 사랑을 키워가고 있는 것으로 전해졌습니다. 1995년생인 지수는 최근 JTBC 드라마 '눈이 부시게'로 연기에 데뷔해 활발한 활동을 펼치고 있다. 한편, 부현은 다양한 드라마에 출연하며 필모그래피를 쌓아왔으며, 최근 tvN '이번 생은 처음이라'에 출연하며 인기를 얻고 있습니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "Neymar-s-Stellar-Per",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: Neymar's Stellar Performance in PSG Victory\ndescription: Paris Saint-Germain (PSG) defeats Jeonbuk Hyundai 3-0 in a friendly match, thanks to Neymar's impressive performance.\ncategory: Sports\nkeywords: PSG,파리생제르망,네이마르,파리생제르망 전북현대\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://flexible.img.hani.co.kr/flexible/normal/900/658/imgdb/original/2023/0803/20230803503133.jpg\" alt=\"한겨레\" />\n    <figcaption>\n        <h4> from 한겨레</h4>\n    </figcaption>\n</figure>\n\nParis Saint-Germain (PSG) defeats Jeonbuk Hyundai 3-0 in a friendly match, thanks to Neymar's impressive performance.\n\n## QnA\n\n\n<details>\n    <summary><b>0. Who was the standout player in the match?</b></summary>\n    Neymar delivered a standout performance, scoring two goals and providing one assist for PSG.\n</details>\n\n<details>\n    <summary><b>1. What was the final score of the match?</b></summary>\n    PSG secured a 3-0 victory against Jeonbuk Hyundai.\n</details>\n\n<details>\n    <summary><b>2. How did Neymar perform after returning from his injury?</b></summary>\n    Neymar showed no signs of injury as he displayed his exceptional skills and contributed significantly to PSG's victory.\n</details>\n\n<details>\n    <summary><b>3. How did the fans react to the match?</b></summary>\n    The fans showed their appreciation for the players with lavish cheers and support throughout the match.\n</details>\n\n<details>\n    <summary><b>4. What was the significance of this victory for PSG?</b></summary>\n    The victory in this friendly match served as a welcome boost for PSG after a somewhat disappointing preseason.\n</details>\n\n\n## Neymar's Stellar Performance in PSG Victory\n\n_2023-08-03 - wikitoday_\n\nParis Saint-Germain (PSG) emerged victorious in their friendly match against Jeonbuk Hyundai, securing a 3-0 win in the Coupang Play Series. Neymar, who returned to the starting lineup after recovering from an ankle injury, showcased his exceptional skills, scoring two goals and providing one assist.\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_rlKbuP.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\nThe victory comes as a welcome boost for PSG, following a less-than-ideal preseason performance in Japan. The match, held at the Asiad Stadium in Busan, attracted a crowd of over 43,000 fans who showed their appreciation for the players with enthusiastic cheers.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: 内马尔在 PSG 胜利中的精彩表现\ndescription: 在一场友谊赛中，巴黎圣日耳曼（PSG）凭借内马尔的出色发挥，以 3-0 的比分击败全北现代。\ncategory: Sports\nkeywords: PSG,파리생제르망,네이마르,파리생제르망 전북현대\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://flexible.img.hani.co.kr/flexible/normal/900/658/imgdb/original/2023/0803/20230803503133.jpg\" alt=\"한겨레\" />\n    <figcaption>\n        <h4> from 한겨레</h4>\n    </figcaption>\n</figure>\n\n在一场友谊赛中，巴黎圣日耳曼（PSG）凭借内马尔的出色发挥，以 3-0 的比分击败全北现代。\n\n## QnA\n\n\n<details>\n    <summary><b>0. 谁是本场比赛的佼佼者？</b></summary>\n    内马尔表现出色，为 PSG 打进两球并送出一次助攻。\n</details>\n\n<details>\n    <summary><b>1. 比赛的最终比分是多少？</b></summary>\n    PSG 3-0 战胜全北现代。\n</details>\n\n<details>\n    <summary><b>2. 内马尔伤愈复出后表现如何？</b></summary>\n    内马尔没有受伤的迹象，他展示了自己出众的技能，为 PSG 的胜利做出了巨大贡献。\n</details>\n\n<details>\n    <summary><b>3. 球迷们对比赛的反应如何？</b></summary>\n    整场比赛，球迷们用热烈的欢呼和支持表达了对球员们的感谢。\n</details>\n\n<details>\n    <summary><b>4. 这场胜利对 PSG 意义何在？</b></summary>\n    在经历了令人失望的季前赛之后，这场友谊赛的胜利为 PSG 打了一支强心针。\n</details>\n\n\n## 内马尔在 PSG 胜利中的精彩表现\n\n_2023-08-03 - wikitoday_\n\n巴黎圣日耳曼队（PSG）在与全北现代队的友谊赛中以 3-0 的比分获胜。从脚踝伤势中恢复后重返首发阵容的内马尔展示了他非凡的球技，打进两球并送出一次助攻。\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_rlKbuP.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\nPSG 在日本的季前赛表现不尽如人意，本场比赛的胜利为 PSG 打了一支强心针。本场比赛在釜山亚细亚体育场举行，吸引了超过 43,000 名球迷到场观战，他们用热情的欢呼声表达了对球员的赞赏。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: PSG 승리를 이끈 네이마르의 눈부신 활약\ndescription: 파리 생제르맹(PSG)이 네이마르의 인상적인 활약에 힘입어 친선경기에서 전북 현대를 3-0으로 물리쳤습니다.\ncategory: Sports\nkeywords: PSG,파리생제르망,네이마르,파리생제르망 전북현대\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://flexible.img.hani.co.kr/flexible/normal/900/658/imgdb/original/2023/0803/20230803503133.jpg\" alt=\"한겨레\" />\n    <figcaption>\n        <h4> from 한겨레</h4>\n    </figcaption>\n</figure>\n\n파리 생제르맹(PSG)이 네이마르의 인상적인 활약에 힘입어 친선경기에서 전북 현대를 3-0으로 물리쳤습니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 이번 경기에서 눈에 띄는 선수는 누구였나요?</b></summary>\n    네이마르는 PSG에서 2골을 넣고 1도움을 기록하며 뛰어난 활약을 펼쳤습니다.\n</details>\n\n<details>\n    <summary><b>1. 경기의 최종 스코어는 어떻게 되나요?</b></summary>\n    PSG가 전북 현대를 상대로 3-0 승리를 거뒀습니다.\n</details>\n\n<details>\n    <summary><b>2. 부상에서 돌아온 네이마르는 어떤 활약을 펼쳤나요?</b></summary>\n    네이마르는 부상 흔적도 없이 뛰어난 기량을 선보이며 PSG의 승리에 크게 기여했습니다.\n</details>\n\n<details>\n    <summary><b>3. 팬들의 경기 반응은 어땠나요?</b></summary>\n    팬들은 경기 내내 아낌없는 환호와 응원으로 선수들에게 감사의 마음을 전했습니다.\n</details>\n\n<details>\n    <summary><b>4. 이번 승리가 PSG에게 어떤 의미가 있나요?</b></summary>\n    이 친선 경기의 승리는 다소 실망스러운 프리시즌을 보낸 PSG에게 반가운 활력소가 되었습니다.\n</details>\n\n\n## PSG 승리를 이끈 네이마르의 눈부신 활약\n\n_2023-08-03 - wikitoday_\n\n파리 생제르맹(PSG)이 전북 현대와의 친선경기에서 3-0 승리를 거두며 쿠팡 플레이 시리즈에서 승승장구했습니다. 발목 부상에서 회복해 선발 라인업에 복귀한 네이마르는 2골 1도움을 기록하며 뛰어난 기량을 뽐냈습니다.\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_rlKbuP.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\n프리시즌 일본에서 기대에 못 미치는 성적을 거둔 PSG에게 이번 승리는 반가운 소식이 아닐 수 없습니다. 부산 아시아드 스타디움에서 열린 이 경기에는 4만 3천여 명의 팬들이 운집해 열광적인 환호로 선수들에게 감사를 표했습니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "Cass-Becomes-Officia",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: Cass Becomes Official Sponsor of LCK Summer 2023\ndescription: Cass (OB Beer) has announced its official sponsorship of the 'League of Legends Champions Korea (LCK) Summer' tournament. The LCK is the largest League of Legends competition in Korea, known for its high level of competitiveness and scale. Cass aims to target Gen Z consumers through this sponsorship and expand its presence in the esports community.\ncategory: Sports\nkeywords: LCK\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://cdn.newsquest.co.kr/news/thumbnail/202308/209346_101708_377_v150.jpg\" alt=\"뉴스퀘스트\" />\n    <figcaption>\n        <h4> from 뉴스퀘스트</h4>\n    </figcaption>\n</figure>\n\nCass (OB Beer) has announced its official sponsorship of the 'League of Legends Champions Korea (LCK) Summer' tournament. The LCK is the largest League of Legends competition in Korea, known for its high level of competitiveness and scale. Cass aims to target Gen Z consumers through this sponsorship and expand its presence in the esports community.\n\n## QnA\n\n\n<details>\n    <summary><b>0. What is LCK Summer 2023?</b></summary>\n    LCK Summer 2023 is the upcoming League of Legends Champions Korea tournament, which is the largest League of Legends competition in Korea. It will determine the top teams who will qualify for the League of Legends World Championship.\n</details>\n\n<details>\n    <summary><b>1. Why is Cass sponsoring LCK Summer 2023?</b></summary>\n    Cass is targeting Gen Z consumers, who are passionate about esports, by sponsoring the LCK Summer 2023 tournament. It is an opportunity for the brand to expand its presence in the esports community and connect with its main target audience.\n</details>\n\n<details>\n    <summary><b>2. What activities will Cass offer at the tournament?</b></summary>\n    Cass will set up a booth at the tournament venue, offering its limited-edition Cass Lemon Squeeze and custom beer pouches. Fans can also participate in the 'Cass Cheerful' zone, where they can write down their cheers on Cass Lemon Squeeze Cheer Pool sheets.\n</details>\n\n<details>\n    <summary><b>3. What benefits will supporters of 'CASS X LCK' receive?</b></summary>\n    Supporters of 'CASS X LCK' will receive exclusive benefits, including a front-row view of the LCK Summer Finals, a welcome kit with support items, and a shuttle bus service to and from the event.\n</details>\n\n<details>\n    <summary><b>4. Where will Cass have a booth besides the LCK Summer tournament?</b></summary>\n    Cass will also have a booth at the LCK Summer Finals and Fan Festa, which will be held at the DCC Daejeon Convention Center in Daejeon, South Korea.\n</details>\n\n\n## Cass Becomes Official Sponsor of LCK Summer 2023\n\n_2023-08-03 - wikitoday_\n\nCass (OB Beer) has officially partnered with the 'League of Legends Champions Korea (LCK) Summer' tournament, set to take place this month. LCK, which has been held since 2012, is the biggest League of Legends gaming competition in Korea. With its intense gameplay and massive following, League of Legends has become increasingly popular among esports fans. The upcoming LCK Summer tournament will mark the first time in five years that the finals will be held in South Korea. It will determine the top teams from each country's league who will qualify for the League of Legends World Championship.\n\n<figure>\n    <img src=\"http://www.consumernews.co.kr/news/thumbnail/202308/684779_261211_1843_v150.jpg\" alt=\"소비자가 만드는 신문\" />\n    <figcaption>\n        <h4> from 소비자가 만드는 신문</h4>\n    </figcaption>\n</figure>\n\nAs an official sponsor, Cass aims to connect with its main target audience, Gen Z consumers, who are avid esports enthusiasts. The brand plans to set up a booth at the tournament venue, offering its limited-edition Cass Lemon Squeeze and custom beer pouches. Fans will also have the opportunity to participate in the 'Cass Cheerful' zone, where they can write down their cheers on Cass Lemon Squeeze Cheer Pool sheets. Selected supporters will receive exclusive benefits, including a front-row view of the LCK Summer Finals, a welcome kit, and a shuttle bus service to and from the event. Additionally, Cass will have a booth at the LCK Summer Finals and Fan Festa, showcasing a high-angle photo booth and limited-edition merchandise featuring the logos of the finalist teams. With this sponsorship, Cass aims to bring the lively energy of Cass to the esports community and create an engaging experience for the younger generation.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: 卡斯成为 LCK Summer 2023 的官方赞助商\ndescription: 卡斯（OB Beer）宣布正式赞助 '英雄联盟韩国冠军赛（LCK）夏季赛'。LCK 是韩国最大的英雄联盟比赛，以其高水平的竞争力和规模而闻名。卡斯旨在通过此次赞助锁定 Z 世代消费者，并扩大其在电竞界的影响力。\ncategory: Sports\nkeywords: LCK\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://cdn.newsquest.co.kr/news/thumbnail/202308/209346_101708_377_v150.jpg\" alt=\"뉴스퀘스트\" />\n    <figcaption>\n        <h4> from 뉴스퀘스트</h4>\n    </figcaption>\n</figure>\n\n卡斯（OB Beer）宣布正式赞助 '英雄联盟韩国冠军赛（LCK）夏季赛'。LCK 是韩国最大的英雄联盟比赛，以其高水平的竞争力和规模而闻名。卡斯旨在通过此次赞助锁定 Z 世代消费者，并扩大其在电竞界的影响力。\n\n## QnA\n\n\n<details>\n    <summary><b>0. LCK 2023 夏季赛是什么？</b></summary>\n    LCK 2023 夏季赛是即将在韩国举行的英雄联盟冠军赛，也是韩国最大的英雄联盟比赛。它将决出有资格参加英雄联盟世界锦标赛的顶级战队。\n</details>\n\n<details>\n    <summary><b>1. 卡斯为什么赞助 LCK Summer 2023？</b></summary>\n    卡斯通过赞助 LCK 2023 夏季赛，瞄准了热衷于电子竞技的 Z 世代消费者。这是该品牌扩大其在电竞社区的影响力并与其主要目标受众建立联系的一次机会。\n</details>\n\n<details>\n    <summary><b>2. 卡斯将在比赛中提供哪些活动？</b></summary>\n    卡斯将在比赛场地设立展台，提供限量版卡斯柠檬汽水和定制啤酒袋。球迷们还可以参加 '卡斯欢呼 '区，在卡斯柠檬水欢呼纸上写下自己的欢呼。\n</details>\n\n<details>\n    <summary><b>3. CASS X LCK '的支持者将获得哪些好处？</b></summary>\n    CASS X LCK '的支持者将获得独家优惠，包括在前排观看 LCK 夏季总决赛，获得包含支持物品的欢迎包，以及往返赛事的班车服务。\n</details>\n\n<details>\n    <summary><b>4. 除了 LCK 夏季锦标赛，卡斯还将在哪里设摊？</b></summary>\n    卡斯还将在韩国大田 DCC 大田会展中心举行的 LCK 夏季总决赛和粉丝节上设立展台。\n</details>\n\n\n## 卡斯成为 LCK Summer 2023 的官方赞助商\n\n_2023-08-03 - wikitoday_\n\n卡斯（OB Beer）已正式与将于本月举行的 '英雄联盟韩国冠军赛（LCK）夏季赛 '合作。LCK 自 2012 年开始举办，是韩国最大的英雄联盟游戏比赛。凭借其激烈的游戏性和大量的追随者，《英雄联盟》在电竞爱好者中越来越受欢迎。即将举行的 LCK 夏季赛将是五年来首次在韩国举行总决赛。它将决出每个国家联赛中的顶级队伍，这些队伍将获得参加英雄联盟世界锦标赛的资格。\n\n<figure>\n    <img src=\"http://www.consumernews.co.kr/news/thumbnail/202308/684779_261211_1843_v150.jpg\" alt=\"소비자가 만드는 신문\" />\n    <figcaption>\n        <h4> from 소비자가 만드는 신문</h4>\n    </figcaption>\n</figure>\n\n作为官方赞助商，卡斯旨在与其主要目标受众--狂热的电竞爱好者 Z 世代消费者建立联系。该品牌计划在比赛场地设立一个展位，提供限量版 Cass Lemon Squeeze 和定制啤酒袋。粉丝们还将有机会参与 'Cass Cheerful '专区，在 'Cass Lemon Squeeze Cheer Pool '纸上写下自己的欢呼。被选中的支持者将获得独家优惠，包括在前排观看 LCK 夏季总决赛、欢迎礼包和往返赛事的班车服务。此外，卡斯还将在 LCK 夏季总决赛和球迷嘉年华上设立展台，展示高角度照相亭和印有决赛队伍标志的限量版商品。通过此次赞助，卡斯旨在将卡斯的活力带入电竞社区，为年轻一代创造有吸引力的体验。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: 카스, 2023 LCK 서머 공식 후원사로 선정되다\ndescription: 카스(OB맥주)가 '리그 오브 레전드 챔피언스 코리아(이하 LCK) 서머' 대회를 공식 후원한다고 밝혔습니다. LCK는 국내 최대 규모의 리그 오브 레전드 대회로, 높은 수준의 경쟁력과 규모를 자랑하는 것으로 유명합니다. 카스는 이번 후원을 통해 Z세대 소비자를 공략하고 e스포츠 커뮤니티에서 입지를 넓힌다는 목표입니다.\ncategory: Sports\nkeywords: LCK\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://cdn.newsquest.co.kr/news/thumbnail/202308/209346_101708_377_v150.jpg\" alt=\"뉴스퀘스트\" />\n    <figcaption>\n        <h4> from 뉴스퀘스트</h4>\n    </figcaption>\n</figure>\n\n카스(OB맥주)가 '리그 오브 레전드 챔피언스 코리아(이하 LCK) 서머' 대회를 공식 후원한다고 밝혔습니다. LCK는 국내 최대 규모의 리그 오브 레전드 대회로, 높은 수준의 경쟁력과 규모를 자랑하는 것으로 유명합니다. 카스는 이번 후원을 통해 Z세대 소비자를 공략하고 e스포츠 커뮤니티에서 입지를 넓힌다는 목표입니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. LCK 서머 2023이란 무엇인가요?</b></summary>\n    LCK 서머 2023은 다가오는 국내 최대 규모의 리그 오브 레전드 대회인 리그 오브 레전드 챔피언스 코리아 토너먼트입니다. 이 대회를 통해 리그 오브 레전드 월드 챔피언십에 출전할 상위 팀이 결정됩니다.\n</details>\n\n<details>\n    <summary><b>1. 카스가 LCK 서머 2023을 후원하는 이유는 무엇인가요?</b></summary>\n    카스는 LCK 서머 2023 토너먼트 후원을 통해 e스포츠에 열정을 가진 Z세대 소비자를 타깃으로 삼고 있습니다. 이 대회는 카스가 e스포츠 커뮤니티에서 입지를 넓히고 주요 타겟층과 소통할 수 있는 기회입니다.\n</details>\n\n<details>\n    <summary><b>2. 카스는 토너먼트에서 어떤 활동을 제공하나요?</b></summary>\n    카스는 대회장에 부스를 설치해 한정판 카스 레몬 스퀴즈와 커스텀 맥주 파우치를 제공할 예정입니다. 팬들은 '카스 치어풀' 존에서 카스 레몬 스퀴즈 응원지에 응원을 적을 수 있는 이벤트에도 참여할 수 있습니다.\n</details>\n\n<details>\n    <summary><b>3. 'CASS X LCK' 서포터즈에게는 어떤 혜택이 있나요?</b></summary>\n    '캐스 X LCK' 서포터즈에게는 LCK 서머 결승전 관람권, 응원 물품이 담긴 웰컴 키트, 행사장 왕복 셔틀버스 운행 등 특별한 혜택이 제공됩니다.\n</details>\n\n<details>\n    <summary><b>4. 카스는 LCK 서머 토너먼트 외에 어디에서 부스를 운영하나요?</b></summary>\n    카스는 대전 DCC 대전 컨벤션 센터에서 열리는 LCK 서머 결승전 및 팬 페스타에도 부스를 운영할 예정입니다.\n</details>\n\n\n## 카스, 2023 LCK 서머 공식 후원사로 선정되다\n\n_2023-08-03 - wikitoday_\n\n카스(OB맥주)가 이달 열리는 '리그 오브 레전드 챔피언스 코리아(이하 LCK) 서머' 대회에 공식 후원사로 참여합니다. 2012년부터 개최되고 있는 LCK는 국내 최대 규모의 리그 오브 레전드 게임 대회입니다. 리그 오브 레전드는 박진감 넘치는 게임 플레이와 수많은 팬으로 인해 e스포츠 팬들 사이에서 점점 더 인기를 얻고 있습니다. 다가오는 LCK 서머 토너먼트에서는 5년 만에 한국에서 결승전이 열릴 예정입니다. 이 대회를 통해 리그 오브 레전드 월드 챔피언십에 출전할 각국 리그의 상위 팀이 결정됩니다.\n\n<figure>\n    <img src=\"http://www.consumernews.co.kr/news/thumbnail/202308/684779_261211_1843_v150.jpg\" alt=\"소비자가 만드는 신문\" />\n    <figcaption>\n        <h4> from 소비자가 만드는 신문</h4>\n    </figcaption>\n</figure>\n\n공식 후원사인 카스는 e스포츠에 열광하는 주요 타겟층인 Z세대 소비자들과 소통하는 것을 목표로 하고 있습니다. 카스는 토너먼트 현장에 부스를 설치해 한정판 카스 레몬 스퀴즈와 맞춤형 맥주 파우치를 제공할 계획입니다. 팬들은 '카스 치어풀' 존에서 카스 레몬 스퀴즈 응원지에 응원 문구를 적을 수 있는 '카스 치어풀' 이벤트에도 참여할 수 있다. 선발된 서포터즈에게는 LCK 서머 결승전 맨 앞줄 관람, 웰컴 키트, 행사장 왕복 셔틀 버스 서비스 등 특별한 혜택이 제공됩니다. 또한, 카스는 LCK 서머 결승전과 팬 페스타에 부스를 마련해 하이앵글 포토 부스와 결승 진출 팀의 로고가 새겨진 한정판 굿즈를 선보일 예정입니다. 카스는 이번 후원을 통해 카스의 활기찬 에너지를 e스포츠 커뮤니티에 전달하고 젊은 세대에게 매력적인 경험을 선사하고자 합니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "China-s-Economy-Faci",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: China's Economy Facing Crisis: Implications of 279.7% and 46.5% Indicators\ndescription: The Chinese economy is heading towards a crisis, with indicators such as government debt reaching alarming levels. Additionally, the high youth unemployment rate raises concerns about social unrest. These factors have implications not only for China but also for the global economy.\ncategory: Politics\nkeywords: 중국\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"http://www.lec.co.kr/news/thumbnail/202308/743858_78889_4346_v150.jpg\" alt=\"법률저널\" />\n    <figcaption>\n        <h4> from 법률저널</h4>\n    </figcaption>\n</figure>\n\nThe Chinese economy is heading towards a crisis, with indicators such as government debt reaching alarming levels. Additionally, the high youth unemployment rate raises concerns about social unrest. These factors have implications not only for China but also for the global economy.\n\n## QnA\n\n\n<details>\n    <summary><b>0. What are the indicators suggesting a crisis in China's economy?</b></summary>\n    The indicators suggesting a crisis in China's economy include the alarmingly high government debt, estimated to be around 279% to 297% of the national debt. The youth unemployment rate, which stands at 46.5%, is another worrisome indicator.\n</details>\n\n<details>\n    <summary><b>1. How are local governments in China affected by the real estate market?</b></summary>\n    Local governments in China have been heavily reliant on real estate development for revenue. However, with the recent decline in the real estate market, these governments have struggled to service their debt, leading to financial challenges.\n</details>\n\n<details>\n    <summary><b>2. Why is the youth unemployment rate concerning in China?</b></summary>\n    The youth unemployment rate in China is concerning because it stands at 46.5%, significantly higher than the government's official urban youth unemployment rate of 21.3%. This high rate of unemployment among the youth population could lead to social unrest and protests.\n</details>\n\n<details>\n    <summary><b>3. What external challenges does China's economy face?</b></summary>\n    China's economy is facing challenges in terms of declining exports and foreign investment. Countries like Vietnam are attracting foreign investment that would have previously gone to China. Additionally, the dominance of the United States in semiconductors and advanced technologies poses a challenge for China's ambitions in high-tech industries.\n</details>\n\n<details>\n    <summary><b>4. What is the potential for China's economy despite the challenges?</b></summary>\n    China, with its large population and strong manufacturing capabilities, has the potential to drive economic development through domestic demand if incomes rise and consumption is supported. However, realizing this potential requires effective political leadership that can address the current economic challenges.\n</details>\n\n\n## China's Economy Facing Crisis: Implications of 279.7% and 46.5% Indicators\n\n_2023-08-03 - wikitoday_\n\nThere is growing concern about China's economy, with predictions of a crisis and deflation. The severity of the situation is reflected in the indicators, particularly the Chinese government's debt. Various estimates suggest that the national debt stands at around 279% to 297%, significantly higher than the government's official data. This alarming level of debt has been driven by the government's desperate efforts to stimulate economic growth. Prior to the 2008 financial crisis, China's government debt was only around 60%. One major issue is that nearly 100% of China's government debt is held by local governments, which have been heavily reliant on real estate development for revenue. However, with the recent decline in the real estate market, local governments have struggled to service their debt. In 2022, real estate revenue accounted for 21% of local government revenue in China, with provinces like Tianjin and Jilin experiencing significant declines of 62% and 61% respectively. The impact of the real estate market extends beyond revenue. It constitutes a quarter of China's GDP and its stagnation has resulted in decreased consumption. While the rest of the world is grappling with inflation, China has managed to maintain a 0% inflation rate, as its citizens are not spending enough to drive inflation. Another alarming indicator is the youth unemployment rate, which stands at 46.5% according to Professor Zhang Dandan of Peking University. While the Chinese government reports an official urban youth unemployment rate of 21.3%, the actual figure is much higher. Furthermore, the job market for recent college graduates is extremely competitive, with only about 50% of them able to find employment.\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_mOOJ4M.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\nThese economic challenges have the potential to lead to a youth bulge, where a large number of young people face limited job prospects, fueling social discontent and possible protests. However, it is difficult to predict whether this will escalate into a second Tiananmen Square incident. Many Chinese youth, despite their discontent and bleak prospects, exhibit a social phenomenon characterized by fear of social interaction and a rejection of societal expectations. They prioritize personal satisfaction over financial success, often spending their time engrossed in their smartphones and leading a leisurely lifestyle. Externally, China is also facing obstacles. Its traditional strengths, such as exports and foreign investment, are declining. Countries like Vietnam are attracting foreign investment that would previously have gone to China. Additionally, the dominance of the United States in semiconductors and advanced technologies presents a challenge for China's ambitions in high-tech industries beyond manufacturing. Despite these challenges, China's potential cannot be disregarded, given its large population and strong manufacturing capabilities. If domestic incomes rise and consumption is supported, China has the potential to drive economic development through domestic demand. However, achieving this potential is contingent on appropriate political leadership. China's Communist Party, with its immense membershipbase, must acknowledge the current economic situation and devise strategies to address it. China needs leaders like Deng Xiaoping, who facilitated its economic transformation in the past. While the concerns for China's economy are valid, the potential impact on South Korea, given their economic interdependence, is also a cause for concern.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: 中国经济面临危机：279.7%和46.5%指标的影响\ndescription: 中国经济正走向危机，政府债务等指标已达到惊人的水平。此外，居高不下的青年失业率也引发了对社会动荡的担忧。这些因素不仅对中国有影响，对全球经济也有影响。\ncategory: Politics\nkeywords: 중국\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"http://www.lec.co.kr/news/thumbnail/202308/743858_78889_4346_v150.jpg\" alt=\"법률저널\" />\n    <figcaption>\n        <h4> from 법률저널</h4>\n    </figcaption>\n</figure>\n\n中国经济正走向危机，政府债务等指标已达到惊人的水平。此外，居高不下的青年失业率也引发了对社会动荡的担忧。这些因素不仅对中国有影响，对全球经济也有影响。\n\n## QnA\n\n\n<details>\n    <summary><b>0. 哪些指标表明中国经济出现了危机？</b></summary>\n    表明中国经济出现危机的指标包括高得惊人的政府债务，估计约占国债的 279% 至 297%。青年失业率高达 46.5%，是另一个令人担忧的指标。\n</details>\n\n<details>\n    <summary><b>1. 房地产市场对中国地方政府有何影响？</b></summary>\n    中国地方政府的财政收入一直严重依赖房地产开发。然而，随着近期房地产市场的下滑，这些政府已难以偿还债务，从而面临财政挑战。\n</details>\n\n<details>\n    <summary><b>2. 为什么中国的青年失业率令人担忧？</b></summary>\n    中国的青年失业率令人担忧，因为它高达 46.5%，大大高于政府官方公布的 21.3% 的城镇青年失业率。青年人口的高失业率可能会引发社会动荡和抗议活动。\n</details>\n\n<details>\n    <summary><b>3. 中国经济面临哪些外部挑战？</b></summary>\n    中国经济正面临出口和外国投资下降的挑战。越南等国正在吸引以前会流向中国的外资。此外，美国在半导体和先进技术领域的主导地位也对中国在高科技产业的雄心壮志构成了挑战。\n</details>\n\n<details>\n    <summary><b>4. 尽管面临挑战，中国经济的潜力何在？</b></summary>\n    中国人口众多，制造业实力雄厚，如果收入增加，消费得到支持，中国有潜力通过内需推动经济发展。然而，实现这一潜力需要有效的政治领导，以应对当前的经济挑战。\n</details>\n\n\n## 中国经济面临危机：279.7%和46.5%指标的影响\n\n_2023-08-03 - wikitoday_\n\n人们对中国经济的担忧与日俱增，预测中国将面临危机和通货紧缩。形势的严重性反映在各项指标上，尤其是中国政府的债务。各种估计表明，中国的国债约为 279% 至 297%，大大高于政府的官方数据。这一惊人的债务水平是由政府拼命刺激经济增长所造成的。在 2008 年金融危机之前，中国的政府债务仅为 60% 左右。一个主要问题是，中国近 100% 的政府债务由地方政府持有，而这些地方政府的财政收入严重依赖于房地产开发。然而，随着近期房地产市场的下滑，地方政府已难以偿还债务。2022 年，房地产收入占中国地方政府收入的 21%，其中天津和吉林等省分别大幅下降 62% 和 61%。房地产市场的影响不仅限于财政收入。房地产占中国 GDP 的四分之一，房地产市场的停滞导致消费减少。当世界其他国家都在努力应对通胀时，中国却成功地保持了 0% 的通胀率，因为国民的消费不足以推动通胀。另一个令人担忧的指标是青年失业率，根据北京大学张丹丹教授的研究，青年失业率高达 46.5%。虽然中国政府官方公布的城镇青年失业率为 21.3%，但实际数字要高得多。此外，应届大学毕业生的就业市场竞争异常激烈，只有约 50%的人能够找到工作。\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_mOOJ4M.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\n这些经济挑战有可能导致青年人口暴增，大量年轻人面临有限的就业前景，从而引发社会不满和可能的抗议活动。然而，很难预测这是否会升级为第二次天安门事件。许多中国青年尽管心怀不满、前景暗淡，但却表现出一种社会现象，其特点是害怕社会交往、拒绝社会期望。他们将个人满足感置于经济成功之上，经常沉迷于智能手机，过着悠闲的生活。在外部，中国也面临着障碍。中国的传统优势，如出口和外国投资，正在下降。越南等国正在吸引以前会流向中国的外国投资。此外，美国在半导体和先进技术领域的主导地位也对中国在制造业以外的高科技产业的雄心壮志构成了挑战。尽管存在这些挑战，但鉴于中国人口众多、制造能力强大，其潜力不容忽视。如果国内收入增加，消费得到支持，中国就有潜力通过内需推动经济发展。然而，实现这一潜力取决于适当的政治领导。拥有庞大党员基础的中国共产党必须承认当前的经济形势，并制定应对策略。中国需要像邓小平这样的领导人，他在过去推动了中国的经济转型。虽然对中国经济的担忧是合理的，但由于两国经济相互依存，对韩国的潜在影响也令人担忧。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: 위기에 직면한 중국 경제: 279.7% 및 46.5% 지표의 시사점\ndescription: 중국 경제는 정부 부채와 같은 지표가 우려할 만한 수준에 도달하는 등 위기를 향해 나아가고 있습니다. 또한 높은 청년 실업률로 인해 사회 불안에 대한 우려도 커지고 있습니다. 이러한 요인들은 중국뿐만 아니라 글로벌 경제에도 영향을 미칩니다.\ncategory: Politics\nkeywords: 중국\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"http://www.lec.co.kr/news/thumbnail/202308/743858_78889_4346_v150.jpg\" alt=\"법률저널\" />\n    <figcaption>\n        <h4> from 법률저널</h4>\n    </figcaption>\n</figure>\n\n중국 경제는 정부 부채와 같은 지표가 우려할 만한 수준에 도달하는 등 위기를 향해 나아가고 있습니다. 또한 높은 청년 실업률로 인해 사회 불안에 대한 우려도 커지고 있습니다. 이러한 요인들은 중국뿐만 아니라 글로벌 경제에도 영향을 미칩니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 중국 경제의 위기를 시사하는 지표에는 어떤 것이 있나요?</b></summary>\n    중국 경제의 위기를 시사하는 지표로는 국가 부채의 약 279%에서 297%로 추정되는 놀라울 정도로 높은 정부 부채가 있습니다. 46.5%에 달하는 청년 실업률도 우려스러운 지표입니다.\n</details>\n\n<details>\n    <summary><b>1. 중국 지방 정부는 부동산 시장의 영향을 어떻게 받고 있나요?</b></summary>\n    중국의 지방 정부는 부동산 개발에 크게 의존해 수익을 창출해 왔습니다. 하지만 최근 부동산 시장이 침체되면서 이들 지방 정부는 부채 상환에 어려움을 겪고 있으며, 이는 재정적 어려움으로 이어지고 있습니다.\n</details>\n\n<details>\n    <summary><b>2. 중국의 청년 실업률이 우려되는 이유는 무엇인가요?</b></summary>\n    중국의 청년 실업률은 46.5%로 정부의 공식 도시 청년 실업률인 21.3%보다 훨씬 높기 때문에 우려스러운 수준입니다. 청년층의 높은 실업률은 사회 불안과 시위로 이어질 수 있습니다.\n</details>\n\n<details>\n    <summary><b>3. 중국 경제는 어떤 외부 도전에 직면해 있나요?</b></summary>\n    중국 경제는 수출과 외국인 투자 감소라는 도전에 직면해 있습니다. 베트남과 같은 국가들은 이전에는 중국으로 향했던 외국인 투자를 유치하고 있습니다. 또한 반도체 및 첨단 기술 분야에서 미국의 우위는 첨단 기술 산업에 대한 중국의 야망에 도전이 되고 있습니다.\n</details>\n\n<details>\n    <summary><b>4. 이러한 어려움에도 불구하고 중국 경제의 잠재력은 무엇일까요?</b></summary>\n    많은 인구와 강력한 제조업 역량을 갖춘 중국은 소득이 증가하고 소비가 뒷받침된다면 내수를 통해 경제 발전을 견인할 잠재력을 가지고 있습니다. 하지만 이러한 잠재력을 실현하기 위해서는 현재 당면한 경제 문제를 해결할 수 있는 효과적인 정치적 리더십이 필요합니다.\n</details>\n\n\n## 위기에 직면한 중국 경제: 279.7% 및 46.5% 지표의 시사점\n\n_2023-08-03 - wikitoday_\n\n중국 경제에 대한 위기와 디플레이션에 대한 예측이 나오면서 중국 경제에 대한 우려가 커지고 있습니다. 상황의 심각성은 지표, 특히 중국 정부의 부채에 반영되어 있습니다. 다양한 추정치에 따르면 국가 부채는 약 279%에서 297%로 정부의 공식 데이터보다 훨씬 높습니다. 이러한 놀라운 수준의 부채는 경제 성장을 촉진하려는 정부의 필사적인 노력으로 인해 발생했습니다. 2008년 금융 위기 이전에는 중국의 정부 부채가 60% 정도에 불과했습니다. 한 가지 주요 문제는 중국 정부 부채의 거의 100%를 부동산 개발에 크게 의존해 온 지방 정부가 보유하고 있다는 점입니다. 그러나 최근 부동산 시장이 하락하면서 지방 정부는 부채 상환에 어려움을 겪고 있습니다. 2022년 중국 지방정부 수입에서 부동산 수입이 차지하는 비중은 21%였으며, 톈진과 지린성은 각각 62%와 61%로 크게 감소했습니다. 부동산 시장의 영향은 세입을 넘어선 것입니다. 부동산 시장은 중국 GDP의 4분의 1을 차지하며, 부동산 시장의 침체는 소비 감소로 이어졌습니다. 전 세계가 인플레이션과 씨름하는 동안 중국은 0%의 인플레이션율을 유지하고 있는데, 이는 중국 국민들이 인플레이션을 유발할 만큼 충분히 소비하지 않기 때문입니다. 베이징대학교의 장단단 교수에 따르면 청년 실업률은 46.5%에 달해 또 다른 우려스러운 지표입니다. 중국 정부가 공식적으로 발표하는 도시 청년 실업률은 21.3%이지만, 실제 수치는 훨씬 더 높습니다. 또한 최근 대학 졸업생의 취업 시장은 경쟁이 매우 치열하여 약 50%만이 취업에 성공할 수 있습니다.\n\n<figure>\n    <img src=\"http://news.kbs.co.kr/data/news/2023/08/03/20230803_mOOJ4M.jpg\" alt=\"KBS뉴스\" />\n    <figcaption>\n        <h4> from KBS뉴스</h4>\n    </figcaption>\n</figure>\n\n이러한 경제적 어려움은 많은 젊은이들이 제한된 일자리 전망에 직면하여 사회적 불만과 시위 가능성을 불러일으키는 청년 폭증으로 이어질 수 있습니다. 그러나 이것이 제2의 천안문 사태로 확대될지 여부는 예측하기 어렵습니다. 많은 중국 청년들은 불만과 암울한 전망에도 불구하고 사회적 상호작용에 대한 두려움과 사회적 기대에 대한 거부를 특징으로 하는 사회 현상을 보이고 있습니다. 이들은 경제적 성공보다 개인적인 만족을 우선시하며, 스마트폰에 몰두하며 여유로운 라이프스타일을 즐기는 경우가 많습니다. 외부적으로도 중국은 장애물에 직면해 있습니다. 수출과 외국인 투자와 같은 전통적인 강점이 감소하고 있습니다. 베트남과 같은 국가들이 과거 중국으로 향하던 외국인 투자를 유치하고 있습니다. 또한 반도체 및 첨단 기술 분야에서 미국의 우위는 제조업을 넘어 첨단 기술 산업에 대한 중국의 야망에 도전이 되고 있습니다. 이러한 도전에도 불구하고 많은 인구와 강력한 제조업 역량을 고려할 때 중국의 잠재력을 무시할 수 없습니다. 국내 소득이 증가하고 소비가 뒷받침된다면 중국은 내수를 통해 경제 발전을 견인할 수 있는 잠재력을 가지고 있습니다. 그러나 이러한 잠재력을 실현하기 위해서는 적절한 정치적 리더십이 필요합니다. 막대한 당원 기반을 가진 중국 공산당은 현재의 경제 상황을 인정하고 이를 해결하기 위한 전략을 수립해야 합니다. 중국에는 과거 경제 변혁을 촉진한 덩샤오핑과 같은 지도자가 필요합니다. 중국 경제에 대한 우려는 타당하지만, 양국의 경제적 상호의존성을 고려할 때 한국에 미칠 잠재적 영향도 우려할 만한 사안입니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "U-S-Credit-Rating-Do",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: U.S. Credit Rating Downgrade Sends Shockwaves Through Global Markets\ndescription: Financial markets around the world are reeling after the sovereign credit rating of the United States was downgraded, causing declines in stock markets and raising concerns about the future of the economy.\ncategory: World/International\nkeywords: 미국 신용등급 강등\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://image.imnews.imbc.com/replay/2023/nw930/article/__icsFiles/afieldfile/2023/08/03/0930_20230803_093536_1_4_Large.jpg\" alt=\"MBC뉴스\" />\n    <figcaption>\n        <h4> from MBC뉴스</h4>\n    </figcaption>\n</figure>\n\nFinancial markets around the world are reeling after the sovereign credit rating of the United States was downgraded, causing declines in stock markets and raising concerns about the future of the economy.\n\n## QnA\n\n\n<details>\n    <summary><b>0. What led to the downgrading of the U.S. credit rating?</b></summary>\n    Fitch cited the expected deterioration of the U.S. fiscal position over the next three years and the rising national debt burden as the reasons for the downgrade.\n</details>\n\n<details>\n    <summary><b>1. How are financial markets reacting to the downgrade?</b></summary>\n    Financial markets around the world are showing signs of unease, with Asian and European stocks falling. However, experts believe that the impact may not be as severe as in 2011 due to the robust growth of the U.S. economy.\n</details>\n\n<details>\n    <summary><b>2. What is the response from the White House and U.S. Treasury Secretary Janet Yellen?</b></summary>\n    Both the White House and U.S. Treasury Secretary Janet Yellen have expressed their disagreement with Fitch's decision, calling it arbitrary and based on outdated metrics.\n</details>\n\n\n## U.S. Credit Rating Downgrade Sends Shockwaves Through Global Markets\n\n_2023-08-03 - wikitoday_\n\nGlobal financial markets are in turmoil following the downgrading of the sovereign credit rating of the United States by Fitch Ratings. This comes after a day of losses in European and Asian markets, and stocks in New York have also taken a hit. The impact of the downgrade is significant, as it is the first time in 12 years that a major international rating agency has downgraded the U.S. sovereign rating.\n\n<figure>\n    <img src=\"https://cdn.mindlenews.com/news/thumbnail/202308/4446_11292_2019_v150.jpg\" alt=\"시민언론 민들레\" />\n    <figcaption>\n        <h4> from 시민언론 민들레</h4>\n    </figcaption>\n</figure>\n\nFitch cited the expected deterioration of the U.S. fiscal position and the rising national debt burden as reasons for the downgrade. Both the White House and U.S. Treasury Secretary Janet Yellen have expressed their disagreement with Fitch's decision, calling it arbitrary and based on outdated metrics. The downgrade has caused unease in financial markets worldwide, with Asian and European stocks falling. However, experts believe that the impact of the downgrade may not be as severe as in 2011, due to the robust growth of the U.S. economy.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: 美国信用评级下调引发全球市场震动\ndescription: 美国的主权信用评级被下调后，全球金融市场一片混乱，导致股市下跌，并引发了对未来经济的担忧。\ncategory: World/International\nkeywords: 미국 신용등급 강등\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://image.imnews.imbc.com/replay/2023/nw930/article/__icsFiles/afieldfile/2023/08/03/0930_20230803_093536_1_4_Large.jpg\" alt=\"MBC뉴스\" />\n    <figcaption>\n        <h4> from MBC뉴스</h4>\n    </figcaption>\n</figure>\n\n美国的主权信用评级被下调后，全球金融市场一片混乱，导致股市下跌，并引发了对未来经济的担忧。\n\n## QnA\n\n\n<details>\n    <summary><b>0. 是什么导致了美国信用评级的下调？</b></summary>\n    惠誉认为，未来三年美国财政状况的预期恶化和国债负担的上升是下调评级的原因。\n</details>\n\n<details>\n    <summary><b>1. 金融市场对降级有何反应？</b></summary>\n    全球金融市场出现了不安的迹象，亚洲和欧洲股市纷纷下跌。不过，专家认为，由于美国经济增长强劲，其影响可能不会像 2011 年那样严重。\n</details>\n\n<details>\n    <summary><b>2. 白宫和美国财政部长珍妮特-耶伦对此有何回应？</b></summary>\n    白宫和美国财政部长珍妮特-耶伦（Janet Yellen）都表示不同意惠誉的决定，称其武断且基于过时的衡量标准。\n</details>\n\n\n## 美国信用评级下调引发全球市场震动\n\n_2023-08-03 - wikitoday_\n\n惠誉国际评级公司（Fitch Ratings）下调美国主权信用评级后，全球金融市场陷入动荡。在此之前，欧洲和亚洲市场连日亏损，纽约股市也受到冲击。此次评级下调影响重大，因为这是 12 年来首次有大型国际评级机构下调美国主权评级。\n\n<figure>\n    <img src=\"https://cdn.mindlenews.com/news/thumbnail/202308/4446_11292_2019_v150.jpg\" alt=\"시민언론 민들레\" />\n    <figcaption>\n        <h4> from 시민언론 민들레</h4>\n    </figcaption>\n</figure>\n\n惠誉将美国财政状况的预期恶化和国债负担的上升作为降级的原因。白宫和美国财政部长珍妮特-耶伦都表示不同意惠誉的决定，称其武断且基于过时的衡量标准。评级下调引起了全球金融市场的不安，亚洲和欧洲股市纷纷下跌。不过，专家认为，由于美国经济增长强劲，降级的影响可能不会像2011年那么严重。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: 미국 신용등급 강등, 글로벌 시장에 충격파를 던지다\ndescription: 미국의 국가신용등급이 강등된 후 전 세계 금융시장이 요동치고 있으며, 이로 인해 주식시장이 하락하고 경제의 미래에 대한 우려가 커지고 있습니다.\ncategory: World/International\nkeywords: 미국 신용등급 강등\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://image.imnews.imbc.com/replay/2023/nw930/article/__icsFiles/afieldfile/2023/08/03/0930_20230803_093536_1_4_Large.jpg\" alt=\"MBC뉴스\" />\n    <figcaption>\n        <h4> from MBC뉴스</h4>\n    </figcaption>\n</figure>\n\n미국의 국가신용등급이 강등된 후 전 세계 금융시장이 요동치고 있으며, 이로 인해 주식시장이 하락하고 경제의 미래에 대한 우려가 커지고 있습니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 미국 신용 등급이 강등된 이유는 무엇인가요?</b></summary>\n    피치는 향후 3년간 미국의 재정 상태가 악화될 것으로 예상되는 점과 국가 부채 부담 증가를 신용등급 강등의 원인으로 꼽았습니다.\n</details>\n\n<details>\n    <summary><b>1. 금융 시장은 신용등급 강등에 어떻게 반응하고 있나요?</b></summary>\n    아시아 및 유럽 증시가 하락하는 등 전 세계 금융 시장이 불안한 조짐을 보이고 있습니다. 하지만 전문가들은 미국 경제의 견조한 성장으로 인해 2011년만큼의 충격은 없을 것으로 보고 있습니다.\n</details>\n\n<details>\n    <summary><b>2. 백악관과 재닛 옐런 미국 재무장관의 반응은 어떤가요?</b></summary>\n    백악관과 재닛 옐런 미국 재무장관은 피치의 결정이 자의적이고 시대에 뒤떨어진 지표에 근거한 것이라며 이에 동의하지 않는다는 입장을 표명했습니다.\n</details>\n\n\n## 미국 신용등급 강등, 글로벌 시장에 충격파를 던지다\n\n_2023-08-03 - wikitoday_\n\n국제 신용평가사 피치 레이팅스가 미국의 국가 신용등급을 강등하면서 글로벌 금융 시장이 혼란에 빠졌습니다. 유럽과 아시아 증시가 하루 만에 하락한 데 이어 뉴욕 증시도 타격을 입었습니다. 주요 국제 신용평가 기관이 미국의 국가 신용등급을 강등한 것은 12년 만에 처음 있는 일이기 때문에 이번 신용등급 강등의 영향은 상당합니다.\n\n<figure>\n    <img src=\"https://cdn.mindlenews.com/news/thumbnail/202308/4446_11292_2019_v150.jpg\" alt=\"시민언론 민들레\" />\n    <figcaption>\n        <h4> from 시민언론 민들레</h4>\n    </figcaption>\n</figure>\n\n피치는 미국 재정 상태의 예상되는 악화와 국가 부채 부담 증가를 신용등급 강등의 이유로 꼽았습니다. 백악관과 재닛 옐런 미국 재무장관은 피치의 결정이 자의적이고 시대에 뒤떨어진 지표를 근거로 한 것이라며 동의하지 않는다는 입장을 표명했습니다. 이번 신용등급 강등으로 아시아 및 유럽 증시가 하락하는 등 전 세계 금융 시장에 불안감이 확산되고 있습니다. 그러나 전문가들은 미국 경제의 견조한 성장으로 인해 이번 신용등급 강등의 영향이 2011년만큼 심각하지는 않을 것으로 보고 있습니다.\n\n_end_\n"
+      }
+    ]
+  },
+  {
+    "today": "2023-08-03",
+    "folder_name": "-GoDaddy4-influencer",
+    "mds": [
+      {
+        "language": "EN-US",
+        "md": "---\ntitle: 'GoDaddy4' influencer's ex-husband denies assault allegations\ndescription: The ex-husband of a popular social media influencer featured on the show 'GoDaddy4' has denied allegations of assault and abuse made by his ex-wife. In a video posted on his YouTube channel, he refuted the claims and stated his side of the story. The couple's divorce and ongoing custody battle have been highly publicized, leading to a heated online debate.\ncategory: Entertainment\nkeywords: 고딩엄빠 인플루언서\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: EN-US\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080315281096391_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\nThe ex-husband of a popular social media influencer featured on the show 'GoDaddy4' has denied allegations of assault and abuse made by his ex-wife. In a video posted on his YouTube channel, he refuted the claims and stated his side of the story. The couple's divorce and ongoing custody battle have been highly publicized, leading to a heated online debate.\n\n## QnA\n\n\n<details>\n    <summary><b>0. What were the allegations made by Ryu Hye-lin?</b></summary>\n    Ryu Hye-lin alleged that she was a victim of habitual drunkenness, assault, and verbal abuse by her ex-husband during their marriage.\n</details>\n\n<details>\n    <summary><b>1. What did Mr. A say in response to the allegations?</b></summary>\n    Mr. A denied the allegations and claimed that the broadcast was more interested in ratings than verifying the truth. He also stated that he was a victim of physical abuse himself.\n</details>\n\n<details>\n    <summary><b>2. What was the controversy surrounding their divorce?</b></summary>\n    The controversy involved issues of child support and accusations of infidelity. Ryu Hye-lin faced legal action from Mr. A after sharing details of their child support arrangement on social media.\n</details>\n\n<details>\n    <summary><b>3. What has been the reaction on social media?</b></summary>\n    The controversy has sparked intense debate, with supporters of both parties expressing their opinions online. Fans of Ryu Hye-lin have been targeting Mr. A with malicious comments.\n</details>\n\n\n## 'GoDaddy4' influencer's ex-husband denies assault allegations\n\n_2023-08-03 - wikitoday_\n\nThe ex-husband, referred to as Mr. A, responded to the accusations made by his ex-wife, Ryu Hye-lin, during her appearance on the show 'GoDaddy4'. Ryu Hye-lin alleged that she was a victim of habitual drunkenness, assault, and verbal abuse during their marriage, leading to their divorce. However, Mr. A claimed that the broadcast was more interested in ratings than verifying the truth. In his video, Mr. A stated that he was also a victim of physical abuse and provided details of the incidents. He described an instance where he threw a pillow at Ryu Hye-lin during an argument, resulting in a bruise on her knee. Mr. A also denied the allegations of habitual drinking and abusive behavior, stating that he hardly consumed alcohol after getting married.\n\n<figure>\n    <img src=\"https://biz.chosun.com/resizer/OzWm5zbHZgPosTTDyJbsKxtO7Vk=/650x341/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/3DGCCITC2SDZVH2H2HEZUAHUWI.jpg\" alt=\"조선비즈\" />\n    <figcaption>\n        <h4> from 조선비즈</h4>\n    </figcaption>\n</figure>\n\nRegarding their divorce, Mr. A mentioned that it was a mutual decision and questioned why he was labeled as unfaithful. He also addressed the issue of child support, stating that he has been making regular monthly payments. The controversy surrounding the couple's divorce and custody battle has sparked intense discussion on social media. Fans of Ryu Hye-lin, who has a large following as a social media influencer, have been bombarding Mr. A with malicious comments. Ryu Hye-lin, on the other hand, faced legal action from Mr. A after she shared details of their child support arrangement on social media. The conflicting accounts of both parties have further fueled the debate, with supporters taking sides and expressing their opinions online. The allegations of assault and abuse have raised important discussions about domestic violence and the challenges faced by victims.\n\n_end_\n"
+      },
+      {
+        "language": "ZH",
+        "md": "---\ntitle: GoDaddy4 '影响者的前夫否认袭击指控\ndescription: 在节目《GoDaddy4》中大受欢迎的社交媒体影响者的前夫否认了前妻对他的攻击和虐待指控。他在自己的 YouTube 频道上发布了一段视频，驳斥了这些指控，并陈述了自己的观点。这对夫妇的离婚和正在进行的监护权争夺战一直备受关注，引发了激烈的网络讨论。\ncategory: Entertainment\nkeywords: 고딩엄빠 인플루언서\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: ZH\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080315281096391_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\n在节目《GoDaddy4》中大受欢迎的社交媒体影响者的前夫否认了前妻对他的攻击和虐待指控。他在自己的 YouTube 频道上发布了一段视频，驳斥了这些指控，并陈述了自己的观点。这对夫妇的离婚和正在进行的监护权争夺战一直备受关注，引发了激烈的网络讨论。\n\n## QnA\n\n\n<details>\n    <summary><b>0. 柳惠琳的指控是什么？</b></summary>\n    Ryu Hye-lin 声称，她是其前夫在婚姻存续期间习惯性酗酒、殴打和辱骂的受害者。\n</details>\n\n<details>\n    <summary><b>1. A 先生是如何回应这些指控的？</b></summary>\n    A 先生否认了这些指控，并声称广播公司更关心的是收视率，而不是核实真相。他还表示，他本人也是身体虐待的受害者。\n</details>\n\n<details>\n    <summary><b>2. 围绕他们离婚的争议是什么？</b></summary>\n    争议涉及子女抚养费问题和出轨指控。Ryu Hye-lin 在社交媒体上分享了他们的子女抚养费安排细节后，面临 A 先生的法律诉讼。\n</details>\n\n<details>\n    <summary><b>3. 社交媒体上的反应如何？</b></summary>\n    这一争议引发了激烈的讨论，双方的支持者都在网上表达了自己的观点。Ryu Hye-lin 的粉丝针对 A 先生发表了恶意评论。\n</details>\n\n\n## GoDaddy4 '影响者的前夫否认袭击指控\n\n_2023-08-03 - wikitoday_\n\n被称为 A 先生的前夫对前妻 Ryu Hye-lin 在参加节目《GoDaddy4》时提出的指控做出了回应。Ryu Hye-lin 声称，她在婚姻存续期间是习惯性酗酒、殴打和辱骂的受害者，导致他们离婚。然而，A 先生声称，广播公司更关心的是收视率，而不是核实真相。在视频中，A 先生说他也是身体虐待的受害者，并提供了事件的细节。他描述了自己在一次争吵中向柳惠琳扔枕头，导致她膝盖瘀伤的事件。A 先生还否认了习惯性饮酒和虐待行为的指控，称他在结婚后几乎不饮酒。\n\n<figure>\n    <img src=\"https://biz.chosun.com/resizer/OzWm5zbHZgPosTTDyJbsKxtO7Vk=/650x341/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/3DGCCITC2SDZVH2H2HEZUAHUWI.jpg\" alt=\"조선비즈\" />\n    <figcaption>\n        <h4> from 조선비즈</h4>\n    </figcaption>\n</figure>\n\n关于他们的离婚，A 先生提到这是双方共同的决定，并质疑为什么他被贴上了不忠的标签。他还谈到了孩子的抚养费问题，并表示自己一直按月定期支付抚养费。围绕这对夫妇离婚和抚养权争夺的争议在社交媒体上引发了激烈的讨论。在社交媒体上拥有众多粉丝的柳惠琳的粉丝们对 A 先生进行了恶意评论。另一方面，Ryu Hye-lin 在社交媒体上分享了他们的子女抚养安排细节后，面临着 A 先生的法律诉讼。双方相互矛盾的说法进一步加剧了争论，支持者们纷纷在网上站队并表达自己的观点。关于攻击和虐待的指控引发了关于家庭暴力和受害者所面临挑战的重要讨论。\n\n_end_\n"
+      },
+      {
+        "language": "KO",
+        "md": "---\ntitle: '고대디4' 인플루언서의 전남편이 폭행 혐의를 부인했습니다.\ndescription: 쇼 '고대디4'에 출연한 인기 소셜 미디어 인플루언서의 전남편이 전처의 폭행 및 학대 혐의를 부인했습니다. 그는 자신의 유튜브 채널에 올린 동영상에서 이러한 주장을 반박하고 자신의 입장을 밝혔습니다. 이 부부의 이혼과 현재 진행 중인 양육권 싸움이 크게 알려지면서 온라인에서 열띤 논쟁이 벌어지고 있습니다.\ncategory: Entertainment\nkeywords: 고딩엄빠 인플루언서\ndate: \"2023-08-03\"\nauthor: wikitoday.io\nlanguage: KO\n---\n\n# Summary\n\n<figure>\n    <img src=\"https://thumb.mt.co.kr/21/2023/08/2023080315281096391_1.jpg\" alt=\"머니투데이\" />\n    <figcaption>\n        <h4> from 머니투데이</h4>\n    </figcaption>\n</figure>\n\n쇼 '고대디4'에 출연한 인기 소셜 미디어 인플루언서의 전남편이 전처의 폭행 및 학대 혐의를 부인했습니다. 그는 자신의 유튜브 채널에 올린 동영상에서 이러한 주장을 반박하고 자신의 입장을 밝혔습니다. 이 부부의 이혼과 현재 진행 중인 양육권 싸움이 크게 알려지면서 온라인에서 열띤 논쟁이 벌어지고 있습니다.\n\n## QnA\n\n\n<details>\n    <summary><b>0. 류혜린 씨가 제기한 의혹은 무엇인가요?</b></summary>\n    류혜린은 결혼 생활 중 전남편으로부터 상습적인 음주와 폭행, 폭언의 피해를 입었다고 주장했습니다.\n</details>\n\n<details>\n    <summary><b>1. A씨는 이 혐의에 대해 어떤 입장을 밝혔나요?</b></summary>\n    A씨는 혐의를 부인하며 방송이 진실 확인보다 시청률에 더 관심이 있다고 주장했습니다. 또한 자신도 신체적 학대의 피해자였다고 진술했습니다.\n</details>\n\n<details>\n    <summary><b>2. 두 사람의 이혼을 둘러싼 논란은 무엇이었나요?</b></summary>\n    이 논란에는 양육비 문제와 외도 의혹이 얽혀 있었습니다. 류혜린은 양육비 합의 내용을 SNS에 공개한 후 A씨로부터 법적 조치를 당했습니다.\n</details>\n\n<details>\n    <summary><b>3. 소셜 미디어의 반응은 어땠나요?</b></summary>\n    이 논란은 양측 지지자들이 온라인에서 각자의 의견을 표출하며 격렬한 논쟁을 불러일으켰습니다. 류혜린의 팬들은 악성 댓글로 A씨를 공격하고 있습니다.\n</details>\n\n\n## '고대디4' 인플루언서의 전남편이 폭행 혐의를 부인했습니다.\n\n_2023-08-03 - wikitoday_\n\nA씨로 지목된 전남편은 전처 류혜린이 '고대디4' 출연 당시 제기한 의혹에 대해 반박했습니다. 류혜린은 결혼 생활 중 상습적인 음주와 폭행, 폭언의 피해자였고, 이로 인해 이혼에 이르렀다고 주장했습니다. 하지만 A씨는 방송이 진실 확인보다 시청률에 더 관심이 있다고 주장했습니다. A씨는 영상에서 자신도 신체적 폭력의 피해자라고 밝히며 사건의 구체적인 정황을 제시했습니다. 그는 말다툼 중 류혜린에게 베개를 던져 무릎에 멍이 들게 한 사례를 설명했습니다. 또한 A씨는 결혼 후 술을 거의 마시지 않는다며 상습 음주 및 폭력 혐의를 부인했다.\n\n<figure>\n    <img src=\"https://biz.chosun.com/resizer/OzWm5zbHZgPosTTDyJbsKxtO7Vk=/650x341/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/3DGCCITC2SDZVH2H2HEZUAHUWI.jpg\" alt=\"조선비즈\" />\n    <figcaption>\n        <h4> from 조선비즈</h4>\n    </figcaption>\n</figure>\n\n이혼에 대해 A씨는 서로의 결정이었다고 말하며 왜 자신이 불성실한 사람으로 분류되는지 의문을 제기했습니다. 또한 양육비 문제도 언급하며 매달 정기적으로 지급하고 있다고 말했습니다. 두 사람의 이혼과 양육권 분쟁을 둘러싼 논란은 소셜 미디어에서 격렬한 논쟁을 불러일으켰습니다. 소셜 미디어 인플루언서로 많은 팔로워를 보유한 류혜린의 팬들은 A씨에게 악성 댓글을 쏟아내고 있다. 반면 류혜린은 양육비 합의 내용을 SNS에 공유한 후 A씨로부터 법적 조치를 당했습니다. 양측의 상반된 주장에 지지자들은 온라인을 통해 어느 한쪽 편을 들며 의견을 표출하는 등 논쟁은 더욱 가열되고 있습니다. 폭행 및 학대 혐의는 가정 폭력과 피해자가 직면한 어려움에 대한 중요한 논의를 불러일으켰습니다.\n\n_end_\n"
+      }
+    ]
+  }
+]

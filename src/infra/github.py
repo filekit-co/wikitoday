@@ -33,7 +33,7 @@ headers = {
     "Authorization": f"Bearer {token}"
 }
 
-async def create_blob(client: httpx.AsyncClient, content: str):
+async def create_blob(client: httpx.AsyncClient, content: str, path: str) -> tuple[str, str]:
     payload = {
         "content": base64.b64encode(content.encode()).decode(),
         "encoding": "base64"
@@ -41,7 +41,7 @@ async def create_blob(client: httpx.AsyncClient, content: str):
     try:
         response = await client.post(blob_url, headers=headers, data=json.dumps(payload))
         response.raise_for_status()
-        return response.json()["sha"]
+        return (response.json()["sha"], path)
     except httpx.HTTPStatusError as e:
         logging.error(f"An error occurred while creating blob: {e}")
         logging.error(f"Error message: {e.response.text}")
@@ -121,9 +121,10 @@ async def push_folders(folders: List[Folder], country: TargetCountryCode):
         for folder in folders:
             for markdown in folder.mds:
                 path = f'{base_path}/{folder.today}/{folder.folder_name}/{markdown.language}.md'
-                tasks.append(create_blob(client, markdown.md))
+                tasks.append(create_blob(client, markdown.md, path))
         blob_shas = await asyncio.gather(*tasks)
-        for sha in blob_shas:
+
+        for sha, path in blob_shas:
             new_tree.append({
                 "path": path,
                 "mode": GIT_REGULAR_FILE_TYPE,  # This is the file_mode
