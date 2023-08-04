@@ -111,6 +111,9 @@ class Language(StrEnum):
         if exclude_en:
             return langs[1:]
         return langs
+    
+    def __repr__(self):
+        return "%s" % (self._value_, )
 
 
 @dataclass
@@ -226,6 +229,3 @@ class Folder:
     today: date
     folder_name: str # create_url_path (max 20 char)
     mds: List[Markdown]
-
-    def __post_init__(self):
-        self.mds = [Markdown(**md) for md in self.mds]
