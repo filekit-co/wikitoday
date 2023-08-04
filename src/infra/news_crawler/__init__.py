@@ -1,4 +1,5 @@
 import datetime
+import logging
 import urllib
 from typing import Dict, List
 
@@ -56,29 +57,37 @@ async def _from_html(html, url=None, download_date=None, fetch_images=True) -> N
     :param url:
     :return:
     """
-    extractor = Extractor()
-    title_encoded = "".encode()
-    if not url:
-        url = ""
-    # if an url was given, we can use that as the filename
-    filename = urllib.parse.quote_plus(url) + ".json"
-    item = NewscrawlerItem()
-    item["spider_response"] = DotMap()
-    item["spider_response"].body = html
-    item["url"] = url
-    item["source_domain"] = (
-        urllib.parse.urlparse(url).hostname.encode() if url != "" else "".encode()
-    )
-    item["html_title"] = title_encoded
-    item["rss_title"] = title_encoded
-    item["local_path"] = None
-    item["filename"] = filename
-    item["download_date"] = download_date
-    item["modified_date"] = None
-    item = extractor.extract(item)
-    tmp_article = ExtractedInformationStorage.extract_relevant_info(item)
-    final_article = ExtractedInformationStorage.convert_to_class(tmp_article)
-    return final_article
+    try: 
+        extractor = Extractor()
+        title_encoded = "".encode()
+        if not url:
+            url = ""
+        # if an url was given, we can use that as the filename
+        filename = urllib.parse.quote_plus(url) + ".json"
+        item = NewscrawlerItem()
+        item["spider_response"] = DotMap()
+        item["spider_response"].body = html
+        item["url"] = url
+        item["source_domain"] = (
+            urllib.parse.urlparse(url).hostname.encode() if url != "" else "".encode()
+        )
+        item["html_title"] = title_encoded
+        item["rss_title"] = title_encoded
+        item["local_path"] = None
+        item["filename"] = filename
+        item["download_date"] = download_date
+        item["modified_date"] = None
+        
+        item = extractor.extract(item)
+        tmp_article = ExtractedInformationStorage.extract_relevant_info(item)
+        final_article = ExtractedInformationStorage.convert_to_class(tmp_article)
+        return final_article
+    except Exception as e:
+        logging.exception(e)
+        logging.error(url)
+        if item:
+            logging.error(item)
+        return None
 
     
 async def _from_urls(urls, timeout=None) -> Dict[str, NewsArticle]:
@@ -101,5 +110,7 @@ async def _from_urls(urls, timeout=None) -> Dict[str, NewsArticle]:
     else:
         results = await SimpleCrawler.fetch_urls(urls)
         for url, html in results.items():
+            if not html: continue
             results[url] = await _from_html(html, url, download_date)
-    return results
+    return {k: v for k, v in results.items() if v}
+
