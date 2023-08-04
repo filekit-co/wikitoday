@@ -5,16 +5,16 @@ from domain.entities import Article, Folder, Markdown
 from jinja2 import Template
 
 _markdown_template = """---
-title: {{ content.title }}
-description: {{ content.lead }}
-category: {{ category }}
-keywords: {{ keywords }}
-date: "{{ date }}"
-author: wikitoday.io
-language: {{ content.language }}
+title: '{{ content.title }}'
+description: '{{ content.lead }}'
+category: '{{ category }}'
+keywords: '{{ keywords }}'
+date: '{{ date }}'
+author: 'wikitoday.io'
+language: '{{ content.language }}'
 ---
 
-# Summary
+## Summary
 
 <figure>
     <img src="{{ images[0].url }}" alt="{{ images[0].source }}" />
@@ -67,9 +67,9 @@ def to_folders(articles: List[Article]) -> List[Folder]:
                 md = ARTICLE_TEMPLATE.render({
                     "category": article.category,
                     "keywords": article.keywords,
+                    "images": article.images,                    
                     "content": content,
                     "date": today,
-                    "images": article.images,
                     "qna": enumerate(content.qna_list)
                 })
             )
@@ -82,7 +82,3 @@ def to_folders(articles: List[Article]) -> List[Folder]:
             )
         )
     return folders
-
-
-
-

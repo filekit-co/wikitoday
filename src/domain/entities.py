@@ -3,7 +3,7 @@ from datetime import date
 from enum import StrEnum
 from typing import Dict, List, Optional
 
-from utils import create_url_path, split_sentences
+from utils import create_url_path, reformat_yaml, split_sentences
 
 
 ### Step 1
@@ -146,12 +146,18 @@ class ArticleContent:
     @staticmethod
     def from_list(data: List[str], language: Language):
         qna = data[4:]
-        qna_list = [QnA(qna[i], qna[i+1]) for i in range(0, len(qna), 2)]
+        qna_list = [
+            QnA(
+                reformat_yaml(qna[i]), 
+                reformat_yaml(qna[i+1])
+            ) 
+            for i in range(0, len(qna), 2)
+        ]
         return ArticleContent(
-            title=data[0],
-            lead=data[1],
-            body1=data[2],
-            body2=data[3],
+            title=reformat_yaml(data[0]),
+            lead=reformat_yaml(data[1]),
+            body1=reformat_yaml(data[2]),
+            body2=reformat_yaml(data[3]),
             qna_list = qna_list,
             language=language
         )
@@ -190,8 +196,8 @@ class Article:
             )
         ]
         return cls(
-            category=category,
-            keywords=tct.str_keywords,
+            category=reformat_yaml(category),
+            keywords=reformat_yaml(tct.str_keywords),
             contents=contents,
             images=tct.images
         )
@@ -208,7 +214,6 @@ class Article:
         )
 
 
-
 ### Step 6
 
 @dataclass
@@ -221,3 +226,6 @@ class Folder:
     today: date
     folder_name: str # create_url_path (max 20 char)
     mds: List[Markdown]
+
+    def __post_init__(self):
+        self.mds = [Markdown(**md) for md in self.mds]

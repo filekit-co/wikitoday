@@ -25,7 +25,13 @@ def split_sentences(text: str) -> List[str]:
 
 def create_url_path(title: str, max_length: int = 20) -> str:
     # 알파벳과 숫자만 남기고 모두 제거합니다. 공백은 하이픈('-')으로 변경합니다.
-    cleaned_title = re.sub(r'\W+', ' ', title).replace(' ', '-')
+    
+    cleaned_title = re.sub(
+        pattern = r'\W+',
+        repl = ' ', 
+        string = title.strip()
+    ).replace(' ', '-')
+    
     # 최대 길이를 초과하는 경우 문자열을 잘라냅니다.
     if len(cleaned_title) > max_length:
         cleaned_title = cleaned_title[:max_length]
@@ -46,3 +52,10 @@ class TermColors(StrEnum):
 
 def color_print(text: str, color = TermColors.OKGREEN):
     print(color + text + TermColors.ENDC)
+
+
+# to use single quote string
+# https://yaml.org/spec/1.2.2/#732-single-quoted-style
+def reformat_yaml(text: str) -> str:
+    # i.g Minwook's -> Minwook''s
+    return text.replace("'", "''")
