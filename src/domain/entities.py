@@ -58,7 +58,7 @@ class TranslatedCrawledTrend:
 
     @property
     def str_keywords(self):
-        return ','.join(self.keywords)
+        return ', '.join(self.keywords)
     
 
     @classmethod

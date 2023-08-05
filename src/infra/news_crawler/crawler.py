@@ -8,7 +8,7 @@ from infra.news_crawler.decoder import decode_response
 
 MAX_FILE_SIZE = 20000000
 MIN_FILE_SIZE = 10
-LOGGER = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 # customize headers
 HEADERS = {
@@ -60,17 +60,20 @@ class SimpleCrawler:
         html_str = None
         try:
             async with httpx.AsyncClient(timeout=timeout, verify=False, headers=HEADERS) as client:
-                response = await client.get(url)
+                response = await client.get(url, follow_redirects=True)
+                response.raise_for_status()
         except (httpx.InvalidURL, httpx.RequestError):
-            LOGGER.error('malformed URL: %s', url)
+            logger.error('malformed URL: %s', url)
+        except httpx.HTTPStatusError as e:
+            logger.error(e)
         else:
             # safety checks
-            if response.status_code != 200:
-                LOGGER.error('not a 200 response: %s', response.status_code)
-            elif response.text is None or len(response.text) < MIN_FILE_SIZE:
-                LOGGER.error('too small/incorrect: %s %s', url, len(response.text))
+            if response.text is None or len(response.text) < MIN_FILE_SIZE:
+                logger.error('too small/incorrect: %s %s', url, len(response.text))
             elif len(response.text) > MAX_FILE_SIZE:
-                LOGGER.error('too large: %s %s', url, len(response.text))
+                logger.error('too large: %s %s', url, len(response.text))
+            # if response.status_code not in (200, 302):
+                # TODO: handle redirect
             else:
                 html_str = decode_response(response)
         return (url, html_str)

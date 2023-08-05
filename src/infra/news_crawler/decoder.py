@@ -3,7 +3,7 @@ import logging
 
 import chardet
 
-LOGGER = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 def _isutf8(data):
@@ -23,7 +23,7 @@ def _detect_encoding(bytesobject):
         return 'UTF-8'
     else:
         guess = chardet.detect(bytesobject)
-        LOGGER.debug('guessed encoding: %s', guess['encoding'])
+        logger.debug('guessed encoding: %s', guess['encoding'])
         return guess['encoding']
     # fallback on full response
     # if guess is None or guess['encoding'] is None: # or guess['confidence'] < 0.99:
@@ -35,13 +35,13 @@ def _detect_encoding(bytesobject):
 def decode_response(response):
     """Read the first chunk of server response and decode it"""
     guessed_encoding = _detect_encoding(response.content)
-    LOGGER.debug('response/guessed encoding: %s / %s', response.encoding, guessed_encoding)
+    logger.debug('response/guessed encoding: %s / %s', response.encoding, guessed_encoding)
     # process
     if guessed_encoding is not None:
         try:
             htmltext = response.content.decode(guessed_encoding)
         except UnicodeDecodeError:
-            LOGGER.warning('encoding error: %s / %s', response.encoding, guessed_encoding)
+            logger.warning('encoding error: %s / %s', response.encoding, guessed_encoding)
             htmltext = response.text
     else:
         htmltext = response.text
