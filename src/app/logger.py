@@ -47,6 +47,7 @@ class ColoredFormatter(logging.Formatter):
 
 
 def setup_logger(app_level: str):
+    [logging.getLogger(name).handlers.clear() for name in logging.root.manager.loggerDict]
     log_level = LogLevel.get_log_level(app_level)
     
     if log_level not in LogLevel:
@@ -77,6 +78,7 @@ def setup_logger(app_level: str):
 @lru_cache(maxsize=None)
 def get_colored_logger(name) -> logging.Logger:
     logger = logging.getLogger(name)
+    # logger.handlers = []  # Remove all handlers
     handler = logging.StreamHandler()
     handler.setFormatter(ColoredFormatter())
     logger.addHandler(handler)
