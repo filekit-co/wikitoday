@@ -94,7 +94,6 @@ def to_folders(articles: List[Article], article_date: Optional[date] = None) -> 
             except TemplateError as e:
                 logger.error(e)
                 logger.error(content)
-                continue
 
         folders.append(
             Folder(

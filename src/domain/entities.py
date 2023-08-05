@@ -148,6 +148,9 @@ class ArticleContent:
     
     @staticmethod
     def from_list(data: List[str], language: Language):
+        if data is None:
+            raise ValueError("Data cannot be None")
+
         qna = data[4:]
         qna_list = [
             QnA(
@@ -190,8 +193,8 @@ class Article:
         qna_list= [QnA(question=qna['question'], answer=qna['answer']) for qna in ai_data['qna']]
         contents = [
             ArticleContent(
-                title = ai_data['title'],
-                lead = ai_data['lead'],
+                title = reformat_yaml(ai_data['title']),
+                lead = reformat_yaml(ai_data['lead']),
                 body1 = body1,
                 body2 = body2,
                 qna_list = qna_list,
@@ -229,3 +232,4 @@ class Folder:
     today: date
     folder_name: str # create_url_path (max 20 char)
     mds: List[Markdown]
+

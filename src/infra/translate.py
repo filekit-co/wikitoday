@@ -13,6 +13,8 @@ logger = logging.getLogger(__name__)
 
 _cfg = get_env()
 DEEPL_API_KEY = _cfg["DEEPL_API_KEY"]
+# FREE_DEEPL_URL = 'https://api-free.deepl.com/v2/translate'
+PRO_DEEPL_URL = 'https://api.deepl.com/v2/translate'
 
 async def translate_text(client: httpx.AsyncClient, texts: List[str], target_lang: Language = Language.EN_US) -> dict:
     """
@@ -34,7 +36,7 @@ async def translate_text(client: httpx.AsyncClient, texts: List[str], target_lan
     ]
     }
     """
-    url = 'https://api-free.deepl.com/v2/translate'
+    
     headers = {
         'Authorization': f'DeepL-Auth-Key {DEEPL_API_KEY}',
         'Content-Type': 'application/json',
@@ -44,9 +46,9 @@ async def translate_text(client: httpx.AsyncClient, texts: List[str], target_lan
         'target_lang': target_lang
     }
     try:
-        response = await client.post(url, headers=headers, data=json.dumps(data))
+        response = await client.post(PRO_DEEPL_URL, headers=headers, data=json.dumps(data))
         response.raise_for_status()
-    except httpx.HTTPStatusError as e:
+    except Exception as e:
         logger.error(f"An error occurred: {e}")
         logger.error(f"given texts: {texts}")
         logger.error(f"Error message: {e.response.text}")
@@ -86,14 +88,19 @@ async def translate_articles(articles: List[Article]):
             for i, article in enumerate(articles)
             for target_lang in Language.target_languages()
         ]
-        # Unpack the article and its associated translation task
         tasks = {key: task for key, task in tasks}
-        # Gather the results, keeping track of which article each one is associated with
-        responses = {
-            key: await task for key, task in tasks.items()
-        }
-    
-    for (i, target_lang), response in responses.items():
-        articles[i].append_translation(response, target_lang)
-    
+        responses = await asyncio.gather(
+            *(task for task in tasks.values()), 
+            return_exceptions=True
+        )
+
+    for (i, target_lang), response in zip(tasks.keys(), responses):
+        if response is None: 
+            continue
+        
+        try:
+            articles[i].append_translation(response, target_lang)
+        except Exception as e:
+            logger.error(f"Error during appending translation: {e}, Params: {(i, target_lang)}")
+        
     return articles
