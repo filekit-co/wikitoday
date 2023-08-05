@@ -23,9 +23,9 @@ language: '{{ content.language }}'
 
 {% if images|length > 0 %}
 <figure>
-    <img src="{{ images[0].url }}" alt="{{ images[0].source }}" />
+    <img src="{{ images[0].url | e }}" alt="{{ images[0].source | e }}" />
     <figcaption>
-        <h4> from {{ images[0].source }}</h4>
+        <h4> from {{ images[0].source | e }}</h4>
     </figcaption>
 </figure>
 {% endif %}
@@ -37,8 +37,8 @@ language: '{{ content.language }}'
 
 {% for i, qna in qna %}
 <details>
-    <summary><b>{{ i }}. {{ qna.question }}</b></summary>
-    {{ qna.answer }}
+    <summary><b>{{ i }}. {{ qna.question | e }}</b></summary>
+    {{ qna.answer | e }}
 </details>
 {% endfor %}
 {% endif %}
@@ -51,9 +51,9 @@ _{{ date }} - wikitoday_
 
 {% if images|length > 1 %}
 <figure>
-    <img src="{{ images[1].url }}" alt="{{ images[1].source }}" />
+    <img src="{{ images[1].url | e }}" alt="{{ images[1].source | e }}" />
     <figcaption>
-        <h4> from {{ images[1].source }}</h4>
+        <h4> from {{ images[1].source | e }}</h4>
     </figcaption>
 </figure>
 {% endif %}
