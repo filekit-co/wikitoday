@@ -113,8 +113,7 @@ class Language(StrEnum):
         return langs
     
     def __repr__(self):
-        return "%s" % (self._value_, )
-
+        return self._value_
 
 @dataclass
 class QnA:
