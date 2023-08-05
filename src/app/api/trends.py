@@ -1,5 +1,5 @@
 import logging
-from pprint import pprint
+import pprint
 from typing import Any, Callable
 
 from fastapi import APIRouter
@@ -20,10 +20,11 @@ logger = logging.getLogger(__name__)
 colored = get_colored_logger(__name__)
 
 async def perform_step(step_number: int, func: Callable, *args, **kwargs) -> Any:
-    colored.debug(f"########## Step {step_number}: {func.__name__}")
+    colored.info(f"########## Step {step_number}: {func.__name__}")
     result = await func(*args, **kwargs)
-    logger.debug(f'step{step_number} = {pprint.pformat(result)}')
+    logger.info(f'step{step_number} = {pprint.pformat(result)}')
     return result
+
 
 
 @router.get("/")
