@@ -16,9 +16,9 @@ class LogLevel(Enum, metaclass=EnumContainsMeta):
     @staticmethod
     def get_log_level(env_level: str):
         if env_level.lower() == 'dev':
-            return LogLevel.DEBUG
-        else:
             return LogLevel.INFO
+        else:
+            return LogLevel.WARNING
 
 class TermColors(str, Enum):
     HEADER = '\033[95m'
