@@ -11,6 +11,7 @@ from consts import GPT_MODEL
 from domain.entities import TranslatedCrawledTrend
 from src.domain.entities import Article
 
+logger = logging.getLogger(__name__)
 _env = get_env()
 OPENAI_API_KEY = _env["OPENAI_API_KEY"]
 openai.api_key = OPENAI_API_KEY
@@ -113,8 +114,8 @@ async def _regenerate(trend: TranslatedCrawledTrend):
         article = json.loads(function_call.arguments)
         return Article.from_dto(trend, article)
     except Exception as e:
-        logging.error(response) # TODO: delete it
-        logging.error(f"An error occurred while generating article for trend\n\n {trend} \n\n{e}")
+        logger.error(response)
+        logger.error(f"An error occurred while generating article for trend\n\n {trend} \n\n{e}")
         return None
 
 

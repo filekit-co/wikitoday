@@ -6,6 +6,8 @@ from domain.entities import Article, Folder, Markdown
 from jinja2 import Template
 from jinja2.exceptions import TemplateError
 
+logger = logging.getLogger(__name__)
+
 _markdown_template = """---
 title: '{{ content.title }}'
 description: '{{ content.lead }}'
@@ -90,8 +92,8 @@ def to_folders(articles: List[Article], article_date: Optional[date] = None) -> 
                 )
                 markdowns.append(markdown)
             except TemplateError as e:
-                logging.error(e)
-                logging.error(content)
+                logger.error(e)
+                logger.error(content)
                 continue
 
         folders.append(

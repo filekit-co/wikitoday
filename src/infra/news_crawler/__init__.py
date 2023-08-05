@@ -11,6 +11,7 @@ from infra.news_crawler.extractor import Extractor
 from infra.news_crawler.models import NewsArticle
 from infra.news_crawler.storage import ExtractedInformationStorage
 
+logger = logging.getLogger(__name__)
 
 async def from_trends(trends: List[GoogleTrend], timeout=None) -> List[CrawledTrend]:
     urls = [
@@ -83,10 +84,10 @@ async def _from_html(html, url=None, download_date=None, fetch_images=True) -> N
         final_article = ExtractedInformationStorage.convert_to_class(tmp_article)
         return final_article
     except Exception as e:
-        logging.exception(e)
-        logging.error(url)
+        logger.exception(e)
+        logger.error(f'given url: {url}')
         if item:
-            logging.error(item)
+            logger.error(f'five item: {item}')
         return None
 
     

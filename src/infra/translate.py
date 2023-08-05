@@ -6,9 +6,10 @@ from typing import List
 import httpx
 
 from app.config import get_env
-from app.exceptions import TranslationError
 from domain.entities import (Article, CrawledTrend, Language,
                              TranslatedCrawledTrend)
+
+logger = logging.getLogger(__name__)
 
 _cfg = get_env()
 DEEPL_API_KEY = _cfg["DEEPL_API_KEY"]
@@ -46,9 +47,9 @@ async def translate_text(client: httpx.AsyncClient, texts: List[str], target_lan
         response = await client.post(url, headers=headers, data=json.dumps(data))
         response.raise_for_status()
     except httpx.HTTPStatusError as e:
-        logging.error(f"An error occurred: {e}")
-        logging.error(f"given texts: {texts}")
-        logging.error(f"Error message: {e.response.text}")
+        logger.error(f"An error occurred: {e}")
+        logger.error(f"given texts: {texts}")
+        logger.error(f"Error message: {e.response.text}")
         return None
     
     translated = response.json()

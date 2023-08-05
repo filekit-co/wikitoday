@@ -10,6 +10,7 @@ from app.config import get_env
 from domain.entities import Folder
 from src.consts import TargetCountryCode
 
+logger = logging.getLogger(__name__)
 _env = get_env()
 
 # git file mode, the number 100644 means that this is a regular file

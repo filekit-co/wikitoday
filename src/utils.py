@@ -1,6 +1,6 @@
 import re
 from dataclasses import fields
-from enum import StrEnum
+from enum import EnumMeta, StrEnum
 from pprint import pprint
 from typing import Dict, List, Type, TypeVar
 from urllib.parse import quote
@@ -38,23 +38,19 @@ def create_url_path(title: str, max_length: int = 20) -> str:
     url_path = quote(cleaned_title)
     return url_path
 
-class TermColors(StrEnum):
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-def color_print(text: str, color = TermColors.OKGREEN):
-    print(color + text + TermColors.ENDC)
-
 
 # to use single quote string
 # https://yaml.org/spec/1.2.2/#732-single-quoted-style
 def reformat_yaml(text: str) -> str:
     # i.g Minwook's -> Minwook''s
     return text.replace("'", "''")
+
+class EnumContainsMeta(EnumMeta):
+
+    def __contains__(self, other):
+        try:
+            self(other)
+        except ValueError:
+            return False
+        else:
+            return True

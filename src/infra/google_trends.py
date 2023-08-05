@@ -116,9 +116,10 @@ async def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
     params = {
             'hl': meta_language,
             'geo': country,
-            'ed': date,
             'ns': '15',
             }
+    if date:
+        params['ed'] = date
     
     async with httpx.AsyncClient() as client:
         r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)

@@ -8,3 +8,7 @@ load_dotenv()
 def get_env():
     return dotenv_values()
 
+
+def get_app_level() -> str:
+    _env = get_env()
+    return _env['APP_LEVEL']
