@@ -170,6 +170,8 @@ class ArticleContent:
 
 @dataclass
 class Article:
+    NUM_PARAGRAPH_SENTENCES = 3
+
     category: str
     keywords: str
     contents: List[ArticleContent]
@@ -184,10 +186,20 @@ class Article:
     def from_dto(cls, tct: TranslatedCrawledTrend, ai_data: Dict[str, str]):
         category = ai_data.pop('category')
         
-        paragraphs: List[str] = split_sentences(ai_data['body'])
-        n = len(paragraphs) // 2
-        body1 = ' '.join(paragraphs[:n])
-        body2 = ' '.join(paragraphs[n:])
+        sentences: List[str] = split_sentences(ai_data['body'])
+
+        if len(sentences) >= Article.NUM_PARAGRAPH_SENTENCES:
+            paragraphs = [
+                ' '.join(sentences[i:i+Article.NUM_PARAGRAPH_SENTENCES]) + '\n\n' 
+                for i in range(0, len(sentences), Article.NUM_PARAGRAPH_SENTENCES)
+            ]
+
+            n = len(paragraphs) // 2
+            body1 = ' '.join(paragraphs[:n])
+            body2 = ' '.join(paragraphs[n:])
+        else:
+            body1 = ' '.join(sentences)
+            body2 = ''
 
         qna_list= [QnA(question=qna['question'], answer=qna['answer']) for qna in ai_data['qna']]
         contents = [
