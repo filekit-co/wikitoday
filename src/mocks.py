@@ -6,102 +6,218 @@ from domain.entities import (Article, ArticleContent, ArticleImage,
                              TrendArticleMeta)
 
 ######################### STEP 1 ##########################
-step_1 = [GoogleTrend(query='잼버리',
-             related_quries=['잼버리 대회', '새만금', '새만금 잼버리', '잼버리 여가부'],
-             articles=[TrendArticleMeta(url='https://www.mindlenews.com/news/articleView.html?idxno=4464',
-                                        source='시민언론 민들레'),
-                       TrendArticleMeta(url='http://www.monews.co.kr/news/articleView.html?idxno=325623',
-                                        source='메디칼업저버')]),
- GoogleTrend(query='임지연',
+step1 = [GoogleTrend(query='Kai Cenat',
+             related_quries=['Union Square', 'Union Square Park', 'New York'],
+             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/twitch-influencer-kai-cenat-custody-console-giveaway-causes-chaos-new-rcna98256',
+                                        source='NBC News'),
+                       TrendArticleMeta(url='https://www.cnn.com/2023/08/04/us/kai-cenat-union-square-nyc-crowds/index.html',
+                                        source='CNN')]),
+ GoogleTrend(query='Mega Millions drawing',
+             related_quries=['mega millions drawing tonight',
+                             'mega millions numbers',
+                             'Mega Millions results'],
+             articles=[TrendArticleMeta(url='https://abcnews.go.com/US/mega-millions-jackpot-climbs-125-billion-ahead-friday/story?id=102021285',
+                                        source='ABC News'),
+                       TrendArticleMeta(url='https://abc7.com/mega-millions-winning-numbers-drawing-megamillions-jackpot-million/13597998/',
+                                        source='KABC-TV')]),
+ GoogleTrend(query='Breaking Bad',
+             related_quries=['Mark Margolis'],
+             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/arts/television/mark-margolis-dead.html',
+                                        source='The New York Times'),
+                       TrendArticleMeta(url='https://variety.com/2023/tv/news/mark-margolis-dead-breaking-bad-better-call-saul-1235688012/',
+                                        source='Variety')]),
+ GoogleTrend(query='Pac-12',
+             related_quries=['Big Ten', 'Big 12 expansion', 'arizona big 12'],
+             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/sports/ncaafootball/pac-12-oregon-washington-big-ten-big-12.html',
+                                        source='The New York Times'),
+                       TrendArticleMeta(url='https://www.espn.com/college-sports/story/_/id/38134021/oregon-washington-officially-leave-pac-12-big-ten',
+                                        source='ESPN')]),
+ GoogleTrend(query='Dolly Parton',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://biz.chosun.com/entertainment/enter_general/2023/08/04/D3XFVGQGM2YTZC5SLIGGJT5OLY/',
-                                        source='조선비즈'),
-                       TrendArticleMeta(url='https://news.mt.co.kr/mtview.php?no=2023080308080533315',
-                                        source='머니투데이')]),
- GoogleTrend(query='류현진',
+             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/movies/thanks-to-carol-burnett-and-dolly-parton-new-life-for-a-1988-film.html',
+                                        source='The New York Times')]),
+ GoogleTrend(query='Donald Trump',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.hani.co.kr/arti/sports/baseball/1102657.html',
-                                        source='한겨레'),
-                       TrendArticleMeta(url='https://imnews.imbc.com/news/2023/sports/article/6510102_36154.html',
-                                        source='MBC뉴스')]),
- GoogleTrend(query='리버풀',
+             articles=[TrendArticleMeta(url='https://www.theguardian.com/us-news/2023/aug/05/donald-trump-threatening-social-media-post-flagged-by-prosecutors-in-court-filing',
+                                        source='The Guardian'),
+                       TrendArticleMeta(url='https://www.usatoday.com/story/news/politics/2023/08/04/im-coming-after-you-trump-issues-new-threats-after-new-indictment/70529404007/',
+                                        source='USA TODAY')]),
+ GoogleTrend(query='Celine Dion',
              related_quries=[],
-             articles=[TrendArticleMeta(url='http://www.fourfourtwo.co.kr/news/articleView.html?idxno=38661',
-                                        source='포포투')]),
- GoogleTrend(query='일본',
+             articles=[TrendArticleMeta(url='https://www.latimes.com/entertainment-arts/music/story/2023-08-04/celine-dion-stiff-person-syndrome-sister-update',
+                                        source='Los Angeles Times'),
+                       TrendArticleMeta(url='https://www.today.com/health/celine-dion-health-rcna98154',
+                                        source='Today.com')]),
+ GoogleTrend(query='Johnny Manziel',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.beautynury.com/news/view/102114/cat/10',
-                                        source='뷰티누리(화장품신문)'),
-                       TrendArticleMeta(url='http://www.monthlypeople.com/news/articleView.html?idxno=620216',
-                                        source='월간인물')])]
-
+             articles=[TrendArticleMeta(url='https://www.cnn.com/2023/08/05/sport/johnny-manziel-documentary-netflix/index.html',
+                                        source='CNN'),
+                       TrendArticleMeta(url='https://sports.yahoo.com/johnny-manziel-says-in-new-netflix-documentary-he-bought-a-gun-and-attempted-suicide-in-2016-161552241.html',
+                                        source='Yahoo Sports')]),
+ GoogleTrend(query='Donny Osmond',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.deseret.com/2023/8/4/23820308/chris-claim-to-fame-season-2-donny-osmond',
+                                        source='Deseret News')]),
+ GoogleTrend(query='Simone Biles',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/sports/simone-biles-return-gymnastics-competition-us-classic-tokyo-olympics-rcna98279',
+                                        source='NBC News'),
+                       TrendArticleMeta(url='https://www.npr.org/2023/08/04/1192147823/simone-biles-comeback-suni-lee-us-classic',
+                                        source='NPR')]),
+ GoogleTrend(query='Diana Taurasi',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/diana-taurasi-becomes-first-wnba-player-reach-10000-points-rcna98117',
+                                        source='NBC News'),
+                       TrendArticleMeta(url='https://www.sent-trib.com/2023/08/04/diana-taurasi-becomes-first-wnba-player-to-reach-10000-points-scoring-season-high-42-for-mercury/',
+                                        source='Sentinel-Tribune')]),
+ GoogleTrend(query='SummerSlam 2023',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.espn.com/wwe/story/_/id/38127551/lapsed-fans-guide-summerslam-2023-get-ready-roman-reigns-vs-jey-uso-tribal-combat-detroit',
+                                        source='ESPN'),
+                       TrendArticleMeta(url='https://sports.yahoo.com/wwe-summerslam-2023-predictions-who-will-win-each-match-from-logan-paul-vs-ricochet-to-roman-reigns-vs-jey-uso-130012558.html',
+                                        source='Yahoo Sports')]),
+ GoogleTrend(query='International Beer Day',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.usatoday.com/story/life/reviewed/2023/08/04/international-beer-day-2023-what-you-need-to-celebrate/70520794007/',
+                                        source='USA TODAY'),
+                       TrendArticleMeta(url='https://spectrumlocalnews.com/nc/charlotte/news/2023/08/04/international-beer-day',
+                                        source='Spectrum News')]),
+ GoogleTrend(query='Steve McMichael',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://abc7chicago.com/chicago-bears-news-steve-mcmichael-als-illness/13597819/',
+                                        source='WLS-TV'),
+                       TrendArticleMeta(url='https://www.nfl.com/news/bears-great-steve-mcmichael-who-has-als-admitted-to-intensive-care',
+                                        source='NFL.com')]),
+ GoogleTrend(query='Astros vs Yankees',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.kswo.com/sports/betting/2023/08/04/astros-yankees-mlb-picks-predictions/',
+                                        source='KSWO'),
+                       TrendArticleMeta(url='https://www.wymt.com/sports/betting/2023/08/04/astros-vs-yankees-mlb-player-prop-bets/',
+                                        source='WYMT News')]),
+ GoogleTrend(query='Kobe Bryant',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.today.com/popculture/music/taylor-swift-kobe-bryant-family-friendship-history-rcna98156',
+                                        source='Today.com'),
+                       TrendArticleMeta(url='https://www.latimes.com/sports/story/2023-08-04/taylor-swift-kobe-bryant-bianka-22-hat-eras-tour-sofi-stadium',
+                                        source='Los Angeles Times')]),
+ GoogleTrend(query='Anthony Davis',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.espn.com/nba/story/_/id/38135013/lakers-anthony-davis-agree-nba-richest-annual-extension',
+                                        source='ESPN'),
+                       TrendArticleMeta(url='https://www.nba.com/news/anthony-davis-max-extension-with-lakers',
+                                        source='NBA.com')]),
+ GoogleTrend(query='Dorian Thompson-Robinson',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.clevelandbrowns.com/news/dorian-thompson-robinson-makes-impressive-debut-in-hall-of-fame-game',
+                                        source='clevelandbrowns.com'),
+                       TrendArticleMeta(url='https://www.nfl.com/news/browns-qb-dorian-thompson-robinson-shines-in-comeback-win-over-jets',
+                                        source='NFL.com')]),
+ GoogleTrend(query='Gilgo Beach killer',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.cnn.com/2023/08/04/us/investigation-update-gilgo-beach-murders/index.html',
+                                        source='CNN'),
+                       TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/police-expected-identify-another-victim-gilgo-beach-killings-source-sa-rcna98125',
+                                        source='NBC News')]),
+ GoogleTrend(query='Cole Hamels',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.mlb.com/news/cole-hamels-retires',
+                                        source='MLB.com'),
+                       TrendArticleMeta(url='https://www.espn.com/mlb/story/_/id/38136242/former-world-series-mvp-cole-hamels-retires-15-seasons',
+                                        source='ESPN')])]
 
 ########################## STEP 2 ##########################
-step2 = [CrawledTrend(keywords=['류현진'],
-              articles=['# Title: 류현진, 최고 구속 146㎞로는 AL 승률 1위 팀 막지 못했다\n'
+step2 = [
+    CrawledTrend(keywords=['Kai Cenat',
+                        'Union Square',
+                        'Union Square Park',
+                        'New York'],
+              articles=[
+                  '# Title: Twitch streamer Kai Cenat charged with riot '
+                        'after NYC giveaway chaos at Union Square Park\n'
                         '\n'
-                        '# Lead: 2일 볼티모어전 선발 등판…5이닝 9피안타 4실점\n'
+                        '# Lead: A social media influencer has been charged '
+                        'with “inciting to riot” after a giveaway in a New '
+                        'York City park erupted in chaos Friday, authorities '
+                        'said.\n'
                         '\n'
-                        '# Body: 2일 볼티모어전 선발 등판…5이닝 9피안타 4실점\n'
-                        '토론토 블루제이스 류현진이 2일(한국시각) 캐나다 온타리오주 토론토의 로저스센터에서 열린 '
-                        '2023 메이저리그(MLB) 볼티모어 오리올스와 안방 경기에 선발로 등판해 공을 던지고 있다. '
-                        '토론토/AP 연합뉴스\n'
-                        '426일 만의 빅리그 등판. 초반은 불안했다. 하지만 점차 ‘코리안 몬스터’다운 안정을 '
-                        '되찾았다. 재활 기간 13㎏ 감량한 류현진(36)이 건강하게 돌아왔다.\n'
-                        '류현진은 2일(한국시각) 캐나다 온타리오주 토론토의 로저스센터에서 열린 2023 '
-                        '메이저리그(MLB) 볼티모어 오리올스와 안방 경기에 선발 등판해 5이닝 9피안타(1피홈런) '
-                        '1볼넷 3탈삼진 4실점 했다. 투구 수는 80개(스트라이크 54개). 왼 팔꿈치 인대 접합 수술 '
-                        '이후 14개월 만의 등판 성적으로는 나쁘지 않은 기록이었다. 류현진의 빅리그 등판은 작년 '
-                        '6월2일 로저스센터에서 열린 시카고 화이트삭스와 경기 이후 426일 만이었다. 이날 '
-                        '로저스센터에는 4만691명의 관중이 찾아 류현진의 복귀전을 지켜봤다.\n'
-                        '아메리칸리그 승률 1위 팀인 볼티모어를 상대로 출발은 아주 안 좋았다. 류현진은 1회초 볼티모어 '
-                        '1번 타자인 포수 애들리 러츠맨에게 초구 시속 88.2마일(142㎞) 포심패스트볼을 던졌다가 '
-                        '2루타를 얻어맞았다. 2번 타자 라이언 마운트캐슬에게도 3구째 시속 84.7마일(136㎞)의 '
-                        '커터가 공략당하며 2루타를 허용, 선제점을 헌납했다. 뒤이어 앤서니 산탄데르에게도 초구에 좌전 '
-                        '안타를 허용해 3연속 안타를 두들겨 맞았다. 14개월 만에 오른 빅리그 마운드가 류현진에게 '
-                        '버거워 보일 정도였다. 하지만 무사 1, 3루에서 오스틴 헤이스를 뜬공으로 잡아내며 점차 안정을 '
-                        '되찾았다. 거너 헨더슨의 내야 땅볼 때 2점째를 허용했으나 1회 실점은 거기까지였다.\n'
-                        '류현진은 2회초 2사 3루에서 적시타를 내주면서 3점째를 내줬으나 3~5회는 커브 제구가 잘 '
-                        '되면서 실점 없이 안정적인 투구를 선보였다. 그러나 3-3이던 6회초 선두 타자 헨더슨에게 던진 '
-                        '시속 77.4마일(124.6㎞)의 체인지업이 가운데로 몰리면서 우월 솔로포를 두들겨 맞았다. '
-                        '류현진은 곧바로 트레버 리처즈에게 마운드를 넘기고 내려왔다.\n'
-                        '류현진의 이날 포심 패스트볼 최고 구속은 시속 91마일(146.5㎞)이 찍혔다. 평균 구속은 '
-                        '시속 89마일(143.3㎞). 체인지업의 제구도 들쑥날쑥해 류현진 본인도 어이없어 할 만큼 '
-                        '실투가 나왔다. 그나마 3회, 5회 실점 위기에서 병살타를 유도해내며 위기를 탈출하는 모습은 '
-                        '예전 그대로였다. ‘MLB닷컴’ 토론토 담당 기자 키건 매티슨은 경기 뒤 자신의 트위터에 '
-                        '“류현진이 빅리그에 복귀한 것은 매우 고무적이고, 다음 등판도 흥미로울 것”이라면서 “특히 '
-                        '구속이 중요하다”고 평했다.\n'
-                        '토론토는 불펜진이 볼티모어 화력을 견디지 못하면서 3-13으로 대패했다. 산탄데르가 만루홈런 등 '
-                        '4타수 3안타 4타점, 류현진에게 일격을 가한 헨더슨이 5타수 3안타 4타점으로 활약했다. '
-                        '토론토가 역전에 실패하며 류현진은 복귀전에서 패전 투수가 됐다. 토론토는 3연패. 6인 선발 '
-                        '로테이션을 운영 중인 팀 사정상 류현진의 다음 등판은 8일 클리블랜드 가디언스 전이 될 것으로 '
-                        '보인다.\n'
-                        '김양희 기자 whizzer4@hani.co.kr',
-                        '# Title: 류현진, 복귀전서 5이닝 4실점 패전‥최고 구속 146km\n'
-                        '\n'
-                        '# Lead: 메이저리그 토론토의 류현진 선수가 작년 6월 팔꿈치 인대 접합 수술을 받은 뒤 '
-                        '1년 2개월 만에 나선 복귀전에서 5이닝동안 4실점했습니다. 류현진은 볼티모어와 홈경기에 선발 '
-                        '등판해...\n'
-                        '\n'
-                        '# Body: 전체재생\n'
-                        '메이저리그 토론토의 류현진 선수가 작년 6월 팔꿈치 인대 접합 수술을 받은 뒤 1년 2개월 만에 '
-                        '나선 복귀전에서 5이닝동안 4실점했습니다.류현진은 볼티모어와 홈경기에 선발 등판해 1회 연속 '
-                        '3안타를 내주며 2실점했고 2회에도 한 점을 더 내줬지만 이후 병살타 2개를 유도하며 5회까지는 '
-                        '추가 실점없이 안정된 투구를 펼쳤습니다.6회에도 마운드에 오른 류현진은 첫 타자 헨더슨에게 솔로 '
-                        '홈런을 내준 뒤 3대 4로 뒤진 상황에서 교체됐습니다.5이닝 9피안타 4실점을 기록한 류현진은 '
-                        '볼넷 하나를 내주는 동안 삼진 3개를 잡았고 투구수 80개에 최고 구속은 146km까지 '
-                        '나왔습니다.토론토가 13대 3으로 크게 패하면서 류현진은 시즌 첫 패전을 떠안았고 평균자책점은 '
-                        '7.20을 기록했습니다.'],
-              images=[ArticleImage(url='https://flexible.img.hani.co.kr/flexible/normal/970/652/imgdb/original/2023/0802/20230802501164.jpg',
-                                   source='한겨레'),
-                      ArticleImage(url='https://image.imnews.imbc.com/news/2023/sports/article/__icsFiles/afieldfile/2023/08/02/y230802-3.jpg',
-                                   source='MBC뉴스')],
-              language='ko')]
-
+                        '# Body: A social media influencer has been charged '
+                        'with “inciting to riot” after a giveaway in a New '
+                        'York City park erupted in chaos Friday, authorities '
+                        'said.\n'
+                        'An NYPD spokesperson said that the video game '
+                        'live-streamer, Kai Cenat had been charged with riot, '
+                        'inciting to riot and and unlawful assembly.\n'
+                        'They added that he was issued with a desk appearance '
+                        'ticket that will require him to appear in court at a '
+                        'later date.\n'
+                        'Cenat, 21, had been removed from the area for his '
+                        'safety after thousands of mostly young people '
+                        'descended on Manhattan’s Union Square on Friday '
+                        'afternoon, New York City Police Chief Jeffrey Maddrey '
+                        'told reporters earlier on Friday.\n'
+                        'Maddrey said that 65 people were arrested. Thirty of '
+                        'them were juveniles, he said.\n'
+                        'They were taken into custody after people threw '
+                        'bottles, fireworks, rocks and paint cans that had '
+                        'been taken from a construction site at the park, '
+                        'Maddrey said.\n'
+                        'Three officers were injured, he said. A sergeant '
+                        'suffered a broken hand.\n'
+                        '“Officers were attacked, we were crushed,” he said, '
+                        'adding that he had been hit with “multiple objects.”\n'
+                        '“I personally observed young people having panic '
+                        'attacks, anxiety attacks,” he said. “People were '
+                        'suffering out here.”\n'
+                        'On Wednesday, Cenat announced on his Twitch channel '
+                        'that he would host a “huge” giveaway with video game '
+                        'consoles, PCs, keyboards, gaming chairs, headphones '
+                        'and other items.\n'
+                        'As of Friday afternoon, the video had more than 2 '
+                        'million views.\n'
+                        'The event was supposed to begin at 4 p.m., but by 3 '
+                        'p.m. the park was filled, NBC New York reported.\n'
+                        "Maddrey said the event wasn't permitted or sanctioned "
+                        'by the city.\n'
+                        'Aerial video showed hundreds of people gathered in '
+                        'the Manhattan park Friday afternoon. The video '
+                        'appeared to capture a skirmish, iand people could be '
+                        'seen standing on cars.\n'
+                        'Plainclothes and uniformed officers could be seen '
+                        'surrounding the crowd and a loud bang could be heard '
+                        'at one point.\n'
+                        'By 5:30 p.m., the area had begun emptying out and '
+                        'police officers were blocking every entrance. '
+                        'Clusters of teens were laughing, joking and said they '
+                        'didn’t fear for their safety.\n'
+                        'One 16-year-old, who identified himself as Rodrigo, '
+                        'said he was a fan of Cenat and came hoping to win '
+                        'money or perhaps a console.\n'
+                        '“And then a big storm of people started running and '
+                        'there were cops everywhere,” he said.\n'
+                        'Two other teens said they came for the “vibes” and to '
+                        'see Cenat — who one described as the “best person in '
+                        "the world' — but saw pushing, crowding, people "
+                        'throwing things and a child “almost passed out.”\n'
+                        'NYPD officials keep a crowd away from Union Square in '
+                        'New York, on Friday. NBC New York\n'
+                        'Cenat has been a content creator for years, but is '
+                        'best known for streaming gameplay, pranks and comedic '
+                        'reactions on Twitch.\n'
+                        'He broke the record for most active subscribers on '
+                        'Twitch in March after completing a 30-day '
+                        'uninterrupted livestream, also known as a subathon.\n'
+                        'Cenat is known for his outrageous antics, which have '
+                        'gotten him in some trouble on the platform. He has '
+                        'been temporarily banned from Twitch five times.'],
+              images=[ArticleImage(url='https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2023-08/230804-nyc-crowd-Kai-Cenat-ac-835p-e04872.jpg',
+                                   source='NBC News')],
+              language='en'),
+]
 ########################## STEP 3 ##########################
 json_error_step_3 = [TranslatedCrawledTrend(keywords=['안보현', '지수 안보현', '안보현 지수', '블랙핑크 지수'], articles=['# Title: [Official] BLACKPINK\'s Jisoo - Actor Bo Bo Hyun admits to romance, "We\'re getting to know each other little by little"\n\n# Lead: Jisoo (28) of the group BLACKPINK and actor Bo Bo Hyun (35) are in a relationship. On the 3rd, Jisoo\'s agency, YG Entertainment, said, "They are getting to know each other with good feelings...\n\n# Body: viewer Actor Bo Bo Hyun and BLACKPINK\'s Jisoo / Photo by Seoul Economic Star DB\n< Copyright ⓒ The Seoul Economic Times, All rights reserved >.\nJisoo (28) of the group Blackpink and actor Bo Bo Hyun (35) are in a relationship.On March 3, Jisoo\'s agency YG Entertainment said, "They are getting to know each other little by little with good feelings. We would appreciate it if you could watch them with a warm gaze."Anbo Hyun\'s agency, FN Entertainment, also said, "They are in the stage of getting to know each other carefully with good feelings. We would appreciate it if you could watch them with a warm gaze."Earlier in the day, media outlet Dispatch reported that Jisoo and Anbo Hyun were spotted dating at Jisoo\'s home in Seoul. "They have a lot of common denominators, from acting to singing to fashion," a source close to the pair told the dispatch.Jisoo debuted with the group BLACKPINK in 2016, releasing a slew of hits including "Whistle," "Boom Boom," "Like the Last Time," "Doo Doo Doo," and "Kill This Love," before becoming a global girl group. In 2021, she made her acting debut in the JTBC drama "Seolganghwa."Bo Bo Hyun made her acting debut in the 2014 drama "Golden Cross," and has since appeared in the drama "Descendants of the Sun" and the movie "Hija. Since 2020, he has gained popularity for his roles in the dramas "Itaewon Class," "Yumi\'s Cells," and the Netflix series "My Name. He recently appeared in the tvN drama "Please Take Care of Me This Time" as the lead character, Doc Ha.', "# Title: The Ultimate Boyfriend Look #Boonhyun #Allure Korea\n\n# Lead: Actor Bo Bo Hyun is the first actor to admit to a romantic relationship with Jisoo. The model-turned-actor is known for his impeccable height of 187 centimeters and his dedication to acting. What is it that makes him so attractive? We got a glimpse through five characteristics of his casual look.\n\n# Body: This browser does not support sharing.\nAddress.\nActor Bo Bo Hyun cautiously acknowledged his love affair with Jisoo. The model-turned-actor is known for his impeccable height of 187 centimeters and his dedication to acting. Is his warm and attentive personality reflected in his looks? We've picked out the top 5 characteristics of Bo Bo-hyun's off-duty look.\n1) A man who knows how to wear a shirt\nAs a former boxer in his student days, Boo-hyun has maintained his superior physique. Perhaps that's why his muscular upper body really shines when he wears a shirt. He's definitely in our top 5 best shirt-fitting men.\n2) Utilize sunglasses\nINFJ Boo-hyun loves to travel, and when he does, he relies heavily on hats and masks to cover his face. If there's one thing he can't live without, it's sunglasses. He can wear them nonchalantly on top of a hat or with a beanie and never feel out of place.\n3) Nerdiness with glasses\nOn the other hand, we can see that Boo-hyun loves his glasses on a regular basis. He often wears clear horn-rimmed glasses with a sweatshirt, black horn-rimmed glasses with a baggy white tee, and despite his chic first impression, he transforms into a friendly handsome brother when he puts on his glasses. If you're a fan of nerdiness, check out Boo-hyun's casual look!\n4) Love the hoodie\nThere's nothing better than a hoodie when you're just heading out the door. You don't have to worry about matching the color of your outfit to your hat, you can just throw it over your head. With his bangs down and his innocent smile, Bo Bo Hyun is a man who can't help but pull off a hoodie.\n5) Watch collector\nIf you scroll through his Instagram feed, you'll notice a lot of wristwatches. From his favorite Bulgari aluminum pieces to his no-frills Apple Watch, it's easy to see why he's been photographed with watches so many times. They pair perfectly with his go-to outfits, like a simple jacket or denim."], images=[ArticleImage(url='https://newsimg.sedaily.com/2023/08/03/29T9HS4184_1.jpg', source='서울경제신문'), ArticleImage(url='https://www.allurekorea.com/wp_data/allure/2023/08/style_64cb5029288c0-700x500-1691046194.jpg', source='얼루어 코리아 (Allure Korea)')])]
 step_3 = [TranslatedCrawledTrend(keywords=['안보현', '지수 안보현', '안보현 지수', '블랙핑크 지수'],
-                        articles=["# Title: [Official] BLACKPINK's Jisoo - "
+                        articles=[
+                            "# Title: [Official] BLACKPINK's Jisoo - "
                                   'Actor Bo Bo Hyun admits to romance, "We\'re '
                                   'getting to know each other little by '
                                   'little"\n'
