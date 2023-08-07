@@ -17,6 +17,7 @@ keywords: '{{ keywords }}'
 date: '{{ date }}'
 author: 'wikitoday.io'
 language: '{{ content.language }}'
+{% if images|length > 0 %}thumbnail: '{{ images[0].url | e }}'{% endif %}
 ---
 
 # {{ content.title }}
