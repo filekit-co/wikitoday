@@ -88,33 +88,34 @@ def _generate_template_articles(keyword, articles):
     })
 
 async def _regenerate(trend: TranslatedCrawledTrend):
+    response = None
     try:
         response = await openai.ChatCompletion.acreate(
-            model=GPT_MODEL,
-            messages=[
-                {
-                "role": "system",
-                "content": SYS_PROMPT
-                },
-                {
-                "role": "user",
-                "content": _generate_template_articles(trend.str_keywords, trend.articles)
-                },
-            ],
-            functions=FUNCTIONS,
-            function_call={"name": FUNCTION_NAME},
-            temperature=1,
-            max_tokens=10000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
+                    model=GPT_MODEL,
+                    messages=[
+                        {
+                        "role": "system",
+                        "content": SYS_PROMPT
+                        },
+                        {
+                        "role": "user",
+                        "content": _generate_template_articles(trend.str_keywords, trend.articles)
+                        },
+                    ],
+                    functions=FUNCTIONS,
+                    function_call={"name": FUNCTION_NAME},
+                    temperature=1,
+                    max_tokens=10000,
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0
         )
-        
         function_call = response.choices[0].message.function_call
         article = json.loads(function_call.arguments)
         return Article.from_dto(trend, article)
     except Exception as e:
-        logger.error(response)
+        if response:
+            logger.error(response)        
         logger.error(f"An error occurred while generating article for trend\n\n {trend} \n\n{e}")
         return None
 
