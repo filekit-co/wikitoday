@@ -2,9 +2,10 @@ import logging
 from datetime import date, datetime
 from typing import List, Optional
 
-from domain.entities import Article, Folder, Markdown
 from jinja2 import Template
 from jinja2.exceptions import TemplateError
+
+from domain.entities import Article, Folder, Markdown
 
 logger = logging.getLogger(__name__)
 
@@ -18,11 +19,18 @@ author: 'wikitoday.io'
 language: '{{ content.language }}'
 ---
 
-## Summary
+# {{ content.title }}
 
+<p class="datetime"><em>{{ date|e }} - wikitoday<em></p>
+
+<blockquote class="quote-container dark">
+  <p class="quote-text dark">
+    {{ content.lead|e }}
+  </p>
+</blockquote>
 
 {% if images|length > 0 %}
-<figure>
+<figure class=image-container>
     <img src="{{ images[0].url | e }}" alt="{{ images[0].source | e }}" />
     <figcaption>
         <h4> from {{ images[0].source | e }}</h4>
@@ -30,27 +38,37 @@ language: '{{ content.language }}'
 </figure>
 {% endif %}
 
-{{ content.lead }}
+<hr class="article-hr" />
 
 {% if qna %}
-## QnA
-
+<div class="faq">
 {% for i, qna in qna %}
-<details>
-    <summary><b>{{ i }}. {{ qna.question | e }}</b></summary>
-    {{ qna.answer | e }}
+<details class="group" {% if i == 0 %}open{% endif %}>
+  <summary class="summary">
+    <h2><b>Q. {{ qna.question | e }}</b></h2>
+    <span class="icon-container">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-closed" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+    </span>    
+  </summary>
+  <p>{{ qna.answer | e }}</p>
 </details>
 {% endfor %}
+</div>
 {% endif %}
 
-## {{ content.title }}
+<hr class="article-hr" />
 
-_{{ date }} - wikitoday_
-
-{{ content.body1 }}
+<div class="article-body">
+{{ content.body1 |e }}
+</div>
 
 {% if images|length > 1 %}
-<figure>
+<figure class=image-container>
     <img src="{{ images[1].url | e }}" alt="{{ images[1].source | e }}" />
     <figcaption>
         <h4> from {{ images[1].source | e }}</h4>
@@ -58,8 +76,9 @@ _{{ date }} - wikitoday_
 </figure>
 {% endif %}
 
-{{ content.body2 }}
-
+<div class="article-body">
+{{ content.body2 |e }}
+</div>
 """
 
 ARTICLE_TEMPLATE = Template(_markdown_template)
