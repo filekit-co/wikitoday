@@ -56,7 +56,7 @@ FUNCTIONS = [
                 },
                 "category": {
                     "type": "string",
-                    "enum": ["Politics", "World/International", "Business/Economy", "Technology", "Science", "Health", "Entertainment", "Sports", "Environment/Nature", "Education", "Lifestyle", "Opinion/Editorial"],
+                    "enum": ["Politics", "International", "Economy", "Technology", "Science", "Health", "Entertainment", "Sports", "Nature", "Education", "Lifestyle", "Opinion", "Crime"],
                     "description": "An article enum typed category"
                 },
             },
@@ -76,7 +76,7 @@ _str_user_template = """Below are {{ num_articles }} articles written with the k
 """
 USER_PROMPT_TEMPLATE = Template(_str_user_template)
 
-
+# TODO: if category not included change it to fallback category.
 def _generate_template_articles(keyword, articles):
     separator = "\n---\n"
     articles_text = separator.join(articles)

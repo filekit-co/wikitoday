@@ -6,124 +6,94 @@ from domain.entities import (Article, ArticleContent, ArticleImage,
                              TrendArticleMeta)
 
 ######################### STEP 1 ##########################
-step1 = [GoogleTrend(query='Kai Cenat',
-             related_quries=['Union Square', 'Union Square Park', 'New York'],
-             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/twitch-influencer-kai-cenat-custody-console-giveaway-causes-chaos-new-rcna98256',
-                                        source='NBC News'),
-                       TrendArticleMeta(url='https://www.cnn.com/2023/08/04/us/kai-cenat-union-square-nyc-crowds/index.html',
-                                        source='CNN')]),
- GoogleTrend(query='Mega Millions drawing',
-             related_quries=['mega millions drawing tonight',
-                             'mega millions numbers',
-                             'Mega Millions results'],
-             articles=[TrendArticleMeta(url='https://abcnews.go.com/US/mega-millions-jackpot-climbs-125-billion-ahead-friday/story?id=102021285',
-                                        source='ABC News'),
-                       TrendArticleMeta(url='https://abc7.com/mega-millions-winning-numbers-drawing-megamillions-jackpot-million/13597998/',
-                                        source='KABC-TV')]),
- GoogleTrend(query='Breaking Bad',
-             related_quries=['Mark Margolis'],
-             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/arts/television/mark-margolis-dead.html',
-                                        source='The New York Times'),
-                       TrendArticleMeta(url='https://variety.com/2023/tv/news/mark-margolis-dead-breaking-bad-better-call-saul-1235688012/',
-                                        source='Variety')]),
- GoogleTrend(query='Pac-12',
-             related_quries=['Big Ten', 'Big 12 expansion', 'arizona big 12'],
-             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/sports/ncaafootball/pac-12-oregon-washington-big-ten-big-12.html',
-                                        source='The New York Times'),
-                       TrendArticleMeta(url='https://www.espn.com/college-sports/story/_/id/38134021/oregon-washington-officially-leave-pac-12-big-ten',
+step1 = [GoogleTrend(query='Inter Miami',
+             related_quries=['fc dallas vs inter miami',
+                             'inter miami vs fc dallas',
+                             'Messi',
+                             'fc dallas - inter miami',
+                             'FC Dallas',
+                             'mls',
+                             'Lionel Messi'],
+             articles=[TrendArticleMeta(url='https://www.tudn.com/futbol/leagues-cup/fc-dallas-vs-inter-miami-octavos-de-final-leagues-cup-2023-resultado-goles-videos',
+                                        source='TUDN'),
+                       TrendArticleMeta(url='https://www.espn.com/soccer/story/_/id/38148143/best-world-messi-makes-inter-miami-lethal-martino',
                                         source='ESPN')]),
- GoogleTrend(query='Dolly Parton',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.nytimes.com/2023/08/04/movies/thanks-to-carol-burnett-and-dolly-parton-new-life-for-a-1988-film.html',
-                                        source='The New York Times')]),
- GoogleTrend(query='Donald Trump',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.theguardian.com/us-news/2023/aug/05/donald-trump-threatening-social-media-post-flagged-by-prosecutors-in-court-filing',
-                                        source='The Guardian'),
-                       TrendArticleMeta(url='https://www.usatoday.com/story/news/politics/2023/08/04/im-coming-after-you-trump-issues-new-threats-after-new-indictment/70529404007/',
-                                        source='USA TODAY')]),
- GoogleTrend(query='Celine Dion',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.latimes.com/entertainment-arts/music/story/2023-08-04/celine-dion-stiff-person-syndrome-sister-update',
-                                        source='Los Angeles Times'),
-                       TrendArticleMeta(url='https://www.today.com/health/celine-dion-health-rcna98154',
-                                        source='Today.com')]),
- GoogleTrend(query='Johnny Manziel',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.cnn.com/2023/08/05/sport/johnny-manziel-documentary-netflix/index.html',
-                                        source='CNN'),
-                       TrendArticleMeta(url='https://sports.yahoo.com/johnny-manziel-says-in-new-netflix-documentary-he-bought-a-gun-and-attempted-suicide-in-2016-161552241.html',
-                                        source='Yahoo Sports')]),
- GoogleTrend(query='Donny Osmond',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.deseret.com/2023/8/4/23820308/chris-claim-to-fame-season-2-donny-osmond',
-                                        source='Deseret News')]),
- GoogleTrend(query='Simone Biles',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/sports/simone-biles-return-gymnastics-competition-us-classic-tokyo-olympics-rcna98279',
-                                        source='NBC News'),
-                       TrendArticleMeta(url='https://www.npr.org/2023/08/04/1192147823/simone-biles-comeback-suni-lee-us-classic',
-                                        source='NPR')]),
- GoogleTrend(query='Diana Taurasi',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/diana-taurasi-becomes-first-wnba-player-reach-10000-points-rcna98117',
-                                        source='NBC News'),
-                       TrendArticleMeta(url='https://www.sent-trib.com/2023/08/04/diana-taurasi-becomes-first-wnba-player-to-reach-10000-points-scoring-season-high-42-for-mercury/',
-                                        source='Sentinel-Tribune')]),
- GoogleTrend(query='SummerSlam 2023',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.espn.com/wwe/story/_/id/38127551/lapsed-fans-guide-summerslam-2023-get-ready-roman-reigns-vs-jey-uso-tribal-combat-detroit',
+ GoogleTrend(query='Arsenal',
+             related_quries=['Man City', 'Manchester City'],
+             articles=[TrendArticleMeta(url='https://www.espn.com/soccer/story/_/id/38145903/beating-man-city-give-arsenal-hope-another-title-run',
                                         source='ESPN'),
-                       TrendArticleMeta(url='https://sports.yahoo.com/wwe-summerslam-2023-predictions-who-will-win-each-match-from-logan-paul-vs-ricochet-to-roman-reigns-vs-jey-uso-130012558.html',
-                                        source='Yahoo Sports')]),
- GoogleTrend(query='International Beer Day',
+                       TrendArticleMeta(url='https://www.eurosport.com/football/community-shield/2023-2024/man-city-v-arsenal-community-shield-live_sto9729712/story.shtml',
+                                        source='Eurosport.com ASIA')]),
+ GoogleTrend(query='Wyndham Championship',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.usatoday.com/story/life/reviewed/2023/08/04/international-beer-day-2023-what-you-need-to-celebrate/70520794007/',
-                                        source='USA TODAY'),
-                       TrendArticleMeta(url='https://spectrumlocalnews.com/nc/charlotte/news/2023/08/04/international-beer-day',
-                                        source='Spectrum News')]),
- GoogleTrend(query='Steve McMichael',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://abc7chicago.com/chicago-bears-news-steve-mcmichael-als-illness/13597819/',
-                                        source='WLS-TV'),
-                       TrendArticleMeta(url='https://www.nfl.com/news/bears-great-steve-mcmichael-who-has-als-admitted-to-intensive-care',
-                                        source='NFL.com')]),
- GoogleTrend(query='Astros vs Yankees',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.kswo.com/sports/betting/2023/08/04/astros-yankees-mlb-picks-predictions/',
-                                        source='KSWO'),
-                       TrendArticleMeta(url='https://www.wymt.com/sports/betting/2023/08/04/astros-vs-yankees-mlb-player-prop-bets/',
-                                        source='WYMT News')]),
- GoogleTrend(query='Kobe Bryant',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.today.com/popculture/music/taylor-swift-kobe-bryant-family-friendship-history-rcna98156',
+             articles=[TrendArticleMeta(url='https://www.pgatour.com/article/news/latest/2023/08/06/wyndham-championship-delayed-thunderstorm-rain-weather-sedgefield-country-club',
+                                        source='pgatour.com'),
+                       TrendArticleMeta(url='https://apnews.com/article/lucas-glover-wyndham-henley-thomas-fedex-cup-ed4a14700d43761d8a3cec008a3a51ea',
+                                        source='The Associated Press')]),
+ GoogleTrend(query='Lyme disease',
+             related_quries=['Bella Hadid'],
+             articles=[TrendArticleMeta(url='https://www.today.com/health/disease/-bella-hadid-lyme-disease-rcna98423',
                                         source='Today.com'),
-                       TrendArticleMeta(url='https://www.latimes.com/sports/story/2023-08-04/taylor-swift-kobe-bryant-bianka-22-hat-eras-tour-sofi-stadium',
-                                        source='Los Angeles Times')]),
- GoogleTrend(query='Anthony Davis',
+                       TrendArticleMeta(url='https://www.usatoday.com/story/entertainment/celebrities/2023/08/06/gigi-hadid-sister-bella-lyme-disease-treatment-update/70538721007/',
+                                        source='USA TODAY')]),
+ GoogleTrend(query='Ian Watkins',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.espn.com/nba/story/_/id/38135013/lakers-anthony-davis-agree-nba-richest-annual-extension',
-                                        source='ESPN'),
-                       TrendArticleMeta(url='https://www.nba.com/news/anthony-davis-max-extension-with-lakers',
-                                        source='NBA.com')]),
- GoogleTrend(query='Dorian Thompson-Robinson',
+             articles=[TrendArticleMeta(url='https://www.rollingstone.com/music/music-news/lostprophets-singer-ian-watkins-stabbed-in-prison-pedophile-1234801627/',
+                                        source='Rolling Stone'),
+                       TrendArticleMeta(url='https://www.scmp.com/news/world/europe/article/3230172/paedophile-lostprophets-frontman-ian-watkins-stabbed-prison',
+                                        source='South China Morning Post')]),
+ GoogleTrend(query='Cleveland Guardians',
              related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.clevelandbrowns.com/news/dorian-thompson-robinson-makes-impressive-debut-in-hall-of-fame-game',
-                                        source='clevelandbrowns.com'),
-                       TrendArticleMeta(url='https://www.nfl.com/news/browns-qb-dorian-thompson-robinson-shines-in-comeback-win-over-jets',
-                                        source='NFL.com')]),
- GoogleTrend(query='Gilgo Beach killer',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.cnn.com/2023/08/04/us/investigation-update-gilgo-beach-murders/index.html',
-                                        source='CNN'),
-                       TrendArticleMeta(url='https://www.nbcnews.com/news/us-news/police-expected-identify-another-victim-gilgo-beach-killings-source-sa-rcna98125',
-                                        source='NBC News')]),
- GoogleTrend(query='Cole Hamels',
-             related_quries=[],
-             articles=[TrendArticleMeta(url='https://www.mlb.com/news/cole-hamels-retires',
+             articles=[TrendArticleMeta(url='https://www.mlb.com/news/brayan-rocchio-kole-calhoun-s-misplays-cost-guardians-in-9th-inning',
                                         source='MLB.com'),
-                       TrendArticleMeta(url='https://www.espn.com/mlb/story/_/id/38136242/former-world-series-mvp-cole-hamels-retires-15-seasons',
-                                        source='ESPN')])]
+                       TrendArticleMeta(url='https://www.beaconjournal.com/story/sports/mlb/cleveland-guardians/2023/08/06/cleveland-guardians-chicago-white-sox-score-two-errors-bryan-rocchio-emmanuel-clase-gabriel-arias/70539119007/',
+                                        source='Akron Beacon Journal')]),
+ GoogleTrend(query='Montgomery Riverfront brawl',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.wsfa.com/2023/08/06/montgomery-riverfront-brawl-leads-multiple-arrests/',
+                                        source='WSFA'),
+                       TrendArticleMeta(url='https://www.usatoday.com/story/news/nation/2023/08/06/montgomery-riverboat-fight-alabama/70539600007/',
+                                        source='USA TODAY')]),
+ GoogleTrend(query='Justin Thomas',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.pgatour.com/article/news/latest/2023/08/06/justin-thomas-misses-fedexcup-playoffs-by-one-shot-wyndham-championship-sedgefield-country-club',
+                                        source='pgatour.com'),
+                       TrendArticleMeta(url='https://www.golfchannel.com/news/justin-thomas-down-not-yet-out-playoffs-after-wild-wyndham-final-hole',
+                                        source='Golf Channel')]),
+ GoogleTrend(query='Jimmy Garoppolo',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.cbssports.com/nfl/news/heres-what-raiders-josh-mcdaniels-said-about-jimmy-garoppolo-throwing-7-interceptions-in-two-camp-practices/',
+                                        source='CBSSports.com'),
+                       TrendArticleMeta(url='https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/josh-mcdaniels-no-concern-about-jimmy-garoppolos-practice-interceptions',
+                                        source='NBC Sports - NFL')]),
+ GoogleTrend(query='One Piece',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.escapistmagazine.com/ranking-one-piece-arcs/',
+                                        source='The Escapist')]),
+ GoogleTrend(query='Erik Karlsson',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.nhl.com/penguins/news/penguins-acquire-defenseman-erik-karlsson-from-the-san-jose-sharks-in-a-three-team-trade/c-345527572',
+                                        source='NHL.com'),
+                       TrendArticleMeta(url='https://www.espn.com/nhl/story/_/id/38144636/erik-karlsson-penguins-3-team-trade-sharks-canadiens',
+                                        source='ESPN')]),
+ GoogleTrend(query='Carson Wentz',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/carson-wentz-works-out-in-gear-from-his-three-teams-while-waiting-for-his-fourth',
+                                        source='NBC Sports - NFL'),
+                       TrendArticleMeta(url='https://www.si.com/extra-mustard/2023/08/06/carson-wentz-throwback-uniforms-whole-new-level-viral-workout-photo',
+                                        source='Sports Illustrated')]),
+ GoogleTrend(query='Bryson DeChambeau',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.espn.com/golf/story/_/id/38145490/bryson-dechambeau-shoots-liv-golf-first-58-take-victory',
+                                        source='ESPN'),
+                       TrendArticleMeta(url='https://www.theguardian.com/sport/2023/aug/06/bryson-dechambeau-shoots-58-on-final-round-of-liv-victory-at-greenbrier',
+                                        source='The Guardian')]),
+ GoogleTrend(query='Michigan International Speedway',
+             related_quries=[],
+             articles=[TrendArticleMeta(url='https://www.nascar.com/news-media/2023/08/06/cup-series-2023-michigan-international-speedway-weather-update/',
+                                        source='NASCAR'),
+                       TrendArticleMeta(url='https://www.mlive.com/sports/2023/08/rain-threatens-start-of-nascar-race-at-michigan-international-speedway.html',
+                                        source='mlive.com')])]
 
 ########################## STEP 2 ##########################
 step2 = [
@@ -1016,1088 +986,7 @@ step_3 = [TranslatedCrawledTrend(keywords=['안보현', '지수 안보현', '안
                                              source='금강일보')])
 ]
 ########################## STEP 4 ##########################
-step4 = [Article(category='Crime',
-         keywords='대전 칼부림,대전 고등학교 칼부림,대전,대전 대덕구 칼부림',
-         contents=[ArticleContent(title='Knife Attack at Daejeon High School: '
-                                        'Suspect Arrested',
-                                  lead='A man in his 20s brandished a knife at '
-                                       'a teacher in his 40s at a high school '
-                                       'in Daejeon. The suspect was caught '
-                                       'within two hours, and police '
-                                       'investigations revealed intriguing '
-                                       "details about the suspect's past.",
-                                  body1='At a high school in Daejeon, a man in '
-                                        'his 20s brandished a weapon at a '
-                                        'teacher in his 40s. The suspect was '
-                                        'caught within two hours and told '
-                                        'police he had been a priest in the '
-                                        'past. According to the police, the '
-                                        'suspect entered the school without '
-                                        'being stopped by the learning guard '
-                                        'at the main gate. He then sought out '
-                                        'a teacher in the staff room and '
-                                        'attacked the teacher with the weapon.',
-                                  body2='The victim teacher was taken to a '
-                                        'hospital and underwent emergency '
-                                        'surgery. Police caught the suspect on '
-                                        'a nearby road two hours after the '
-                                        'crime. When questioned about the '
-                                        'motive for the crime, the suspect '
-                                        'remained silent. Police plan to '
-                                        'further investigate the motive and '
-                                        'circumstances of the crime.',
-                                  qna_list=[QnA(question='What happened at the '
-                                                         'high school in '
-                                                         'Daejeon?',
-                                                answer='A man in his 20s '
-                                                       'brandished a knife at '
-                                                       'a teacher in his 40s.'),
-                                            QnA(question='Was the suspect '
-                                                         'caught?',
-                                                answer='Yes, the police caught '
-                                                       'the suspect within two '
-                                                       'hours.'),
-                                            QnA(question='What did the suspect '
-                                                         'reveal about his '
-                                                         'past?',
-                                                answer='The suspect told '
-                                                       'police that he had '
-                                                       'been a priest.'),
-                                            QnA(question='How did the suspect '
-                                                         'enter the school '
-                                                         'without being '
-                                                         'stopped?',
-                                                answer='The suspect entered '
-                                                       'the school without '
-                                                       'being stopped by the '
-                                                       'learning guard at the '
-                                                       'main gate.'),
-                                            QnA(question='What happened to the '
-                                                         'victim teacher?',
-                                                answer='The victim teacher was '
-                                                       'taken to a hospital '
-                                                       'and underwent '
-                                                       'emergency surgery.'),
-                                            QnA(question='Where was the '
-                                                         'suspect caught?',
-                                                answer='The suspect was caught '
-                                                       'on a nearby road two '
-                                                       'hours after the crime.'),
-                                            QnA(question='What is the next '
-                                                         'step in the '
-                                                         'investigation?',
-                                                answer='Police plan to further '
-                                                       'investigate the motive '
-                                                       'and circumstances of '
-                                                       'the crime.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://image.imnews.imbc.com/replay/2023/nwtoday/article/__icsFiles/afieldfile/2023/08/05/today_20230805_071028_1_6_Large.jpg',
-                              source='MBC뉴스'),
-                 ArticleImage(url='http://www.goodmorningcc.com/news/thumbnail/202308/293936_325538_1955_v150.jpg',
-                              source='굿모닝충청')]),
- Article(category='Crime',
-         keywords='고속터미널,고속터미널 흉기',
-         contents=[ArticleContent(title='Arrests Made at Gangnam High-Speed '
-                                        'Terminal with Weapons',
-                                  lead='A man in his 20s was apprehended at '
-                                       'Gangnam Express Bus Terminal in Seoul '
-                                       'for carrying weapons, raising concerns '
-                                       'about a potential crime spree.',
-                                  body1='The Seocho Police Station in Seoul '
-                                        'reported that they arrested a man, '
-                                        'identified as Mr. A, in his 20s at '
-                                        'the Gangnam Express Bus Terminal. The '
-                                        'arrest was made after a security '
-                                        'guard alerted the police about a man '
-                                        'carrying a weapon near the terminal. '
-                                        'Within six minutes of receiving the '
-                                        'report, the police were able to '
-                                        'apprehend the suspect.',
-                                  body2='It was discovered that the man had a '
-                                        'knife and a toy gun in his bag. '
-                                        'Fortunately, he did not use the '
-                                        'weapons to harm anyone. The police '
-                                        'are currently investigating the '
-                                        'incident and the motive behind it.',
-                                  qna_list=[QnA(question='Who was arrested at '
-                                                         'Gangnam Express Bus '
-                                                         'Terminal?',
-                                                answer='A man in his 20s, '
-                                                       'known as Mr. A, was '
-                                                       'apprehended at the '
-                                                       'terminal.'),
-                                            QnA(question='What weapons did the '
-                                                         'arrested man have?',
-                                                answer='The man was found in '
-                                                       'possession of a knife '
-                                                       'and a toy gun.'),
-                                            QnA(question='Were there any '
-                                                         'casualties or '
-                                                         'injuries?',
-                                                answer='Fortunately, there '
-                                                       'were no casualties or '
-                                                       'injuries reported in '
-                                                       'this incident.'),
-                                            QnA(question='What is the current '
-                                                         'status of the '
-                                                         'investigation?',
-                                                answer='The police are '
-                                                       'currently '
-                                                       'investigating the '
-                                                       'incident and the '
-                                                       'motive behind it.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='http://news.kbs.co.kr/data/news/2023/08/04/20230804_vxxJFM.jpg',
-                              source='KBS뉴스'),
-                 ArticleImage(url='https://image.imnews.imbc.com/news/2023/society/article/__icsFiles/afieldfile/2023/08/04/R230804-24.jpg',
-                              source='MBC뉴스')]),
- Article(category='Accidents',
-         keywords='롤스로이스 사고',
-         contents=[ArticleContent(title="'A Hair on the Wheel' - Rolls-Royce "
-                                        'Accident at Apgujeong Station',
-                                  lead='A Rolls-Royce SUV worth 600 million '
-                                       'won crashed into a sidewalk near '
-                                       'Apgujeong Station in Seoul, severely '
-                                       'injuring a woman in her 20s. The '
-                                       'incident was covered by the YouTube '
-                                       "channel 'Caracula Detective Agency' "
-                                       'which released photos of the scene and '
-                                       'the driver involved. The victim '
-                                       'suffered a broken leg in the accident.',
-                                  body1='A Rolls-Royce SUV collided with a '
-                                        'sidewalk near Apgujeong Station in '
-                                        'Gangnam-gu, Seoul, causing serious '
-                                        'injuries to a woman in her 20s. The '
-                                        'incident took place at around 8:10 '
-                                        'p.m. on April 2. The YouTube channel '
-                                        "'Caracula Detective Agency' provided "
-                                        'coverage of the accident and shared '
-                                        'photos showing the driver, a '
-                                        '28-year-old individual named A, '
-                                        'exiting the vehicle and the woman '
-                                        'trapped beneath the car. The debris '
-                                        'from the crash displayed a few '
-                                        'strands of hair believed to belong to '
-                                        'the victim.',
-                                  body2='The driver, who had full-body '
-                                        'tattoos, reportedly acted '
-                                        'threateningly towards the police '
-                                        'officers at the scene. Despite '
-                                        "bystanders' warnings, the driver "
-                                        'accelerated, leaving the victim in a '
-                                        'critical condition. The victim '
-                                        'underwent surgery for a broken leg '
-                                        'and head and stomach injuries. The '
-                                        'driver tested positive for ketamine '
-                                        'in a drug test and is currently under '
-                                        'investigation.',
-                                  qna_list=[QnA(question='What happened at '
-                                                         'Apgujeong Station?',
-                                                answer='A Rolls-Royce SUV '
-                                                       'crashed into a '
-                                                       'sidewalk near '
-                                                       'Apgujeong Station, '
-                                                       'severely injuring a '
-                                                       'woman in her 20s.'),
-                                            QnA(question='Who covered the '
-                                                         'accident?',
-                                                answer='The YouTube channel '
-                                                       "'Caracula Detective "
-                                                       "Agency' provided "
-                                                       'coverage of the '
-                                                       'accident.'),
-                                            QnA(question='What evidence was '
-                                                         'found at the scene?',
-                                                answer='Debris from the crash '
-                                                       'included strands of '
-                                                       'hair believed to '
-                                                       'belong to the victim.'),
-                                            QnA(question='What was the '
-                                                         "driver's behavior "
-                                                         'after the accident?',
-                                                answer='The driver, who had '
-                                                       'full-body tattoos, '
-                                                       'acted threateningly '
-                                                       'towards the police '
-                                                       'officers and seemed '
-                                                       'unconcerned about the '
-                                                       'injured victim.'),
-                                            QnA(question='What were the '
-                                                         'injuries sustained '
-                                                         'by the victim?',
-                                                answer='The victim suffered a '
-                                                       'broken leg and head '
-                                                       'and stomach injuries.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='http://res.heraldm.com/content/image/2023/08/03/20230803000139_p.jpg',
-                              source='헤럴드경제'),
-                 ArticleImage(url='https://news.imaeil.com/photos/2023/08/05/2023080507281692897_l.jpg',
-                              source='매일신문')]),
- Article(category='Entertainment',
-         keywords='소방서 옆 경찰서 그리고 국과수',
-         contents=[ArticleContent(title="'Police Station and Bureau of "
-                                        "Investigation Next to Fire Station' "
-                                        'Returns for Season 2',
-                                  lead="SBS's 'The Police Station Next to the "
-                                       "Fire Station and Guk Gua Soo' will "
-                                       'premiere on April 4 at 10 p.m. as a '
-                                       "follow-up to 'Demon'.",
-                                  body1="Season 2 of 'The Police Station Next "
-                                        "to the Fire Station and Guk Gua Soo' "
-                                        'is a drama that depicts the upgraded '
-                                        'cooperation of firefighting, '
-                                        'crime-fighting, and '
-                                        'evidence-gathering police officers '
-                                        'who face unprecedented and '
-                                        'unprecedented cases, and will be '
-                                        'broadcast in 12 episodes.',
-                                  body2='Season 2 picks up where Season 1 left '
-                                        "off with the 'parking tower burial' "
-                                        "ending and the subsequent 'fight "
-                                        "against a serial arsonist,' with a "
-                                        'series of near-disastrous events and '
-                                        'accidents.',
-                                  qna_list=[QnA(question="When will 'The "
-                                                         'Police Station Next '
-                                                         'to the Fire Station '
-                                                         "and Guk Gua Soo' "
-                                                         'premiere?',
-                                                answer="'The Police Station "
-                                                       'Next to the Fire '
-                                                       'Station and Guk Gua '
-                                                       "Soo' will premiere on "
-                                                       'April 4 at 10 p.m.'),
-                                            QnA(question='How many episodes '
-                                                         'will Season 2 have?',
-                                                answer='Season 2 will be '
-                                                       'broadcast in 12 '
-                                                       'episodes.'),
-                                            QnA(question='What will be the '
-                                                         'main focus of Season '
-                                                         '2?',
-                                                answer='Season 2 will depict '
-                                                       'the upgraded '
-                                                       'cooperation of '
-                                                       'firefighting, '
-                                                       'crime-fighting, and '
-                                                       'evidence-gathering '
-                                                       'police officers.'),
-                                            QnA(question='What happened at the '
-                                                         'end of Season 1?',
-                                                answer='Season 1 ended with a '
-                                                       "'parking tower burial' "
-                                                       'and the subsequent '
-                                                       "'fight against a "
-                                                       "serial arsonist.'"),
-                                            QnA(question='What can viewers '
-                                                         'expect from Season '
-                                                         '2?',
-                                                answer='Viewers can expect a '
-                                                       'series of '
-                                                       'near-disastrous events '
-                                                       'and accidents in '
-                                                       'Season 2.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://biz.chosun.com/resizer/T7PaBYXeO7JRRekZISLb1oOCsSE=/650x341/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/2THYHQXKAZ4LLS2VCZLTKF47UA.jpg',
-                              source='조선비즈'),
-                 ArticleImage(url='https://cdn.mhns.co.kr/news/thumbnail/202308/558910_683707_2921_v150.jpg',
-                              source='문화뉴스')]),
- Article(category='World/International',
-         keywords='뉴스',
-         contents=[ArticleContent(title='Intensive Rainfall Leaves '
-                                        'Gyeongsangbuk-do Region in Urgent '
-                                        'Need of Precautions and Port '
-                                        'Restoration',
-                                  lead='Almost three weeks after heavy rains '
-                                       'caused significant damage to the '
-                                       'northern Gyeongsangbuk-do region, '
-                                       'authorities are emphasizing the '
-                                       'importance of taking preventive '
-                                       'measures and restoring ports to '
-                                       'address the increasing frequency of '
-                                       'such disasters.',
-                                  body1="It's been almost three weeks since "
-                                        'torrential rains caused major damage '
-                                        'in northern Gyeongsangbuk-do. '
-                                        'Gyeongsangbuk-do believes that '
-                                        'disasters that may or may not come '
-                                        'once in 50 or 100 years will become '
-                                        'more frequent in the future, and is '
-                                        'taking this opportunity to prepare a '
-                                        'solid alternative. The emergency '
-                                        'restoration rate for this intensive '
-                                        'rainfall is 89.8% overall, including '
-                                        '98.2% for roads and bridges. Now that '
-                                        'emergency restoration is in its final '
-                                        'stages, attention is shifting to port '
-                                        'restoration and preventive measures.',
-                                  body2='Gyeongsangbuk-do is taking action '
-                                        'through the Landslide Response System '
-                                        'Innovation Task Force, saying the '
-                                        'heavy rains have shown that there are '
-                                        'no safe zones. It plans to build '
-                                        'disaster prevention villages that can '
-                                        'prevent landslides, and will begin a '
-                                        'large-scale safety diagnosis of risk '
-                                        'factors such as artificial objects in '
-                                        'the mountains. In addition, we will '
-                                        'improve the warning, evacuation, and '
-                                        'rescue and relief systems so that '
-                                        'rapid dissemination and evacuation '
-                                        'can be carried out in actual '
-                                        'situations. With extreme weather '
-                                        'events such as extreme downpours '
-                                        'becoming an everyday occurrence, the '
-                                        'extent of the damage will depend on '
-                                        'how well we establish permanent '
-                                        'recovery plans and disaster '
-                                        'preparedness.',
-                                  qna_list=[QnA(question='What caused the '
-                                                         'major damage in the '
-                                                         'northern '
-                                                         'Gyeongsangbuk-do '
-                                                         'region?',
-                                                answer='The major damage in '
-                                                       'the northern '
-                                                       'Gyeongsangbuk-do '
-                                                       'region was caused by '
-                                                       'torrential rains.'),
-                                            QnA(question='What is '
-                                                         'Gyeongsangbuk-do '
-                                                         'doing to address the '
-                                                         'increasing frequency '
-                                                         'of disasters?',
-                                                answer='Gyeongsangbuk-do is '
-                                                       'taking preventive '
-                                                       'measures and restoring '
-                                                       'ports to address the '
-                                                       'increasing frequency '
-                                                       'of disasters.'),
-                                            QnA(question='What is the '
-                                                         'emergency '
-                                                         'restoration rate for '
-                                                         'the intensive '
-                                                         'rainfall?',
-                                                answer='The emergency '
-                                                       'restoration rate for '
-                                                       'the intensive rainfall '
-                                                       'is 89.8% overall, '
-                                                       'including 98.2% for '
-                                                       'roads and bridges.'),
-                                            QnA(question='What action is '
-                                                         'Gyeongsangbuk-do '
-                                                         'taking through the '
-                                                         'Landslide Response '
-                                                         'System Innovation '
-                                                         'Task Force?',
-                                                answer='Gyeongsangbuk-do is '
-                                                       'planning to build '
-                                                       'disaster prevention '
-                                                       'villages, conduct a '
-                                                       'large-scale safety '
-                                                       'diagnosis, and improve '
-                                                       'warning, evacuation, '
-                                                       'and rescue systems '
-                                                       'through the Landslide '
-                                                       'Response System '
-                                                       'Innovation Task Force.'),
-                                            QnA(question='What is the '
-                                                         'importance of '
-                                                         'permanent recovery '
-                                                         'plans and disaster '
-                                                         'preparedness?',
-                                                answer='The extent of the '
-                                                       'damage caused by '
-                                                       'extreme weather events '
-                                                       'depends on how well '
-                                                       'permanent recovery '
-                                                       'plans and disaster '
-                                                       'preparedness are '
-                                                       'established.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='http://news.kbs.co.kr/data/news/title_image/newsmp4/daegu/news9/2023/08/04/50_7741234.jpg',
-                              source='KBS뉴스'),
-                 ArticleImage(url='https://yonhapnewstv-prod.s3.ap-northeast-2.amazonaws.com/article/MYH/20230804/MYH20230804026100641_P1.jpg',
-                              source='연합뉴스TV')]),
- Article(category='Technology',
-         keywords='호신용품',
-         contents=[ArticleContent(title="'I hope I never have to use "
-                                        "it'...self-defense firearms in spate "
-                                        'of violent crimes',
-                                  lead='Delays and out-of-stock notices amid '
-                                       "surge in sales 'I must protect my "
-                                       "body' anxiety spreads",
-                                  body1='Delayed deliveries and out-of-stock '
-                                        "notices amid a sales surge 'Protect "
-                                        "your body' anxiety spreads An online "
-                                        'store is out of tridents. Shopping '
-                                        "Mall Nurijip Galmuri 'Sales of "
-                                        'self-defense products have been '
-                                        'surging recently due to the ongoing '
-                                        'serious incidents...We will do our '
-                                        'best to deliver them as quickly as '
-                                        'possible and hope that you will never '
-                                        'have to use them, as our company '
-                                        "motto says.' On the 4th, NAVER Smart "
-                                        'Store, which sells self-defense '
-                                        'products, posted a message about the '
-                                        'delay in delivery. The three-piece '
-                                        'baton, which costs 15,900 won, has '
-                                        "over 8,100 reviews. 'I bought it for "
-                                        'self-defense after seeing a vicious '
-                                        'post about a murder in broad '
-                                        "daylight,' most of them said. On "
-                                        'March 3, 13 days after the stabbing '
-                                        'in Shinlim-dong, Gwanak-gu, Seoul, '
-                                        'another indiscriminate crime occurred '
-                                        'at a department store near Seohyeon '
-                                        'Station in Bundang-gu, Seongnam-si, '
-                                        'Gyeonggi-do, and the number of '
-                                        'consumers seeking self-defense '
-                                        'products has surged. The news that '
-                                        'the police have launched an '
-                                        'investigation into the crime, with a '
-                                        'series of warning posts on large '
-                                        'communities, is also amplifying '
-                                        "consumers' anxiety. Some products are "
-                                        'even selling out. A sign for a '
-                                        'company selling self-defense '
-                                        'products.',
-                                  body2='Nurijip Galmuri According to '
-                                        'G-market, sales of self-defense '
-                                        'products increased by 243 percent '
-                                        'from March 22 to March 3 compared to '
-                                        'the same period last year. Sales of '
-                                        'truncheons for self-defense increased '
-                                        'by 303%. On 11th Avenue, sales of '
-                                        'self-defense products and '
-                                        'self-defense sprays increased by 109% '
-                                        'and 171%, respectively, compared to '
-                                        "the same period last year. 'After the "
-                                        'stabbing in Shinlim-dong on the 21st '
-                                        'of last month, people who were '
-                                        "overwhelmed by the anxiety of 'what "
-                                        "could happen to me' were buying a lot "
-                                        'of related products to protect '
-                                        "themselves,' said an industry "
-                                        "insider. 'In addition, the Seohyun "
-                                        'Station incident every three days is '
-                                        'expected to cause a further surge in '
-                                        "self-defense product sales.' In fact, "
-                                        'on the fourth day after the Seohyun '
-                                        "Station incident, 'self-defense "
-                                        "products' ranked at the top of the "
-                                        'Naver Shopping search chart. Kubotan '
-                                        'is popular among women. There were '
-                                        'over 1,300 reviews. Nurijip Galmuri '
-                                        "'When I go to the bathroom, take the "
-                                        'train, or walk down the street, I '
-                                        'find myself constantly looking '
-                                        "around, and I'm sensitive to the "
-                                        "slightest sound,' said Yoo "
-                                        'Ah-moo-gae, a woman in her 40s who '
-                                        "lives in Seongbuk-gu, Seoul. 'In a "
-                                        'chat room with my family, we '
-                                        'discussed whether we should all buy '
-                                        "self-defense products.' Another man "
-                                        'in his 30s, Yoon Ah-moo-gae, said, '
-                                        "'The stabbing incident made me "
-                                        'realize that women who are relatively '
-                                        'weak are not the only ones who become '
-                                        "victims.' 'I'm thinking of buying a "
-                                        'lightweight spray, a trident, or a '
-                                        'kubotan (a keychain with a pointed '
-                                        "end) for self-defense,' he said. By "
-                                        'Yoo Yoon-hee Lee duck@hani.co.kr',
-                                  qna_list=[QnA(question='What is causing the '
-                                                         'surge in sales of '
-                                                         'self-defense '
-                                                         'products?',
-                                                answer='The surge in sales of '
-                                                       'self-defense products '
-                                                       'is being caused by '
-                                                       'ongoing serious '
-                                                       'incidents and the '
-                                                       'anxiety of individuals '
-                                                       'wanting to protect '
-                                                       'themselves.'),
-                                            QnA(question='Which online store '
-                                                         'posted a message '
-                                                         'about the delay in '
-                                                         'delivery?',
-                                                answer='NAVER Smart Store, '
-                                                       'which sells '
-                                                       'self-defense products, '
-                                                       'posted a message about '
-                                                       'the delay in delivery.'),
-                                            QnA(question='How much did sales '
-                                                         'of self-defense '
-                                                         'products increase on '
-                                                         'G-market?',
-                                                answer='Sales of self-defense '
-                                                       'products on G-market '
-                                                       'increased by 243 '
-                                                       'percent from March 22 '
-                                                       'to March 3 compared to '
-                                                       'the same period last '
-                                                       'year.'),
-                                            QnA(question='Why are people '
-                                                         'buying self-defense '
-                                                         'products?',
-                                                answer='People are buying '
-                                                       'self-defense products '
-                                                       'due to the anxiety of '
-                                                       'potential harm and the '
-                                                       'need to protect '
-                                                       'themselves.'),
-                                            QnA(question='What self-defense '
-                                                         'products are popular '
-                                                         'among women?',
-                                                answer='Kubotan, a keychain '
-                                                       'with a pointed end, is '
-                                                       'popular among women '
-                                                       'for self-defense.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://flexible.img.hani.co.kr/flexible/normal/640/307/imgdb/original/2023/0804/20230804502176.jpg',
-                              source='한겨레'),
-                 ArticleImage(url='https://img.biz.sbs.co.kr/upload/2023/08/04/ixf1691116949643.jpg',
-                              source='SBS Biz')]),
- Article(category='Entertainment',
-         keywords='소방서 옆 경찰서',
-         contents=[ArticleContent(title='Hanmyeong Butcher Shop and Gastron '
-                                        'Support Production of SBS Drama '
-                                        "'Police Station and Gukgwasoo Next to "
-                                        "Fire Station'",
-                                  lead='Hanmyeong Butcher Shop and Gastron are '
-                                       'both supporting the production of '
-                                       "SBS's new Friday drama 'Police Station "
-                                       "and Gukgwasoo Next to Fire Station'. "
-                                       'The drama tells the story of a fire '
-                                       'department, a police department, and a '
-                                       'gukgwasoo working together to solve '
-                                       'unprecedented cases.',
-                                  body1='Hanmyeong Butcher Shop and Gastron '
-                                        'are actively involved in the '
-                                        "production of SBS's new Friday drama "
-                                        "'Police Station and Gukgwasoo Next to "
-                                        "Fire Station'. This drama revolves "
-                                        'around the collaboration between a '
-                                        'fire department, a police department, '
-                                        'and a gukgwasoo to solve complex and '
-                                        'unprecedented cases. Starring actors '
-                                        'such as Kim Rae Won, Son Ho Joon, and '
-                                        'Gong Seung Yeon, the drama has gained '
-                                        'attention since its premiere. It airs '
-                                        'every Friday at 10 pm on SBS. '
-                                        'Hanmyeong Butcher Shop is a renowned '
-                                        'franchise brand specializing in aged '
-                                        'raw meat. It provides franchisees '
-                                        'with multifaceted brand promotion '
-                                        'strategies to boost sales. The '
-                                        'headquarters ensures the smooth '
-                                        'operation of stores by supplying all '
-                                        'ingredients, including meat and '
-                                        'sauces, in one pack.',
-                                  body2='Additionally, logistics and '
-                                        'distribution are handled by the '
-                                        'headquarters, reducing supply costs '
-                                        'and increasing franchisee margins. '
-                                        'Gastron, on the other hand, is a '
-                                        'company specializing in industrial '
-                                        'gas detectors. Founded in 1992, '
-                                        'Gastron has achieved localization and '
-                                        'globalization of gas detectors, '
-                                        'becoming a leader in the industry. '
-                                        "The drama's PPL (Product Placement) "
-                                        "includes Gastron's portable gas "
-                                        'detectors, which are frequently used '
-                                        'by firefighters in the field. These '
-                                        'detectors can simultaneously detect '
-                                        'oxygen, carbon monoxide, hydrogen '
-                                        'sulfide, and combustible gases. As '
-                                        'disaster sites often involve various '
-                                        'gas-related risks, wearing a gas '
-                                        'detector is essential for the safety '
-                                        'of firefighters. Gastron aims to '
-                                        'promote its products effectively '
-                                        'through its support for the drama '
-                                        'production and PPL promotion.',
-                                  qna_list=[QnA(question='What is the Friday '
-                                                         "drama 'Police "
-                                                         'Station and '
-                                                         'Gukgwasoo Next to '
-                                                         "Fire Station' about?",
-                                                answer="'Police Station and "
-                                                       'Gukgwasoo Next to Fire '
-                                                       "Station' is a drama "
-                                                       'that follows the '
-                                                       'collaboration between '
-                                                       'a fire department, a '
-                                                       'police department, and '
-                                                       'a gukgwasoo to solve '
-                                                       'complex and '
-                                                       'unprecedented cases.'),
-                                            QnA(question='Who are some of the '
-                                                         'actors in the drama?',
-                                                answer='The drama stars actors '
-                                                       'such as Kim Rae Won, '
-                                                       'Son Ho Joon, and Gong '
-                                                       'Seung Yeon.'),
-                                            QnA(question='When does the drama '
-                                                         "'Police Station and "
-                                                         'Gukgwasoo Next to '
-                                                         "Fire Station' air?",
-                                                answer='The drama airs every '
-                                                       'Friday at 10 pm on '
-                                                       'SBS.'),
-                                            QnA(question='What is Hanmyeong '
-                                                         'Butcher Shop known '
-                                                         'for?',
-                                                answer='Hanmyeong Butcher Shop '
-                                                       'is a renowned '
-                                                       'franchise brand '
-                                                       'specializing in aged '
-                                                       'raw meat.'),
-                                            QnA(question='How does Hanmyeong '
-                                                         'Butcher Shop support '
-                                                         'its franchisees?',
-                                                answer='Hanmyeong Butcher Shop '
-                                                       'supports its '
-                                                       'franchisees through '
-                                                       'multifaceted brand '
-                                                       'promotion strategies '
-                                                       'and by supplying all '
-                                                       'ingredients, including '
-                                                       'meat and sauces, to '
-                                                       'franchisees in one '
-                                                       'pack.'),
-                                            QnA(question='What does Gastron '
-                                                         'specialize in?',
-                                                answer='Gastron specializes in '
-                                                       'industrial gas '
-                                                       'detectors.'),
-                                            QnA(question='What product of '
-                                                         'Gastron is featured '
-                                                         'as PPL in the drama?',
-                                                answer="The drama's PPL "
-                                                       "includes Gastron's "
-                                                       'portable gas '
-                                                       'detectors.'),
-                                            QnA(question='What gases can '
-                                                         "Gastron's gas "
-                                                         'detectors detect?',
-                                                answer="Gastron's gas "
-                                                       'detectors can '
-                                                       'simultaneously detect '
-                                                       'oxygen, carbon '
-                                                       'monoxide, hydrogen '
-                                                       'sulfide, and '
-                                                       'combustible gases.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://cdn.mhns.co.kr/news/thumbnail/202308/558808_683527_413_v150.jpg',
-                              source='문화뉴스'),
-                 ArticleImage(url='https://cdn.mhns.co.kr/news/thumbnail/202308/558806_683525_3934_v150.jpg',
-                              source='문화뉴스')]),
- Article(category='Politics',
-         keywords='김관영',
-         contents=[ArticleContent(title='Governor Kim Kwan-young Highlights '
-                                        'Positive Aspects of World Scout '
-                                        'Jamboree',
-                                  lead='North Jeolla Province Governor Kim '
-                                       'Kwan-young has expressed optimism '
-                                       'about the ongoing World Scout '
-                                       'Jamboree, emphasizing the enjoyable '
-                                       'experiences of participants. Despite '
-                                       'concerns over the recent fever '
-                                       'outbreak and extreme weather '
-                                       'conditions, Governor Kim remains '
-                                       "committed to ensuring the event's "
-                                       'success.',
-                                  body1='Governor Kim Kwan-young of North '
-                                        'Jeolla Province has been actively '
-                                        'involved in overseeing the World '
-                                        'Scout Jamboree. He has even chosen to '
-                                        'stay at the campsite for the past two '
-                                        'days, closely observing the '
-                                        'activities and engaging with the '
-                                        'participants. According to Governor '
-                                        'Kim, the participants have been '
-                                        'having a great time, particularly '
-                                        'during the evening when they immerse '
-                                        'themselves in their respective '
-                                        "cultures. The governor's presence at "
-                                        'the campsite serves to address safety '
-                                        'concerns and ensure the smooth '
-                                        'functioning of the jamboree. He has '
-                                        'visited the key sites, inspected the '
-                                        'facilities, and interacted with the '
-                                        'scouts. Despite the challenges faced, '
-                                        'Governor Kim remains optimistic about '
-                                        "the event's success.",
-                                  body2='Addressing the recent fever outbreak, '
-                                        'he attributed it to factors such as '
-                                        'jet lag and exhaustion experienced by '
-                                        'athletes traveling long distances to '
-                                        'participate. He noted that the '
-                                        "scouts' condition has been improving "
-                                        'over the course of the jamboree. In '
-                                        'response to the heatwave, the '
-                                        'organizers have implemented necessary '
-                                        'measures to prioritize the safety of '
-                                        'all participants. Governor Kim '
-                                        'emphasized the indomitable spirit of '
-                                        'the jamboree, highlighting the '
-                                        'determination to persevere regardless '
-                                        'of the weather conditions. Indoor '
-                                        'activities, experience centers, and '
-                                        'exhibits have been planned to provide '
-                                        'a respite from the heat, while '
-                                        'certain outdoor activities have been '
-                                        'canceled. The governor stated that '
-                                        'further decisions regarding large '
-                                        'gatherings, such as K-pop concerts, '
-                                        'will be made after a comprehensive '
-                                        'assessment in an upcoming meeting. '
-                                        'With his unwavering dedication to '
-                                        'ensuring participant safety and a '
-                                        'memorable jamboree experience, '
-                                        'Governor Kim Kwan-young personifies '
-                                        'the spirit of a responsible leader '
-                                        'and an attentive father.',
-                                  qna_list=[QnA(question='What has Governor '
-                                                         "Kim Kwan-young's "
-                                                         'role been at the '
-                                                         'World Scout '
-                                                         'Jamboree?',
-                                                answer='Governor Kim '
-                                                       'Kwan-young has been '
-                                                       'overseeing the World '
-                                                       'Scout Jamboree and has '
-                                                       'chosen to stay at the '
-                                                       'campsite for the past '
-                                                       'two days to ensure '
-                                                       'safety and address any '
-                                                       'concerns.'),
-                                            QnA(question='How have the '
-                                                         'participants been '
-                                                         'enjoying the '
-                                                         'jamboree?',
-                                                answer='According to Governor '
-                                                       'Kim, the participants '
-                                                       'have been having a lot '
-                                                       'of fun, particularly '
-                                                       'during the evening as '
-                                                       'they engage in '
-                                                       'cultural activities.'),
-                                            QnA(question='What factors '
-                                                         'contributed to the '
-                                                         'recent fever '
-                                                         'outbreak?',
-                                                answer='Governor Kim '
-                                                       'attributed the fever '
-                                                       'outbreak to jet lag '
-                                                       'and exhaustion '
-                                                       'experienced by '
-                                                       'athletes traveling '
-                                                       'long distances to '
-                                                       'participate in the '
-                                                       'jamboree.'),
-                                            QnA(question='How are the '
-                                                         'organizers '
-                                                         'addressing the '
-                                                         'heatwave?',
-                                                answer='The organizers have '
-                                                       'implemented measures '
-                                                       'such as moving indoor '
-                                                       'activities, experience '
-                                                       'centers, and exhibits '
-                                                       'indoors, and canceling '
-                                                       'certain outdoor '
-                                                       'activities to '
-                                                       'prioritize participant '
-                                                       'safety during the '
-                                                       'heatwave.'),
-                                            QnA(question='What is the '
-                                                         "governor's stance "
-                                                         'regarding the '
-                                                         "event's success?",
-                                                answer='Governor Kim remains '
-                                                       'optimistic about the '
-                                                       "event's success and "
-                                                       'emphasized the '
-                                                       'indomitable spirit of '
-                                                       'the jamboree.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://cdn.eroun.net/news/thumbnail/202308/35826_64573_3536_v150.jpg',
-                              source='이로운넷'),
-                 ArticleImage(url='https://cdn.pressian.com/_resources/10/2023/08/04/2023080410440197244_l.png',
-                              source='프레시안')]),
- Article(category='Politics',
-         keywords='박영수 구속',
-         contents=[ArticleContent(title="'50 billion club' Park Young-soo "
-                                        "arrested...What's the difference from "
-                                        'when he was dismissed a month ago?',
-                                  lead='The arrest warrant for former special '
-                                       'prosecutor Park Young-soo, which the '
-                                       'court dismissed once, was issued on '
-                                       'March 3. Park was lobbied by a private '
-                                       'businessman in Daejeon-dong...',
-                                  body1='Former special prosecutor Park '
-                                        'Young-soo, who is under suspicion of '
-                                        "the so-called '5 billion club' for "
-                                        'receiving money in exchange for '
-                                        'helping private developers in '
-                                        'Daejeon-dong, heads to court to '
-                                        'appear for his second pre-arrest '
-                                        'interrogation (warrant examination) '
-                                        'at the Seoul Central District Court '
-                                        'in Seocho-gu, Seoul, on Wednesday '
-                                        'morning. Yonhap An arrest warrant for '
-                                        'former special prosecutor Park '
-                                        'Young-soo, which the court had '
-                                        'dismissed once, was issued on '
-                                        'Wednesday. Park is considered one of '
-                                        "the members of the '5 billion club' "
-                                        'that allegedly received lobbying from '
-                                        'a private businessman in Daegu-dong. '
-                                        'Additional charges filed by '
-                                        'prosecutors in the course of the '
-                                        'reinforcement investigation are '
-                                        'believed to have made the difference. '
-                                        'Yoon Jae-nam, deputy chief judge of '
-                                        "the Seoul Central District Court's "
-                                        'warrant division, announced the '
-                                        'reason for issuing an arrest warrant '
-                                        'for Park on the night of March 3, '
-                                        "saying that 'there is a risk of "
-                                        "evidence being destroyed.' Normally, "
-                                        'an arrest warrant is issued on the '
-                                        'premise that the charges have been '
-                                        'partially proven and for reasons such '
-                                        'as evidence destruction and fear of '
-                                        'escape. Previously, in June, Chief '
-                                        'Warrant Officer Yoo Chang-hoon '
-                                        'dismissed the arrest warrant, saying '
-                                        "that the charges were 'disputed in "
-                                        "factual and legal terms' and did not "
-                                        'recognize the charges themselves. The '
-                                        'prosecution believes the new charges, '
-                                        'which were filed in a reinforced '
-                                        'investigation, helped reverse the '
-                                        'outcome. Prosecutors added the charge '
-                                        'of violating the anti-graft law, '
-                                        'alleging that 1.1 billion won of the '
-                                        'money Park was supposed to receive '
-                                        'went to her daughter, Park '
-                                        'Ah-moo-gae, in the form of loans '
-                                        'while she was a special prosecutor. '
-                                        'The prosecution claimed that private '
-                                        'businesses in Daejeon-dong promised '
-                                        'to pay Park, and that the promise was '
-                                        'realized in the 1.1 billion won that '
-                                        "went to Park's daughter, which the "
-                                        'court accepted.',
-                                  body2="Park's destruction of her cell phone "
-                                        'earlier this year is also believed to '
-                                        "have contributed to the court's "
-                                        "determination of 'evidence "
-                                        "destruction concerns.' New evidence "
-                                        'obtained during the reinforcement '
-                                        'investigation also played a role. '
-                                        'During the reinforcement '
-                                        'investigation, the prosecution '
-                                        'obtained a loan agreement stating '
-                                        'that Kim Man-bae, the majority '
-                                        'shareholder of Hwacheon Daewoo Asset '
-                                        'Management, borrowed 500 million won '
-                                        'from Park, and that Park was to '
-                                        'receive the money back in shares. The '
-                                        'document served to support the '
-                                        'allegation that Park had agreed to '
-                                        "receive money. 'After carefully "
-                                        'analyzing the reasons for dismissing '
-                                        'the warrant, we reinforced the '
-                                        'evidence with solid evidence and '
-                                        "explained it in detail to the court,' "
-                                        'said an official from the Seoul '
-                                        "Central District Prosecutors' Office. "
-                                        'Park has previously stated that she '
-                                        "'did not receive or promise anything "
-                                        'in exchange for participating in the '
-                                        'Daejeon-dong development project or '
-                                        "arranging financing.' The detention "
-                                        'of Park is expected to speed up the '
-                                        "rest of the '5 billion club' "
-                                        'investigation. In particular, the '
-                                        'investigation of former Nationalist '
-                                        'Party of Korea lawmaker Kwak Sang-do, '
-                                        'whose case is similarly structured in '
-                                        'that he realized the money he was to '
-                                        'receive through his children, is '
-                                        'likely to gain momentum. Prosecutors '
-                                        "called Kwak's son, Kwak Sang-do, who "
-                                        'received 5 billion won in severance '
-                                        'pay (2.5 billion won in error) from '
-                                        'Hwacheon Daewoo, for questioning on '
-                                        'the 27th of last month and again '
-                                        'earlier this week. A prosecution '
-                                        "official said on March 3, 'We plan to "
-                                        "investigate the alleged '5 billion "
-                                        "club' in a sequential manner.' Former "
-                                        'Supreme Court Justice Kwon Soon-il, '
-                                        "who is suspected of 'trial "
-                                        "transactions,' is also being "
-                                        'investigated. By Kwang-joon Jeon '
-                                        'light@hani.co.kr',
-                                  qna_list=[QnA(question='Why was an arrest '
-                                                         'warrant issued for '
-                                                         'Park Young-soo?',
-                                                answer='An arrest warrant was '
-                                                       'issued for Park '
-                                                       'Young-soo due to the '
-                                                       'risk of evidence being '
-                                                       'destroyed. The '
-                                                       'prosecution believes '
-                                                       'that new charges filed '
-                                                       'during the '
-                                                       'reinforcement '
-                                                       'investigation, '
-                                                       'including a violation '
-                                                       'of the anti-graft law, '
-                                                       'helped reverse the '
-                                                       'outcome.'),
-                                            QnA(question="What is the '5 "
-                                                         "billion club'?",
-                                                answer="The '5 billion club' "
-                                                       'refers to a group of '
-                                                       'individuals who '
-                                                       'allegedly received '
-                                                       'money in exchange for '
-                                                       'assisting private '
-                                                       'developers in '
-                                                       'Daejeon-dong.'),
-                                            QnA(question='Who else is being '
-                                                         'investigated in '
-                                                         "relation to the '5 "
-                                                         "billion club'?",
-                                                answer='Former Nationalist '
-                                                       'Party of Korea '
-                                                       'lawmaker Kwak Sang-do '
-                                                       'and former Supreme '
-                                                       'Court Justice Kwon '
-                                                       'Soon-il are also being '
-                                                       'investigated in '
-                                                       "connection with the '5 "
-                                                       "billion club' case."),
-                                            QnA(question='What is the '
-                                                         'significance of Park '
-                                                         "Young-soo's arrest "
-                                                         "in the '5 billion "
-                                                         "club' investigation?",
-                                                answer="Park Young-soo's "
-                                                       'arrest is expected to '
-                                                       'accelerate the rest of '
-                                                       "the '5 billion club' "
-                                                       'investigation. It may '
-                                                       'also lead to a further '
-                                                       'investigation into '
-                                                       'other members of the '
-                                                       'group.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://flexible.img.hani.co.kr/flexible/normal/970/647/imgdb/original/2023/0804/20230804501508.jpg',
-                              source='한겨레'),
-                 ArticleImage(url='https://dimg.donga.com/a/800/0/95/5/wps/NEWS/IMAGE/2023/08/04/120570314.1.jpg',
-                              source='동아일보')]),
- Article(category='Crime',
-         keywords='칼부림예고',
-         contents=[ArticleContent(title='Arrest Made in Daegu University '
-                                        'Threatening Post Case',
-                                  lead='A 20-year-old individual who posted a '
-                                       'threatening message on the Daegu '
-                                       'University bulletin board has been '
-                                       'apprehended by the Gyeongsan Police '
-                                       'Department. The post, which mentioned '
-                                       'stabbings, triggered concerns among '
-                                       'students and prompted an '
-                                       'investigation.',
-                                  body1='The Gyeongsan Police Department in '
-                                        'Gyeongsangbuk-do, Gyeongsangbuk-do, '
-                                        'announced on the afternoon of the 4th '
-                                        'that it arrested A, in his 20s, for '
-                                        'writing a post satirizing stabbings '
-                                        'on the Everytime Daegu University '
-                                        'bulletin board (threats).A wrote a '
-                                        'post at 2:38 p.m. on the same day, '
-                                        "saying, 'Daegu University Rollo Noir "
-                                        "Zoro 3 degrees of stabbings.' He "
-                                        "posted a post titled, 'Daegu "
-                                        'University Rolloa Zoro. The post was '
-                                        'deleted at 3:10 p.m., but students '
-                                        "who saw it reported it as a 'warning "
-                                        "of a weapon rampage,' prompting "
-                                        'police to launch an investigation. '
-                                        'Police traced his internet address '
-                                        '(IP) and arrested him five hours '
-                                        'later near a study cafe in Gyeongsan, '
-                                        'North Gyeongsang Province.',
-                                  body2='Police plan to file threatening '
-                                        'charges against him. In the wake of '
-                                        'the recent stabbing rampage, police '
-                                        'have been applying threatening '
-                                        'charges to posters of death threats '
-                                        'on online communities and social '
-                                        'media services (SNS). The crime of '
-                                        'threatening is punishable by up to '
-                                        'three years in prison and a fine of '
-                                        'up to 5 million won.',
-                                  qna_list=[QnA(question='Who has been '
-                                                         'arrested by the '
-                                                         'Gyeongsan Police '
-                                                         'Department?',
-                                                answer='A 20-year-old '
-                                                       'individual has been '
-                                                       'arrested by the '
-                                                       'Gyeongsan Police '
-                                                       'Department.'),
-                                            QnA(question='What was the content '
-                                                         'of the threatening '
-                                                         'post?',
-                                                answer='The post mentioned '
-                                                       "'Daegu University "
-                                                       'Rollo Noir Zoro 3 '
-                                                       "degrees of stabbings.'"),
-                                            QnA(question='How did the police '
-                                                         'trace the '
-                                                         'individual?',
-                                                answer='The police traced the '
-                                                       'individual through '
-                                                       'their internet address '
-                                                       '(IP).'),
-                                            QnA(question='What charges will '
-                                                         'the police file '
-                                                         'against the arrested '
-                                                         'individual?',
-                                                answer='The police will file '
-                                                       'threatening charges '
-                                                       'against the arrested '
-                                                       'individual.'),
-                                            QnA(question='What is the '
-                                                         'punishment for the '
-                                                         'crime of '
-                                                         'threatening?',
-                                                answer='The crime of '
-                                                       'threatening is '
-                                                       'punishable by up to '
-                                                       'three years in prison '
-                                                       'and a fine of up to 5 '
-                                                       'million won.')],
-                                  language='EN-US')],
-         images=[ArticleImage(url='https://newsimg.sedaily.com/2023/08/04/29TA0FROJB_1.jpg',
-                              source='서울경제신문'),
-                 ArticleImage(url='https://newsimg.sedaily.com/2023/08/04/29TA11XCJD_1.jpg',
-                              source='서울경제신문')])]
-
-
+step4 =[Article(category='Entertainment', keywords='William Friedkin', contents=[ArticleContent(title='William Friedkin, Director of ‘French Connection’ and ‘Exorcist,’ Dies at 87', lead='He made his name with two of the biggest box-office hits of the 1970s. But despite some later successes, he never regained his early acclaim.', body1='“Horror was a disreputable genre, but Friedkin elevated it with the A-list treatment,” Peter Biskind, the author of “Easy Riders, Raging Bulls: How the Sex-Drugs-and-Rock ’n’ Roll Generation Saved Hollywood” (1998), said in an interview for this obituary in 2016. “‘The Exorcist’ was so successful that it paved the way for the gentrification of B movies that has given us ‘Star Wars,’ the ‘Raiders of the Lost Ark’ cycle and the comic-book movies we have today.” William Friedkin, known to his friends as Billy, was born in Chicago on Aug.\n\n 25, 1935, to Louis and Rachel (Green) Friedkin. Both parents were Jews who had left Ukraine early in the century with their families to escape the tsarist pogroms. His mother, who was known as Rae, was an operating room nurse; his father worked a variety of low-paying jobs.\n\n', body2='After graduating from Senn High School on Chicago’s North Side in 1953, Mr. Friedkin took a job in the mailroom of the local television station WGN. Within a few years he had worked his way up to director, turning out hundreds of shows, from “Bozo’s Circus” to live performances of the Chicago Symphony Orchestra, as well as documentaries. His documentary work coincided with the advent of portable cameras, a decisive influence on his style.\n\n “I learned on equipment that almost begged for you to get up and move around,” he told Gene Siskel, the film critic for The Chicago Tribune, in 1980. After his documentary “The People vs. Paul Crump,” about a death-row prisoner in the Cook County Jail, won the grand prize at the San Francisco Film Festival in 1962, Mr. Friedkin went to work in Los Angeles for David Wolper, a producer of documentaries for all three television networks.\n\n', qna_list=[QnA(question="What were William Friedkin's biggest box-office hits?", answer="William Friedkin's biggest box-office hits were 'French Connection' and 'Exorcist'."), QnA(question="What impact did 'The Exorcist' have on the horror genre?", answer="'The Exorcist' was so successful that it paved the way for the gentrification of B movies and influenced the development of other successful movies like 'Star Wars' and the 'Raiders of the Lost Ark' cycle."), QnA(question='Where was William Friedkin born?', answer='William Friedkin was born in Chicago, Illinois.'), QnA(question="What was William Friedkin's early career like?", answer='After working his way up from the mailroom of a local television station in Chicago, William Friedkin became a director and worked on various shows and documentaries.'), QnA(question="What was one of William Friedkin's notable documentary films?", answer="One of William Friedkin's notable documentary films was 'The People vs. Paul Crump', which won the grand prize at the San Francisco Film Festival in 1962.")], language='EN-US')], images=[ArticleImage(url='https://static01.nyt.com/images/2023/08/08/obituaries/00friedkin1-print1/00friedkin1-facebookJumbo.jpg', source='The New York Times'), ArticleImage(url='https://media.npr.org/assets/img/2023/08/07/gettyimages-1482518211_wide-f7baf5a3ffc7dc8c24e3ccd5e892ecf20db9f1c0-s1400-c100.jpg', source='NPR')])]
 ########################## STEP 5 ##########################
 step_5 = [Article(category='Sports',
          keywords='월드컵,여자월드컵,축구,여자 월드컵,한국 독일',
@@ -3567,7 +2456,7 @@ step_5 = [Article(category='Sports',
                               source='시민언론 민들레'),
                  ArticleImage(url='https://gdb.voanews.com/01000000-0aff-0242-b0e3-08db5b043c7a_w1200_r1.jpg',
                               source='VOA Korea')]),
- Article(category='Business/Economy',
+ Article(category='Economy',
          keywords='미국 신용등급 강등',
          contents=[ArticleContent(title='U.S. sovereign credit rating '
                                         'downgraded for first time in 12 '
@@ -5325,7 +4214,7 @@ step6 = [Folder(today=datetime.date(2023, 8, 5),
                          'the importance of taking preventive measures and '
                          'restoring ports to address the increasing frequency '
                          "of such disasters.'\n"
-                         "category: 'World/International'\n"
+                         "category: 'International'\n"
                          "keywords: '뉴스'\n"
                          "date: '2023-08-05'\n"
                          "author: 'wikitoday.io'\n"
@@ -5452,7 +4341,7 @@ step6 = [Folder(today=datetime.date(2023, 8, 5),
                          "title: '强降雨导致庆尚北道地区急需采取预防措施和恢复港口'\n"
                          'description: '
                          "'在暴雨给庆尚北道北部地区造成重大损失近三周后，当局强调了采取预防措施和恢复港口的重要性，以应对日益频繁的此类灾害。'\n"
-                         "category: 'World/International'\n"
+                         "category: 'International'\n"
                          "keywords: '뉴스'\n"
                          "date: '2023-08-05'\n"
                          "author: 'wikitoday.io'\n"
@@ -5537,7 +4426,7 @@ step6 = [Folder(today=datetime.date(2023, 8, 5),
                          "description: '폭우로 경북 북부 지역에 큰 피해가 발생한 지 약 3주가 지난 지금, "
                          '당국은 이러한 재해의 빈도가 높아짐에 따라 예방 조치와 항구 복구의 중요성을 강조하고 '
                          "있습니다.'\n"
-                         "category: 'World/International'\n"
+                         "category: 'International'\n"
                          "keywords: '뉴스'\n"
                          "date: '2023-08-05'\n"
                          "author: 'wikitoday.io'\n"

@@ -94,5 +94,5 @@ def test_to_folder_template_html_escape():
     article.contents[0].body1 = breaked
     result = to_folders([article, ], '20220807')
 
-    print(result[0].mds[0].md)
-    assert False
+    # print(result[0].mds[0].md)
+    # assert False

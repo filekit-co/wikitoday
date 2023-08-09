@@ -36,6 +36,7 @@ def perform_step(step_number: int, func: Callable, *args, **kwargs) -> Any:
 async def generate_news(country: TargetCountryCode, date: str | None = None):
     # date schema YYYYMMDD i.g 20230803
     google_trends = await aperform_step(1, daily_trends, country, date)
+    google_trends = google_trends[:2]
     crawled_trends = await aperform_step(2, from_trends, google_trends)
     translated_trends = await aperform_step(3, translate_crawled_trends, crawled_trends)
     regenerated_articles = await aperform_step(4, regenerate_articles, translated_trends)
