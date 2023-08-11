@@ -986,7 +986,232 @@ step_3 = [TranslatedCrawledTrend(keywords=['안보현', '지수 안보현', '안
                                              source='금강일보')])
 ]
 ########################## STEP 4 ##########################
-step4 =[Article(category='Entertainment', keywords='William Friedkin', contents=[ArticleContent(title='William Friedkin, Director of ‘French Connection’ and ‘Exorcist,’ Dies at 87', lead='He made his name with two of the biggest box-office hits of the 1970s. But despite some later successes, he never regained his early acclaim.', body1='“Horror was a disreputable genre, but Friedkin elevated it with the A-list treatment,” Peter Biskind, the author of “Easy Riders, Raging Bulls: How the Sex-Drugs-and-Rock ’n’ Roll Generation Saved Hollywood” (1998), said in an interview for this obituary in 2016. “‘The Exorcist’ was so successful that it paved the way for the gentrification of B movies that has given us ‘Star Wars,’ the ‘Raiders of the Lost Ark’ cycle and the comic-book movies we have today.” William Friedkin, known to his friends as Billy, was born in Chicago on Aug.\n\n 25, 1935, to Louis and Rachel (Green) Friedkin. Both parents were Jews who had left Ukraine early in the century with their families to escape the tsarist pogroms. His mother, who was known as Rae, was an operating room nurse; his father worked a variety of low-paying jobs.\n\n', body2='After graduating from Senn High School on Chicago’s North Side in 1953, Mr. Friedkin took a job in the mailroom of the local television station WGN. Within a few years he had worked his way up to director, turning out hundreds of shows, from “Bozo’s Circus” to live performances of the Chicago Symphony Orchestra, as well as documentaries. His documentary work coincided with the advent of portable cameras, a decisive influence on his style.\n\n “I learned on equipment that almost begged for you to get up and move around,” he told Gene Siskel, the film critic for The Chicago Tribune, in 1980. After his documentary “The People vs. Paul Crump,” about a death-row prisoner in the Cook County Jail, won the grand prize at the San Francisco Film Festival in 1962, Mr. Friedkin went to work in Los Angeles for David Wolper, a producer of documentaries for all three television networks.\n\n', qna_list=[QnA(question="What were William Friedkin's biggest box-office hits?", answer="William Friedkin's biggest box-office hits were 'French Connection' and 'Exorcist'."), QnA(question="What impact did 'The Exorcist' have on the horror genre?", answer="'The Exorcist' was so successful that it paved the way for the gentrification of B movies and influenced the development of other successful movies like 'Star Wars' and the 'Raiders of the Lost Ark' cycle."), QnA(question='Where was William Friedkin born?', answer='William Friedkin was born in Chicago, Illinois.'), QnA(question="What was William Friedkin's early career like?", answer='After working his way up from the mailroom of a local television station in Chicago, William Friedkin became a director and worked on various shows and documentaries.'), QnA(question="What was one of William Friedkin's notable documentary films?", answer="One of William Friedkin's notable documentary films was 'The People vs. Paul Crump', which won the grand prize at the San Francisco Film Festival in 1962.")], language='EN-US')], images=[ArticleImage(url='https://static01.nyt.com/images/2023/08/08/obituaries/00friedkin1-print1/00friedkin1-facebookJumbo.jpg', source='The New York Times'), ArticleImage(url='https://media.npr.org/assets/img/2023/08/07/gettyimages-1482518211_wide-f7baf5a3ffc7dc8c24e3ccd5e892ecf20db9f1c0-s1400-c100.jpg', source='NPR')])]
+step4 = [Article(category='Entertainment',
+         keywords='Lil Tay, how did lil tay die, lil tay dead, lil tay death, '
+                  'lil tay brother, lil tay cause of death, lil tay passed '
+                  'away, lil tay age, what happened to lil tay, lil tay died',
+         contents=[ArticleContent(title='Teen Internet Rapper Lil Tay Has Died',
+                                  lead='Claire Hope, the Canadian pre-teen '
+                                       'internet rapper known as Lil Tay, has '
+                                       'died, her management confirmed to '
+                                       'Variety.',
+                                  body1='Claire Hope, the Canadian pre-teen '
+                                        'internet rapper known as Lil Tay, has '
+                                        'died, her management confirmed in a '
+                                        'statement to Variety. Lil Tay '
+                                        'achieved viral fame as a 9-year-old '
+                                        'social media influencer, known for '
+                                        'her expletive-filled Instagram videos '
+                                        'depicting a lavish hip-hop lifestyle. '
+                                        'She was associated with popular '
+                                        'rappers including Chief Keef and '
+                                        'XXXTentacion.\n'
+                                        '\n',
+                                  body2='However, she also faced controversies '
+                                        'for her use of offensive language and '
+                                        'allegations of abuse within her '
+                                        'family. The circumstances surrounding '
+                                        'her death, along with the death of '
+                                        'her brother, are still under '
+                                        "investigation. Lil Tay's sudden "
+                                        'passing has left her family and fans '
+                                        'in shock, and she will be remembered '
+                                        'for her impact on social media and '
+                                        'the music industry.\n'
+                                        '\n',
+                                  qna_list=[QnA(question='Who is Lil Tay?',
+                                                answer='Lil Tay, whose real '
+                                                       'name is Claire Hope, '
+                                                       'was a Canadian '
+                                                       'pre-teen internet '
+                                                       'rapper and social '
+                                                       'media influencer.'),
+                                            QnA(question='How did Lil Tay '
+                                                         'achieve fame?',
+                                                answer='Lil Tay gained viral '
+                                                       'fame through her '
+                                                       'expletive-filled '
+                                                       'Instagram videos, '
+                                                       'where she portrayed a '
+                                                       'lavish hip-hop '
+                                                       'lifestyle.'),
+                                            QnA(question='What controversies '
+                                                         'was Lil Tay involved '
+                                                         'in?',
+                                                answer='Lil Tay faced backlash '
+                                                       'for using offensive '
+                                                       'language and drew '
+                                                       'criticism for her '
+                                                       'association with '
+                                                       'popular rappers. '
+                                                       'Additionally, there '
+                                                       'were allegations of '
+                                                       'abuse within her '
+                                                       'family.'),
+                                            QnA(question='What is still under '
+                                                         'investigation '
+                                                         "regarding Lil Tay's "
+                                                         'death?',
+                                                answer='The circumstances '
+                                                       "surrounding Lil Tay's "
+                                                       'death, along with the '
+                                                       'death of her brother, '
+                                                       'are still being '
+                                                       'investigated.'),
+                                            QnA(question="How are Lil Tay's "
+                                                         'fans reacting to her '
+                                                         'passing?',
+                                                answer="Lil Tay's sudden death "
+                                                       'has left her fans in '
+                                                       'shock, and they are '
+                                                       'expressing their grief '
+                                                       'and sharing memories '
+                                                       'of her impact on '
+                                                       'social media.'),
+                                            QnA(question="What is Lil Tay's "
+                                                         'legacy in the music '
+                                                         'industry?',
+                                                answer='Lil Tay will be '
+                                                       'remembered for her '
+                                                       'significant influence '
+                                                       'on social media and '
+                                                       'her role in shaping '
+                                                       'the rap genre among '
+                                                       'young audiences.')],
+                                  language='EN-US')],
+         images=[ArticleImage(url='https://variety.com/wp-content/uploads/2023/08/Lil-Tay-Obit-Dead.jpg?w=1000&h=518&crop=1',
+                              source='Variety'),
+                 ArticleImage(url='https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1688,w_3000,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1691599135/Blank_3000_x_1688_copy_382_e2csbq',
+                              source='Daily Beast')]),
+ Article(category='Nature',
+         keywords='Maui fire, Maui, lahaina fire, Lahaina, hawaii fire, maui '
+                  'fires, Hawaii, maui fire update, lahaina maui, Hawaii '
+                  'Wildfires, hawaii fires, hurricane dora, fires in maui, '
+                  'fire in maui, maui wildfires, lahaina maui fire, maui fire '
+                  'map, maui wildfire, fires in hawaii, lahaina maui fires, '
+                  'fire in hawaii',
+         contents=[ArticleContent(title='Deadly Maui Fire Destroys Town and '
+                                        'Forces Evacuations',
+                                  lead='A massive wildfire in Maui, Hawaii, '
+                                       'has devastated the town of Lahaina and '
+                                       'forced thousands of residents to '
+                                       'evacuate. The fire, which started '
+                                       'under dry conditions and strong winds, '
+                                       'has caused widespread destruction and '
+                                       'claimed the lives of at least six '
+                                       'people. The exact cause of the fire is '
+                                       'still unknown, but authorities believe '
+                                       'the combination of dry conditions, '
+                                       'high winds, and the effects of '
+                                       'Hurricane Dora contributed to its '
+                                       'rapid spread. Emergency measures have '
+                                       'been put in place, including an '
+                                       'emergency proclamation and the '
+                                       'deployment of National Guard troops.',
+                                  body1='Deadly wildfires have been raging in '
+                                        'Hawaii, with the town of Lahaina on '
+                                        'the island of Maui bearing the brunt '
+                                        'of the destruction. The fire, which '
+                                        'started under dry conditions and '
+                                        'strong winds, quickly engulfed the '
+                                        'town, leaving buildings on both sides '
+                                        "of the street 'engulfed' in flames. "
+                                        'As a result, many people lost their '
+                                        'jobs and homes, making the impact of '
+                                        'the fire devastating for the '
+                                        'community.\n'
+                                        '\n',
+                                  body2='The exact cause of the fire is still '
+                                        'unknown, but authorities suspect that '
+                                        'the combination of dry conditions, '
+                                        'low humidity, and high winds played a '
+                                        'significant role. Additionally, '
+                                        'Hurricane Dora, which was moving '
+                                        'across the Pacific Ocean south of the '
+                                        'Hawaiian islands, generated powerful '
+                                        'winds that fueled the flames. The '
+                                        "fire's rapid spread prompted an "
+                                        "emergency proclamation from Hawaii's "
+                                        'acting governor, Sylvia Luke, who '
+                                        'authorized the deployment of National '
+                                        'Guard troops to assist with the '
+                                        'firefighting efforts.\n'
+                                        '\n',
+                                  qna_list=[QnA(question='How did the Maui '
+                                                         'fire start?',
+                                                answer='The exact cause of the '
+                                                       'Maui fire is still '
+                                                       'unknown. However, '
+                                                       'authorities believe '
+                                                       'that the combination '
+                                                       'of dry conditions, low '
+                                                       'humidity, and high '
+                                                       'winds contributed to '
+                                                       'its start.'),
+                                            QnA(question='What is the impact '
+                                                         'of the Maui fire?',
+                                                answer='The Maui fire has '
+                                                       'caused widespread '
+                                                       'destruction, '
+                                                       'particularly in the '
+                                                       'town of Lahaina. Many '
+                                                       'buildings have been '
+                                                       'engulfed in flames, '
+                                                       'and at least six '
+                                                       'people have lost their '
+                                                       'lives. The fire has '
+                                                       'also resulted in job '
+                                                       'loss and displacement '
+                                                       'for many residents.'),
+                                            QnA(question='Did Hurricane Dora '
+                                                         'contribute to the '
+                                                         'spread of the fire?',
+                                                answer='Yes, Hurricane Dora, a '
+                                                       'Category 4 storm, '
+                                                       'generated powerful '
+                                                       'winds that fanned the '
+                                                       'flames of the Maui '
+                                                       'fire. The effects of '
+                                                       'the hurricane, '
+                                                       'combined with the '
+                                                       'existing dry '
+                                                       'conditions and strong '
+                                                       'winds, created a '
+                                                       'perfect environment '
+                                                       'for the fire to '
+                                                       'rapidly spread.'),
+                                            QnA(question='What measures have '
+                                                         'been taken to '
+                                                         'address the fire?',
+                                                answer="Hawaii's acting "
+                                                       'governor, Sylvia Luke, '
+                                                       'issued an emergency '
+                                                       'proclamation in '
+                                                       'response to the Maui '
+                                                       'fire. This authorized '
+                                                       'the deployment of '
+                                                       'National Guard troops '
+                                                       'to assist with '
+                                                       'firefighting efforts. '
+                                                       'Evacuations have also '
+                                                       'been carried out to '
+                                                       'ensure the safety of '
+                                                       'residents.'),
+                                            QnA(question='Are there any known '
+                                                         'casualties from the '
+                                                         'fire?',
+                                                answer='At least six people '
+                                                       'have lost their lives '
+                                                       'as a result of the '
+                                                       'Maui fire. The exact '
+                                                       'number of casualties '
+                                                       'may change as the '
+                                                       'situation develops.')],
+                                  language='EN-US')],
+         images=[ArticleImage(url='https://assets3.cbsnewsstatic.com/hub/i/r/2023/08/09/acd7f16c-7c94-483e-acbe-6b24481b1dac/thumbnail/1200x630/a1790ea5e59a3351dba048437ed36ed3/2023-08-09t205115z-518774722-rc2gk2apznpl-rtrmadp-3-hawaii-wildfires.jpg?v=08aa43fa812a9e12e93282c47f58b17f',
+                              source='CBS News'),
+                 ArticleImage(url='https://s.abcnews.com/images/US/hawaii-fire_hpMain_20230809-100146_16x9_992.jpg',
+                              source='ABC News')])]
 ########################## STEP 5 ##########################
 step_5 = [Article(category='Sports',
          keywords='월드컵,여자월드컵,축구,여자 월드컵,한국 독일',

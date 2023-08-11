@@ -17,6 +17,7 @@ keywords: '{{ keywords }}'
 date: '{{ date }}'
 author: 'wikitoday.io'
 language: '{{ content.language }}'
+candidLanguages: [{{ candid_languages|join(", ") }}]
 {% if images|length > 0 %}thumbnail: '{{ images[0].url | e }}'{% endif %}
 ---
 
@@ -97,6 +98,7 @@ def to_folders(articles: List[Article], article_date: Optional[date] = None) -> 
     folders = []
     for article in articles:
         markdowns = []
+        candid_languages = [f"'{c.language}'" for c in article.contents]
         for content in article.contents:
             try:
                 markdown = Markdown(
@@ -107,7 +109,8 @@ def to_folders(articles: List[Article], article_date: Optional[date] = None) -> 
                         "images": article.images,
                         "content": content,
                         "date": article_date,
-                        "qna": enumerate(content.qna_list)
+                        "qna": enumerate(content.qna_list),
+                        "candid_languages": candid_languages
                     })
                 )
                 markdowns.append(markdown)

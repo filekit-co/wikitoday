@@ -4,8 +4,9 @@ from dataclasses import dataclass, field
 from typing import List, Optional
 
 import httpx
-from domain.entities import GoogleTrend, TrendArticleMeta
 from httpx import AsyncClient, Response
+
+from domain.entities import GoogleTrend, TrendArticleMeta
 from utils import generate_dataclass
 
 GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends"
@@ -41,6 +42,8 @@ class Title:
 
 @dataclass
 class TrendingDataEntry:
+    NUM_MAX_ARTICLE = 2
+
     title: Optional[Title] = None
     formattedTraffic: Optional[str] = None
     relatedQueries: List[RelatedQuery] = field(default_factory=list)
@@ -55,11 +58,10 @@ class TrendingDataEntry:
         
     
     def to_dto(self) -> GoogleTrend:
-        NUM_MAX_ARTICLE = 2
         return GoogleTrend(
             query=self.title.query,
             related_quries=[r.query for r in self.relatedQueries if r.query],
-            articles=[a.dto for a in self.articles if a.url][:NUM_MAX_ARTICLE]
+            articles=[a.dto for a in self.articles if a.url][:TrendingDataEntry.NUM_MAX_ARTICLE]
         )
 
 
