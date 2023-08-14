@@ -8,8 +8,7 @@ from jinja2 import Template
 
 from app.config import get_env
 from consts import GPT_MODEL
-from domain.entities import TranslatedCrawledTrend
-from src.domain.entities import Article
+from domain.entities import Article, TranslatedCrawledTrend
 
 logger = logging.getLogger(__name__)
 _env = get_env()

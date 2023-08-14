@@ -7,8 +7,8 @@ from typing import List
 import httpx
 
 from app.config import get_env
+from consts import TargetCountryCode
 from domain.entities import Folder
-from src.consts import TargetCountryCode
 
 logger = logging.getLogger(__name__)
 _env = get_env()

@@ -104,14 +104,7 @@ class Language(StrEnum):
     UK = "UK"
     ZH = "ZH"
 
-    @classmethod
-    def target_languages(cls, exclude_en=True):
-        # langs = [self.EN_US, self.ZH, self.JA, self.PT_PT, self.PT_BR, self.RU, self.KO]
-        langs = [cls.EN_US, cls.ZH, cls.KO]
-        if exclude_en:
-            return langs[1:]
-        return langs
-    
+
     def __repr__(self):
         return self._value_
 

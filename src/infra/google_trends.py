@@ -127,4 +127,5 @@ async def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
         r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
         r.raise_for_status()
         trends = _parse_trends(r)
-        return [t.to_dto() for t in trends]
+        only_three = [t.to_dto() for t in trends][:2]
+        return only_three

@@ -6,8 +6,11 @@ from typing import List
 import httpx
 
 from app.config import get_env
+from consts import TargetCountryCode
 from domain.entities import (Article, CrawledTrend, Language,
                              TranslatedCrawledTrend)
+from domain.localization.cultural_mapping import \
+    get_culturally_relevant_languages
 
 logger = logging.getLogger(__name__)
 
@@ -80,13 +83,13 @@ async def translate_crawled_trends(trends: List[CrawledTrend], target_lang: Lang
 
 
 # en -> multiple languages
-async def translate_articles(articles: List[Article]):
+async def translate_articles(news_origin_country_code: TargetCountryCode, articles: List[Article]):
     # key format = (article index, target_lang_code)
     async with httpx.AsyncClient() as client:
         tasks = [
             ((i, target_lang), translate_text(client, article.to_list(), target_lang)) 
             for i, article in enumerate(articles)
-            for target_lang in Language.target_languages()
+            for target_lang in get_culturally_relevant_languages(news_origin_country_code, include_english=False)
         ]
         tasks = {key: task for key, task in tasks}
         responses = await asyncio.gather(
