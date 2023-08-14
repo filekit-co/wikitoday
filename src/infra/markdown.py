@@ -98,7 +98,7 @@ def to_folders(articles: List[Article], article_date: Optional[date] = None) -> 
     folders = []
     for article in articles:
         markdowns = []
-        candid_languages = [f"'{c.language}'" for c in article.contents]
+        candid_languages = [f"'{c.language}'" for c in list(set([c for c in article.contents])) ]
         for content in article.contents:
             try:
                 markdown = Markdown(
