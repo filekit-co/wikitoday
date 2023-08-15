@@ -163,7 +163,7 @@ class ArticleContent:
 
 @dataclass
 class Article:
-    NUM_PARAGRAPH_SENTENCES = 3
+    NUM_PARAGRAPH_SENTENCES = 2
 
     category: str
     keywords: str
