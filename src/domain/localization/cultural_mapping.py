@@ -8,7 +8,7 @@ _cultural_language_mapping = {
     "AU": [Language.EN_US, Language.ZH], # 호주는 영어를 사용하며, 중국과의 경제적 연결을 고려하여 중국어도 포함됩니다.
     "AT": [Language.DE, Language.FR, Language.IT], # 오스트리아는 독일어를 사용하며, 주변 유럽 국가와의 연결을 반영하여 프랑스어와 이탈리아어도 포함됩니다.
     "BE": [Language.NL, Language.FR, Language.DE],  # 벨기에는 네덜란드어, 프랑스어, 독일어를 공용어로 사용하며, 이 세 언어가 포함되었습니다.
-    "BR": [Language.PT_BR, Language.ES], # 브라질은 포르투갈어를 사용하며, 이웃 국가와의 연결을 고려하여 스페인어도 포함되었습니다.
+    "BR": [Language.PT_BR, Language.ES, Language.FR, Language.DE], # 브라질은 포르투갈어를 사용하며, 이웃 국가와의 연결을 고려하여 스페인어도 포함되었습니다. 축구 관련된 뉴스에 의해 프랑스어와 독일어를 추가합니다.
     "CA": [Language.EN_US, Language.FR], # 캐나다는 영어와 프랑스어를 공용어로 사용합니다.
     "CL": [Language.ES, Language.PT_BR],
     "CO": [Language.ES, Language.PT_BR],
@@ -26,7 +26,7 @@ _cultural_language_mapping = {
     "IE": [Language.EN_GB],
     # "IL": [Language.HE, ], # 이스라엘은 히브리어와 아랍어를 공용어로 사용합니다
     "IT": [Language.IT, Language.FR, Language.DE],
-    "JP": [Language.JA, Language.KO, Language.ZH], # 일본은 일본어를 사용하며, 근접한 한국과 중국과의 문화적, 경제적 연결을 반영합니다.
+    "JP": [Language.JA, ], 
     "KE": [Language.FR],
     "MY": [Language.EN_US, Language.ZH],
     "MX": [Language.ES, Language.EN_US],
@@ -43,7 +43,7 @@ _cultural_language_mapping = {
     "SA": [Language.EN_US],
     "SG": [Language.EN_US, Language.ZH, ],
     "ZA": [Language.EN_US],
-    "KR": [Language.KO, Language.JA, Language.ZH], # 대한민국은 한국어를 사용하며, 일본과 중국과의 거리가 가까운 연결을 반영합니다.
+    "KR": [Language.KO, Language.JA, Language.EN_US, ], # 대한민국은 한국어를 사용하며, 일본과 중국과의 거리가 가까운 연결을 반영합니다.
     "ES": [Language.ES, Language.PT_PT, Language.FR],
     "SE": [Language.SV, Language.DA],
     "CH": [Language.DE, Language.FR, Language.IT], #  스위스는 독일어, 프랑스어, 이탈리아어를 공용어로 사용하여 이 세 언어를 포함시킵니다.
