@@ -1,0 +1,99 @@
+@startuml
+
+participant "Scheduler" as A
+participant "Google Trends\nFetcher" as B
+participant "Article Crawler" as C
+participant "Text Translator" as D
+participant "OpenAI\nArticle Generator" as E
+participant "Article Translator" as F
+participant "Google Pub/Sub" as PubSub
+participant "GitHub Pusher" as G
+participant "SNS Distributor" as H
+participant "Video Generator" as I
+participant "Video Distributor" as J
+database "Google Trends" as K
+database "External Articles" as L
+database "OpenAI" as M
+database "DeepL" as N
+database "GitHub Repo" as O
+database "SNS Providers\n(Twitter, FB, ...)" as P
+database "Video Providers\n(YouTube, TikTok)" as Q
+
+A -> B: Trigger at 11:59am for each country
+B -> K: Fetch trends and articles
+K --> B: Return trends and article links
+alt Failure
+  B -> PubSub: Save failure details
+end
+
+B -> C: Send article links
+C -> L: Crawl articles
+L --> C: Return article contents
+alt Failure
+  C -> PubSub: Save failure details
+end
+
+C -> D: Send article contents
+alt non-English article content
+  D -> N: Translate text to English
+  N --> D: Return translated texts
+  alt Failure
+    D -> PubSub: Save failure details
+  end
+else
+  D --> D: do nothing
+end
+
+D -> E: Send translated texts
+E -> M: Generate new articles
+M --> E: Return new articles
+alt Failure
+  E -> PubSub: Save failure details
+end
+
+E -> F: Send articles for translation
+F -> N: Translate articles to 5 languages
+N --> F: Return translated articles
+alt Failure
+  F -> PubSub: Save failure details
+end
+
+group
+  "GitHub Push after all articles are translated"
+  F -> G: Send articles for push
+  G -> O: Push all articles
+  O --> G: Confirm push
+  alt Failure
+    G -> PubSub: Save failure details
+  end
+end
+
+group
+  "Parallel Tasks for Each Translated Article"
+  loop for each translated article
+    par
+      G -> H: Trigger SNS distribution for article
+      H -> P: Distribute article to SNS
+      P --> H: Confirm distribution
+      alt Failure
+        H -> PubSub: Save failure details
+      end
+
+      G -> I: Send article for video creation
+      I -> N: Translate for video content
+      N --> I: Return translated content
+      alt Failure
+        I -> PubSub: Save failure details
+      end
+
+      I -> J: Send video for distribution
+      J -> Q: Distribute video
+      Q --> J: Confirm distribution
+      alt Failure
+        J -> PubSub: Save failure details
+      end
+    end
+  end
+end
+
+@enduml

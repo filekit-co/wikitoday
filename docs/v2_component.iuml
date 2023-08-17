@@ -1,0 +1,88 @@
+@startuml
+
+skinparam component {
+  BackgroundColor #F0E68C
+  BorderColor Black
+  ArrowColor Black
+}
+
+skinparam cloud {
+  BackgroundColor #AED6F1
+  BorderColor Black
+}
+
+skinparam database {
+  BackgroundColor #D5DBDB
+  BorderColor Black
+}
+
+package "Cloud Services" {
+
+  [Scheduler] as scheduler
+  cloud "Google Trends" as googleTrends
+  database "External Articles" as extArticles
+  cloud "OpenAI" as openai
+  cloud "DeepL" as deepl
+  cloud "GitHub Repo" as github
+  cloud "SNS Platforms" as sns
+  cloud "Video Platforms" as vidPlatforms
+
+  [Google Trends Fetcher] as trendsFetcher
+  [Article Crawler] as articleCrawler
+  [Text Translator] as textTranslator
+  [Article Generator] as articleGen
+  [New Article Translator] as newArtTranslator
+  [GitHub Pusher] as gitPusher
+  [SNS Distributor] as snsDistributor
+  [Video Generator] as vidGen
+  [Video Distributor] as vidDistributor
+
+  database "Google Cloud Pub/Sub" as pubsub
+  [Error Handler & Retrier] as errorHandler
+
+}
+
+scheduler --> trendsFetcher
+trendsFetcher --> googleTrends
+articleCrawler --> extArticles
+articleGen --> openai
+textTranslator --> deepl
+newArtTranslator --> deepl
+gitPusher --> github
+snsDistributor --> sns
+vidDistributor --> vidPlatforms
+
+trendsFetcher --> articleCrawler
+articleCrawler --> textTranslator
+textTranslator --> articleGen
+articleGen --> newArtTranslator
+
+' Parallel execution
+newArtTranslator -down-> gitPusher
+newArtTranslator -right-> snsDistributor
+newArtTranslator -left-> vidGen
+vidGen --> vidDistributor
+
+' Handling errors using Google Cloud Pub/Sub
+trendsFetcher --> pubsub : onError
+articleCrawler --> pubsub : onError
+textTranslator --> pubsub : onError
+articleGen --> pubsub : onError
+newArtTranslator --> pubsub : onError
+gitPusher --> pubsub : onError
+snsDistributor --> pubsub : onError
+vidGen --> pubsub : onError
+vidDistributor --> pubsub : onError
+
+pubsub --> errorHandler
+
+' Notes to explain the relationships
+note right of googleTrends: "Fetched daily"
+note right of extArticles: "Crawl based on\nGoogle Trends' data"
+note right of openai: "Generate new content\nbased on crawled data"
+note right of deepl: "Translates articles\nif necessary"
+note right of github: "Pushes the\nfinal articles"
+note right of sns: "Distributes the content\nto various platforms"
+note right of vidPlatforms: "Generate videos\nand distribute them"
+
+@enduml
