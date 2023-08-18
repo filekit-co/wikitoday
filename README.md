@@ -6,7 +6,7 @@
 <img src="https://github.com/filekit-co/wikitoday/assets/37536298/7bdab99e-f7e7-400d-878a-eb56d044e024" width=900 />
 <br/>
 <br/>
-<img src="./docs/v2.png" />
+<img src="./docs/wikitoday.png" />
 <hr />
 <img src="./docs/v2_component.png" />
 </p>

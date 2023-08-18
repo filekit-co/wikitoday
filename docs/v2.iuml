@@ -1,4 +1,4 @@
-@startuml
+@startuml wikitoday
 
 participant "Scheduler" as A
 participant "Google Trends\nFetcher" as B
@@ -24,16 +24,18 @@ B -> K: Fetch trends and articles
 K --> B: Return trends and article links
 alt Failure
   B -> PubSub: Save failure details
+else
+  B -> C: Send article links
 end
 
-B -> C: Send article links
 C -> L: Crawl articles
 L --> C: Return article contents
 alt Failure
   C -> PubSub: Save failure details
+else
+  C -> D: Send article contents
 end
 
-C -> D: Send article contents
 alt non-English article content
   D -> N: Translate text to English
   N --> D: Return translated texts
@@ -41,56 +43,54 @@ alt non-English article content
     D -> PubSub: Save failure details
   end
 else
-  D --> D: do nothing
+  D -> E: Send translated texts
 end
 
-D -> E: Send translated texts
 E -> M: Generate new articles
 M --> E: Return new articles
 alt Failure
   E -> PubSub: Save failure details
+else
+  E -> F: Send articles for translation
 end
 
-E -> F: Send articles for translation
 F -> N: Translate articles to 5 languages
 N --> F: Return translated articles
 alt Failure
   F -> PubSub: Save failure details
-end
-
-group
-  "GitHub Push after all articles are translated"
-  F -> G: Send articles for push
-  G -> O: Push all articles
-  O --> G: Confirm push
-  alt Failure
-    G -> PubSub: Save failure details
+else
+  group "GitHub Push after all articles are translated"
+    F -> G: Send articles for push
+    G -> O: Push all articles
+    O --> G: Confirm push
+    alt Failure
+      G -> PubSub: Save failure details
+    end
   end
-end
 
-group
-  "Parallel Tasks for Each Translated Article"
-  loop for each translated article
-    par
-      G -> H: Trigger SNS distribution for article
-      H -> P: Distribute article to SNS
-      P --> H: Confirm distribution
-      alt Failure
-        H -> PubSub: Save failure details
-      end
+  group "Parallel Tasks for Each Translated Article"
+    loop for each translated article
+      par
+        G -> H: Trigger SNS distribution for article
+        H -> P: Distribute article to SNS
+        P --> H: Confirm distribution
+        alt Failure
+          H -> PubSub: Save failure details
+        end
 
-      G -> I: Send article for video creation
-      I -> N: Translate for video content
-      N --> I: Return translated content
-      alt Failure
-        I -> PubSub: Save failure details
-      end
+        G -> I: Send article for video creation
+        I -> N: Translate for video content
+        N --> I: Return translated content
+        alt Failure
+          I -> PubSub: Save failure details
+        end
 
-      I -> J: Send video for distribution
-      J -> Q: Distribute video
-      Q --> J: Confirm distribution
-      alt Failure
-        J -> PubSub: Save failure details
+        I -> J: Send video for distribution
+        J -> Q: Distribute video
+        Q --> J: Confirm distribution
+        alt Failure
+          J -> PubSub: Save failure details
+        end
       end
     end
   end
