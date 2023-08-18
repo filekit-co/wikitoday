@@ -17,7 +17,7 @@ from infra.news_crawler import from_trends
 from infra.sns import twitter
 from infra.sns.base import post_sns
 from infra.translate import translate_articles, translate_crawled_trends
-from mocks import step4
+from mocks import step5, step6
 
 router = APIRouter(prefix='/trends', tags=["trends"])
 logger = logging.getLogger(__name__)
@@ -45,7 +45,9 @@ async def generate_news(country: TargetCountryCode, date: str | None = None):
     regenerated_articles = await aperform_step(4, regenerate_articles, translated_trends)
     translated_articles = await aperform_step(5, translate_articles, country, regenerated_articles)
     folders = perform_step(6, to_folders, translated_articles, date)
-
-    
     await push_folders(folders, country)
+
+    today = folders[0].today
+    for article in translated_articles:
+        article.print_sns_articles(today)
     return JSONResponse(content=jsonable_encoder(folders))

@@ -1,7 +1,10 @@
+import pprint
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from enum import StrEnum
 from typing import Dict, List, Optional
+
+from jinja2 import Template
 
 from utils import create_url_path, reformat_yaml, split_sentences
 
@@ -161,6 +164,17 @@ class ArticleContent:
         )
 
 
+_sns_template = """#BREAKING: {{ title }}
+
+category: #{{ category }}
+
+📰 {{ news_url }}
+
+#wikitoday {{ hashtags }} @wikitoday_io
+
+"""
+SNS_TEMPLATE = Template(_sns_template)
+
 @dataclass
 class Article:
     NUM_PARAGRAPH_SENTENCES = 2
@@ -169,11 +183,17 @@ class Article:
     keywords: str
     contents: List[ArticleContent]
     images: List[ArticleImage]
+    
 
     @property
     def url_safe_name(self) -> str:
         en_content = self.contents[0]
         return create_url_path(en_content.title)
+
+    @property
+    def hashtags(self) -> str:
+        return ' '.join(['#' + item for item in self.keywords.split(',')])
+
 
     @classmethod
     def from_dto(cls, tct: TranslatedCrawledTrend, ai_data: Dict[str, str]):
@@ -211,6 +231,18 @@ class Article:
             contents=contents,
             images=tct.images
         )
+
+    def print_sns_articles(self, date) -> List[str]:
+        for c in self.contents:
+            news_url = f'https://wikitoday.io/{c.language}/news/{date}/{self.url_safe_name}'
+            sns_post = SNS_TEMPLATE.render({
+                'title': c.title,
+                'category': self.category,
+                'hashtags': self.hashtags,
+                'news_url': news_url,
+            })
+            print(sns_post)
+        
 
     def to_list(self) -> List[str]:
         """DeepL does not support json schema translation, so we need to pass it with an array typed texts"""
