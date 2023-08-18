@@ -1,7 +1,6 @@
 # `wikitoday.io` server
 > for making ai news using the LLM model
 
-
 <p align="center">
 <img src="https://github.com/filekit-co/wikitoday/assets/37536298/7bdab99e-f7e7-400d-878a-eb56d044e024" width=900 />
 <br/>

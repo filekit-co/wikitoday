@@ -21,6 +21,7 @@ langdetect = "^1.0.9"
 openai = "^0.27.8"
 jinja2 = "^3.1.2"
 tiktoken = "^0.4.0"
+tweepy = {extras = ["async"], version = "^4.14.0"}
 
 
 [tool.poetry.group.dev.dependencies]

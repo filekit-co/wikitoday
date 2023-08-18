@@ -51,3 +51,16 @@ async def generate_news(country: TargetCountryCode, date: str | None = None):
     for article in translated_articles:
         article.print_sns_articles(today)
     return JSONResponse(content=jsonable_encoder(folders))
+
+
+
+    # us_twitter_pusher = twitter.get_pusher_by_language(language=Language.EN_US)
+    # await post_sns(
+    #     us_twitter_pusher,
+    #     title='Al Nassr Advances To The Arab Club Champions Cup Final With A Thrilling Victory Over Al Shorta',
+    #     lead='ollow for highlights from the Arab Club Champions Cup match between Al Shorta and Al Nassr, which ended with Al Nassr securing a spot in the final.',
+    #     category='Sports',
+    #     keywords='#AlNassr #AlShorta #ArabClubChampionsCup #Final #Victory #PrinceSultanBinAbdulAzizStadium #Abha #SaudiArabia #Alaqidi #Goalkeeper #LastDitchSave #Sportstar',
+    #     url='https://wikitoday.io/EN-US/news/Sports/2023-08-10/Al-Nassr-advances-to',
+    # )
+    
