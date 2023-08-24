@@ -2,13 +2,12 @@ import logging
 import pprint
 from typing import Any, Callable
 
-from fastapi import APIRouter
-from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse
-
 from app.logger import get_colored_logger
 from consts import TargetCountryCode
 from domain.entities import Language
+from fastapi import APIRouter
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 from infra.github import push_folders
 from infra.google_trends import daily_trends
 from infra.gpt import regenerate_articles

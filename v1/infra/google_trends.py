@@ -4,9 +4,8 @@ from dataclasses import dataclass, field
 from typing import List, Optional
 
 import httpx
-from httpx import AsyncClient, Response
-
 from domain.entities import GoogleTrend, TrendArticleMeta
+from httpx import AsyncClient, Response
 from utils import generate_dataclass
 
 GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends"
@@ -127,5 +126,5 @@ async def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
         r = await client.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
         r.raise_for_status()
         trends = [t.to_dto() for t in _parse_trends(r)]
-        only_three = trends[:2]
-        return only_three
+        only_two = trends[:2]
+        return only_two

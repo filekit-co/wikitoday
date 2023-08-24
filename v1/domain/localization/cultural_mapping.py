@@ -1,3 +1,4 @@
+from datetime import time
 from functools import lru_cache
 
 from domain.entities import Language
@@ -43,16 +44,42 @@ _cultural_language_mapping = {
     "SA": [Language.EN_US],
     "SG": [Language.EN_US, Language.ZH, ],
     "ZA": [Language.EN_US],
-    "KR": [Language.KO, Language.JA, Language.EN_US, ], # 대한민국은 한국어를 사용하며, 일본과 중국과의 거리가 가까운 연결을 반영합니다.
+    "KR": [Language.KO, Language.EN_US, ], # 대한민국은 한국어를 사용하며, 일본과 중국과의 거리가 가까운 연결을 반영합니다.
     "ES": [Language.ES, Language.PT_PT, Language.FR],
     "SE": [Language.SV, Language.DA],
     "CH": [Language.DE, Language.FR, Language.IT], #  스위스는 독일어, 프랑스어, 이탈리아어를 공용어로 사용하여 이 세 언어를 포함시킵니다.
-    "TW": [Language.ZH, Language.EN_US, Language.JA],
+    "TW": [Language.ZH, Language.EN_US],
     "TH": [Language.ZH, Language.EN_US],
     "TR": [Language.TR, ],
     "UA": [Language.UK, Language.RU],
     "GB": [Language.EN_GB, Language.FR, Language.DE],
     "VN": [Language.EN_US, Language.ZH],
+}
+
+
+# 6am and 6pm by Korean time
+countries_time_at_kr_6 = {
+    time(10, 0): ["MX"],
+    time(11, 0): ["US", "CA", "CO", "PE"],
+    time(12, 0): ["CL", "KR", "JP"],
+    time(13, 0): ["BR", "AR"],
+    time(16, 0): ["GB", "PT", "IE"],
+    time(17, 0): ["DE", "FR", "IT", "ES", "NL", "CH", "SE", "BE", "PL", "AT", "DK", "CZ", "HU", "NO", "NG"],
+    time(18, 0): ["ZA", "UA", "IL", "FI", "GR", "RO"],
+    time(19, 0): ["RU", "TR", "SA", "KE"],
+    time(21, 30): ["IN"],
+    time(22, 0): ["MX"],
+    time(23, 0): ["US", "CA", "CO", "PE"],
+    time(0, 0): ["SG", "TW", "MY", "HK", "PH", "KR", "JP"],
+    time(1, 0): ["BR", "AR"],
+    time(2, 0): ["AU"],
+    time(4, 0): ["NZ"],
+    time(7, 0): ["RU", "TR", "SA", "KE"],
+    time(9, 30): ["IN"],
+    time(11, 0): ["ID", "VN", "TH"],
+    time(12, 0): ["SG", "TW", "MY", "HK", "PH"],
+    time(14, 0): ["AU"],
+    time(16, 0): ["NZ"]
 }
 
 @lru_cache()
@@ -74,3 +101,5 @@ def get_culturally_relevant_languages(country_id, include_english=True):
         culturally_relevant_languages.append(Language.EN_US)
 
     return culturally_relevant_languages
+
+

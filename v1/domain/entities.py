@@ -5,7 +5,6 @@ from enum import StrEnum
 from typing import Dict, List, Optional
 
 from jinja2 import Template
-
 from utils import create_url_path, reformat_yaml, split_sentences
 
 
@@ -164,13 +163,13 @@ class ArticleContent:
         )
 
 
-_sns_template = """#BREAKING: {{ title }}
+_sns_template = """{{ title }}
 
-category: #{{ category }}
+{{ category }}
 
-📰 {{ news_url }}
+{{ news_url }}
 
-#wikitoday {{ hashtags }} @wikitoday_io
+{{ hashtags }}
 
 """
 SNS_TEMPLATE = Template(_sns_template)
