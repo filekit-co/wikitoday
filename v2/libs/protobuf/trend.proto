@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package google_trends;
+
+message GoogleTrend {
+    repeated GoogleArticle articles = 1;
+    repeated string keywords = 2;
+}
+
+message GoogleArticle {
+    string url = 1;
+    optional string source = 2;
+}

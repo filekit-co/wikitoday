@@ -3,6 +3,10 @@ IAM = sa-minwook@poetic-producer-396107.iam.gserviceaccount.com
 # Google Cloud 명령어
 GC_PREFIX = gc
 
+compile-proto:
+	@protoc -I=/Users/minwook/code/filekit/wikitoday/v2/libs/protobuf --python_out=/Users/minwook/code/filekit/wikitoday/v2/libs/protobuf /Users/minwook/code/filekit/wikitoday/v2/libs/protobuf/*.proto
+
+
 $(GWF_PREFIX)-auth:
 	gcloud auth login
 
@@ -44,4 +48,6 @@ $(GCR_PREFIX)-describe:
 $(GCR_PREFIX)-list:
 	@gcloud run services list
 
-.PHONY: $(GC_PREFIX)-auth $(GC_PREFIX)-info $(GWF_PREFIX)-deploy $(GWF_PREFIX)-run $(GWF_PREFIX)-desc $(GWF_PREFIX)-list $(GWF_PREFIX)-del $(GCR_PREFIX)-deploy $(GCR_PREFIX)-describe $(GCR_PREFIX)-list
+
+.PHONY: compile-proto $(GC_PREFIX)-auth $(GC_PREFIX)-info $(GWF_PREFIX)-deploy $(GWF_PREFIX)-run $(GWF_PREFIX)-desc $(GWF_PREFIX)-list $(GWF_PREFIX)-del $(GCR_PREFIX)-deploy $(GCR_PREFIX)-describe $(GCR_PREFIX)-list
+
