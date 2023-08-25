@@ -1,4 +1,4 @@
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import date
 from enum import StrEnum
 from typing import List, Optional
@@ -7,86 +7,6 @@ from utils import create_url_path, reformat_yaml
 
 # from utils import split_sentences
 
-
-class TargetCountryCode(StrEnum):
-    # The ranking is based on a combination of factors such as population, 
-    # global influence, and national income levels.
-    
-    US = "US"  # United States
-    JP = "JP"  # Japan
-    DE = "DE"  # Germany
-    GB = "GB"  # United Kingdom
-    FR = "FR"  # France
-    IN = "IN"  # India
-    BR = "BR"  # Brazil
-    RU = "RU"  # Russia
-    IT = "IT"  # Italy
-    CA = "CA"  # Canada
-    KR = "KR"  # South Korea
-    AU = "AU"  # Australia
-    ES = "ES"  # Spain
-    MX = "MX"  # Mexico
-    NL = "NL"  # Netherlands
-    CH = "CH"  # Switzerland
-    TR = "TR"  # Türkiye
-    SA = "SA"  # Saudi Arabia
-    SE = "SE"  # Sweden
-    ID = "ID"  # Indonesia
-    BE = "BE"  # Belgium
-    AR = "AR"  # Argentina
-    ZA = "ZA"  # South Africa
-    PL = "PL"  # Poland
-    AT = "AT"  # Austria
-    SG = "SG"  # Singapore
-    UA = "UA"  # Ukraine
-    TW = "TW"  # Taiwan
-    NO = "NO"  # Norway
-    IL = "IL"  # Israel
-    MY = "MY"  # Malaysia
-    VN = "VN"  # Vietnam
-    HK = "HK"  # Hong Kong
-    TH = "TH"  # Thailand
-    DK = "DK"  # Denmark
-    CL = "CL"  # Chile
-    PH = "PH"  # Philippines
-    CZ = "CZ"  # Czechia
-    FI = "FI"  # Finland
-    GR = "GR"  # Greece
-    PT = "PT"  # Portugal
-    IE = "IE"  # Ireland
-    CO = "CO"  # Colombia
-    RO = "RO"  # Romania
-    NZ = "NZ"  # New Zealand
-    HU = "HU"  # Hungary
-    PE = "PE"  # Peru
-    KE = "KE"  # Kenya
-    NG = "NG"  # Nigeria
-
-
-
-### Step 1
-@dataclass(frozen=True)
-class TrendArticleMeta:
-    url: str
-    source: Optional[str] = None
-
-
-@dataclass(frozen=True)
-class GoogleTrend:
-    query: str
-    related_quries: List[str]
-    articles: List[TrendArticleMeta]
-
-    @property
-    def keywords(self) -> List[str]:
-        return [self.query, *self.related_quries]
-
-    @property
-    def hrefs(self):
-        return [a.url for a in self.articles]
-    
-    def as_dict(self):
-        return asdict(self)
 
 ### Step 2
 @dataclass(frozen=True)

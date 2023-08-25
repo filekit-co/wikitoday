@@ -3,14 +3,16 @@ import logging
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+import common_logging
 import requests
-from domain.entities import TargetCountryCode
+from country_pb2 import TargetCountryCode
 from google.protobuf.json_format import MessageToJson
 from trend_pb2 import GoogleArticle, GoogleTrend
 from utils import generate_dataclass
 
 GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends"
 logger = logging.getLogger(__name__)
+common_logging.setup_logger(logger)
 
 
 
@@ -99,7 +101,7 @@ def _parse_trends(response: requests.models.Response) -> List[DcGoogleTrend]:
 
 
 
-def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
+def daily_trends(country:TargetCountryCode, date: Optional[str]) -> List[GoogleTrend]:
     """_summary_
 
     Args:
@@ -109,6 +111,7 @@ def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
     Returns:
         List[GoogleTrend]: google trends api response
     """
+    str_country = TargetCountryCode.Name(country)
 
     meta_language='en-US'
     headers = {
@@ -117,25 +120,26 @@ def daily_trends(country:str, date: Optional[str]) -> List[GoogleTrend]:
         "Origin": "https://trends.google.com",
         "DNT": "1",
         "Connection": "keep-alive",
-        "Referer": f"https://trends.google.com/trends/trendingsearches/daily?geo={country}",
+        "Referer": f"https://trends.google.com/trends/trendingsearches/daily?geo={str_country}",
         "Cache-Control": "max-age=0",
         "TE": "Trailers",
     }
+
     params = {
             'hl': meta_language,
-            'geo': country,
+            'geo': str_country,
             'ns': '15',
             }
     if date:
         params['ed'] = date
-    
-    
+    logger.info(country)
     r: requests.models.Response = requests.get(GOOGLE_TRENDS_URL, headers=headers, params=params)
     r.raise_for_status()
     trends = [t.to_proto() for t in _parse_trends(r)]
     return trends
 
 if __name__ == '__main__':
-    google_trends : List[GoogleTrend] = daily_trends(TargetCountryCode.US, None)
+    country_code: str = 'US'
+    google_trends : List[GoogleTrend] = daily_trends(TargetCountryCode.Value(country_code), None)
     json_trends = [MessageToJson(gt) for gt in google_trends]
-    
+    logger.info(json_trends)
