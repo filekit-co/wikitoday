@@ -1,53 +1,33 @@
+PROJECT_ID = poetic-producer-396107
 IAM = sa-minwook@poetic-producer-396107.iam.gserviceaccount.com
+PROJECT_NUMBER := $(shell gcloud projects describe $(PROJECT_ID) --format='value(projectNumber)')
+CLOUDBUILD_SA := $(PROJECT_NUMBER)@cloudbuild.gserviceaccount.com
 
-# Google Cloud 명령어
-GC_PREFIX = gc
+PROTOBUF_DIR = /Users/minwook/code/filekit/wikitoday/v2/libs/protobuf
 
 compile-proto:
-	@protoc -I=/Users/minwook/code/filekit/wikitoday/v2/libs/protobuf --python_out=/Users/minwook/code/filekit/wikitoday/v2/libs/protobuf /Users/minwook/code/filekit/wikitoday/v2/libs/protobuf/*.proto
+	@protoc -I=$(PROTOBUF_DIR) --python_out=$(PROTOBUF_DIR) $(PROTOBUF_DIR)/*.proto
 
+enable:
+	@gcloud services enable \
+    run.googleapis.com \
+    cloudbuild.googleapis.com
 
-$(GWF_PREFIX)-auth:
-	gcloud auth login
+perm:
+	@gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+    --member=serviceAccount:${IAM} \
+    --role=roles/run.admin
+	@gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+    --member=serviceAccount:${IAM} \
+    --role=roles/cloudbuild.builds.editor
 
-$(GWF_PREFIX)-info:
-	gcloud info --show-log
-
-# Google Cloud Workflow 명령어
-GWF_PREFIX = gwf
-GWF_NAME = myFirstWorkflow
-
-
-$(GWF_PREFIX)-deploy:
-	@gcloud workflows deploy $(GWF_NAME) --source=./workflows/$(GWF_NAME).yaml --service-account=$(IAM)
-
-$(GWF_PREFIX)-run:
-	@gcloud workflows run $(GWF_NAME) --data='{"searchTerm": "north"}'
-
-$(GWF_PREFIX)-desc:
-	@gcloud workflows describe $(GWF_NAME)
-
-$(GWF_PREFIX)-list:
-	@gcloud workflows list
-
-$(GWF_PREFIX)-del:
-	@gcloud workflows delete $(GWF_NAME)
-
-
-# Google Cloud Run 명령어
-GCR_PREFIX = gcr
-GCR_NAME = ...
-GCR_IMG_NAME = ...
-
-$(GCR_PREFIX)-deploy:
-	@gcloud run deploy $(GCR_NAME) --image=$(GCR_IMG_NAME)
-
-$(GCR_PREFIX)-describe:
-	@gcloud run services describe $(GCR_NAME)
-
-$(GCR_PREFIX)-list:
-	@gcloud run services list
-
-
-.PHONY: compile-proto $(GC_PREFIX)-auth $(GC_PREFIX)-info $(GWF_PREFIX)-deploy $(GWF_PREFIX)-run $(GWF_PREFIX)-desc $(GWF_PREFIX)-list $(GWF_PREFIX)-del $(GCR_PREFIX)-deploy $(GCR_PREFIX)-describe $(GCR_PREFIX)-list
-
+build-perm:
+	@gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+    --member=serviceAccount:${CLOUDBUILD_SA} \
+    --role=roles/run.admin
+	@gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+    --member=serviceAccount:${CLOUDBUILD_SA} \
+    --role=roles/cloudbuild.builds.editor
+	@gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+    --member=serviceAccount:${CLOUDBUILD_SA} \
+    --role=roles/iam.serviceAccountUser

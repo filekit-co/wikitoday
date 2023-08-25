@@ -1,0 +1,27 @@
+steps:
+  - id: "Build the container image"
+    name: "gcr.io/cloud-builders/docker:latest"
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$BUILD_ID', '.' ]
+  - id: "Push Container Image"
+    name: "gcr.io/cloud-builders/docker:latest"
+    args: [ 'push', "gcr.io/$PROJECT_ID/$_SERVICE_NAME:$BUILD_ID"]
+  - id: "Deploy to Cloud Run Jobs"
+    name: "gcr.io/cloud-builders/gcloud:latest"
+    entrypoint: /bin/bash
+    args:
+      - "-c"
+      - |
+        gcloud beta run jobs create $_SERVICE_NAME \
+          --image gcr.io/$PROJECT_ID/$_SERVICE_NAME:$BUILD_ID \
+          --region $_REGION \
+          --execution-environment gen2 || \
+        gcloud beta run jobs update $_SERVICE_NAME \
+          --image gcr.io/$PROJECT_ID/$_SERVICE_NAME:$BUILD_ID \
+          --region $_REGION
+
+
+        gcloud beta run jobs execute $_SERVICE_NAME --region $_REGION
+
+substitutions:
+  _SERVICE_NAME: trends-fetch
+  _REGION: us-central1
