@@ -1,0 +1,47 @@
+main:
+  params: [triggerTime, country]
+  steps:
+    fetchTrends:
+      call: google-trends-fetcher
+      args:
+        time: ${triggerTime}
+        country: ${country}
+      result: trendsAndLinks
+    crawlArticles:
+      call: article-crawler
+      args:
+        links: ${trendsAndLinks.links}
+      result: articles
+    translateArticles:
+      call: text-translator
+      args:
+        articles: ${articles}
+      result: translatedArticles
+    generateArticles:
+      call: openai-article-generator
+      args:
+        articles: ${translatedArticles}
+      result: newArticles
+    translateNewArticles:
+      call: article-translator
+      args:
+        articles: ${newArticles}
+      result: multiLingualArticles
+    pushToGithub:
+      call: github-pusher
+      args:
+        articles: ${multiLingualArticles}
+    distributeArticles:
+      foreach:
+        article in ${multiLingualArticles}
+        do:
+          call: sns-distributor
+          args:
+            article: ${article}
+    generateAndDistributeVideos:
+      foreach:
+        article in ${multiLingualArticles}
+        do:
+          call: video-generator-and-distributor
+          args:
+            article: ${article}
